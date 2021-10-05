@@ -1,0 +1,37 @@
+name: Java exercises
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Restore Maven cache
+        uses: skjolber/maven-cache-github-action@v1
+        with:
+          step: restore
+
+      - name: aggregate modules
+        run: ./aggregate-modules.sh
+
+      - name: compile
+        run: mvn -f reactor.pom install -DskipTests=true --fail-at-end
+
+      - name: check format
+        run: mvn -f reactor.pom spotless:check --fail-at-end
+
+      - name: run tests
+        run: mvn -f reactor.pom test --fail-at-end
+
+      - name: Save Maven cache
+        uses: skjolber/maven-cache-github-action@v1
+        with:
+          step: save
