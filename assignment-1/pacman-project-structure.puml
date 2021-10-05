@@ -1,0 +1,7 @@
+@startuml
+object package1
+object package2
+
+package1 <-- package2
+
+@enduml

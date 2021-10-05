@@ -1,0 +1,35 @@
+name: Render PlantUML and generate PDF
+on:
+  - push
+  - workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: grassedge/generate-plantuml-action@v1.5
+        with:
+          message: "Render PlantUML files"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: |
+          sudo apt update
+          sudo apt install -y \
+                              pandoc \
+                              texlive-latex-base \
+                              texlive-latex-extra \
+                              texlive-fonts-recommended \
+                              texlive-fonts-extra \
+                              librsvg2-bin
+
+
+      - run: ./generate-pdf.sh
+
+      - uses: EndBug/add-and-commit@v7
+        with:
+          message: Generate PDF
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
