@@ -31,6 +31,13 @@ Used for the github actions, that the github actions don't need to reference eve
 which references all the pom.xml in this repo. If you run a maven target on the reactor.pom, it will run the target over
 all maven projects.
 
+* [java.yml](.github/workflows/java.yml)
+CI for java: runs tests and format check
+
+* [documents.yaml](.github/workflows/documents.yml)  
+Github Actions to render PlantUML (.puml) files and generate PDF from *.md Files (except the README.md file).
+The new files are added to the branch with a new commit.
+
 # How to set up a new task
 
 1. Create a new maven project with the groupid ch.uzh.soco21.group8
