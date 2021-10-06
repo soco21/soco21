@@ -1,7 +1,56 @@
 @startuml
-object package1
-object package2
+note as Board
+  |= Board |= |
+  |= Responsibilities |= Collaborators |
+  | create init state | |
+  | move piece | |
+  | decide if piece was captured and maybe remove piece ||
+  | Decide if transform to King | |
+endnote
 
-package1 <-- package2
+note as GameLogic
+  |= GameLogic |= |
+  |= Responsibilities |= Collaborators |
+  | hold enum with players | |
+  | print welcome message | |
+  | Print instructions to player | Terminal |
+  | decide which player should move (attention, double Jump rule) ||
+  | check win conditions | List<WinCondition> |
+  | print win message | |
+  | check that input move has correct format | |
+  | check if move is valid | List<Rule> |
+  | get move from player | Terminal |
+  | print error message | Terminal |
+endnote
+
+note as WinCondition
+  |= WinCondition |= |
+  | One Class for every win condition | |
+  |= Responsibilities |= Collaborators |
+  | decide if condition was met | Board |
+endnote
+
+note as BoardPrinter
+  |= BoardPrinter |= |
+  |= Responsibilities |= Collaborators |
+  | print board | |
+endnote
+
+note as Move
+  |= Move |= |
+  |= Responsibilities |= Collaborators |
+  | hold move parameters (From field A to field B) | |
+endnote
+
+note as Rule
+  |= Rule |= |
+  | One class for every rule | |
+  |= Responsibilities |= Collaborators |
+  | Is there a piece of the correct player | |
+  | Target field is empty | |
+  | If jump move: is a opponent piece between | |
+  | If not jump move: is no jump move possible | |
+  | If king: can move diagonally in all directions | |
+endnote
 
 @enduml
