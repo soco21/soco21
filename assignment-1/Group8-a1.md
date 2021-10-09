@@ -12,7 +12,7 @@ and (iii) describe what you understood from this depiction of the system
 
 #### Diagram of the project's packages and classes
 
-![pacman-project-structure](./pacman-project-structure.svg)
+![pacman-project-structure](exercise1/pacman-project-structure.svg)
 
 #### Why was this level of abstraction used?
 
