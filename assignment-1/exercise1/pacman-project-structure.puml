@@ -1,7 +1,42 @@
 @startuml
-object package1
-object package2
 
-package1 <-- package2
+title Exercise 1-part2 PacMan Callgraph\n
 
+circle Main
+object launch
+object makeGame
+object getGameFactory
+object makeLevel
+object createSinglePlayerGame
+object SinglePlayerGame
+object createPacMan
+
+
+Main -->launch
+launch -->makeGame
+makeGame-->getGameFactory
+makeGame-->createSinglePlayerGame
+makeGame-->makeLevel
+createSinglePlayerGame-->SinglePlayerGame
+createPacMan-->SinglePlayerGame
+
+note as N1
+  The call graph below shows the methods called
+  to generate a single player game of pacman.
+  In order to get to that, 4 methods must be called first.
+  This is the only way to access the SinglePlayerGame class.
+  
+  As seen in the diagram, the Main function first calls the launch 
+  which in turn calls 4 other methods. As the name suggests, 
+  The method "launches" the game in its initial setup.
+  The makeGame() method is a crucial component to make a 
+  new level(level design,sprites, PacMan) in the game.
+  This method also returns the variable "game" which is an instance
+  of the GameFactory class.
+  Next, we step into creating a single Player game inside the created level.
+  This in turn creates a new object of SinglePlayerGame which also uses the 
+  createPacMan method that creates new PacMan character.
+  
+ 
+end note
 @enduml
