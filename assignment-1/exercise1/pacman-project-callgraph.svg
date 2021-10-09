@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="148px" preserveAspectRatio="none" style="width:95px;height:148px;background:#FFFFFF;" version="1.1" viewBox="0 0 95 148" width="95px" zoomAndPan="magnify"><defs><filter height="300%" id="fcgw4erppn064" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FEFECE" filter="url(#fcgw4erppn064)" height="33.9688" style="stroke:#A80036;stroke-width:1.5;" width="73" x="7.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="59" x="14.5" y="20.1387">package1</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8.5" x2="79.5" y1="24.9688" y2="24.9688"/><rect fill="#FEFECE" filter="url(#fcgw4erppn064)" height="33.9688" style="stroke:#A80036;stroke-width:1.5;" width="74" x="7" y="101"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="60" x="14" y="114.1387">package2</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="80" y1="118.9688" y2="118.9688"/><!--MD5=[ceeef5a91f37c48cd34e55718cb134f0]
+reverse link package1 to package2--><path codeLine="4" d="M44,46.4108 C44,63.0357 44,85.7294 44,100.8498 " fill="none" id="package1-backto-package2" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="44,41.0252,40,50.0252,44,46.0252,48,50.0252,44,41.0252" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[468b3de3550d6ea09580e9c782f796bd]
+@startuml
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "nl.tudelft.jpacman.Launcher#makeGame()",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": ""
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false // root node is included
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "nl.tudelft.jpacman.Launcher"
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+
+
+'nodes
+subgraph cluster_978676680 {
+   	label=tudelft
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+
+   subgraph cluster_784480068 {
+   	label=jpacman
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+
+   subgraph cluster_1191563907 {
+   	label=PlayerFactory
+	labeljust=l
+	fillcolor=white
+	style=filled
+
+   PlayerFactory48535646XXXcreatePacMan0[
+	label="+ createPacMan()"
+	style=filled
+	fillcolor=white
+	tooltip="PlayerFactory
+
+&#10;  Creates a new player with the classic Pac-Man sprites.&#10; &#10;  @return A new player.&#10; "
+	fontcolor=darkgreen
+];
+}
+
+subgraph cluster_1625526575 {
+   	label=MapParser
+	labeljust=l
+	fillcolor=white
+	style=filled
+
+   MapParser48535646XXXparseMap1361886154[
+	label="+ parseMap()"
+	style=filled
+	fillcolor=white
+	tooltip="MapParser
+
+&#10;  Parses the provided input stream as a character stream and passes it&#10;  result to {@link #parseMap(List)}.&#10; &#10;  @param source&#10; The input stream that will be read.&#10;  @return The parsed level as represented by the text on the input stream.&#10;  @throws IOException&#10;  when the source could not be read.&#10; "
+	fontcolor=darkgreen
+];
+
+MapParser48535646XXXparseMap1808118735[
+	label="+ parseMap()"
+	style=filled
+	fillcolor=white
+	tooltip="MapParser
+
+&#10;  Parses the provided input stream as a character stream and passes it&#10;  result to {@link #parseMap(List)}.&#10; &#10;  @param mapName&#10; Name of a resource that will be read.&#10;  @return The parsed level as represented by the text on the input stream.&#10;  @throws IOException&#10;  when the resource could not be read.&#10; "
+	fontcolor=darkgreen
+];
+}
+
+subgraph cluster_2027304222 {
+   	label=Launcher
+	labeljust=l
+	fillcolor=white
+	style=filled
+
+   Launcher674465652XXXlaunch0[
+	label="+ launch()"
+	style=filled
+	fillcolor=white
+	tooltip="Launcher
+
+&#10;  Creates and starts a JPac-Man game.&#10; "
+	fontcolor=darkgreen
+];
+
+Launcher674465652XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="Launcher
+
+&#10;  Main execution method for the Launcher.&#10; &#10;  @param args&#10; The command line arguments - which are ignored.&#10;  @throws IOException&#10;  When a resource could not be read.&#10; "
+	fontcolor=darkgreen
+];
+
+Launcher674465652XXXmakeGame0[
+	label="+ makeGame()"
+	style=filled
+	fillcolor=white
+	tooltip="Launcher
+
+&#10;  Creates a new game using the level from {@link #makeLevel()}.&#10; &#10;  @return a new Game.&#10; "
+	penwidth=4
+	fontcolor=darkgreen
+];
+
+Launcher674465652XXXmakeLevel0[
+	label="+ makeLevel()"
+	style=filled
+	fillcolor=white
+	tooltip="Launcher
+
+&#10;  Creates a new level. By default this method will use the map parser to&#10;  parse the default board stored in the \<code\>board.txt\</code\> resource.&#10; &#10;  @return A new level.&#10; "
+	fontcolor=darkgreen
+];
+}
+
+subgraph cluster_691989950 {
+   	label=GameFactory
+	labeljust=l
+	fillcolor=white
+	style=filled
+
+   GameFactory555908076XXXcreateSinglePlayerGame73313124[
+	label="+ createSinglePlayerGame()"
+	style=filled
+	fillcolor=white
+	tooltip="GameFactory
+
+&#10;  Creates a game for a single level with one player.&#10; &#10;  @param level&#10; The level to create a game for.&#10;  @return A new single player game.&#10; "
+	fontcolor=darkgreen
+];
+}
+}
+}
+
+'edges
+GameFactory555908076XXXcreateSinglePlayerGame73313124 -> PlayerFactory48535646XXXcreatePacMan0;
+Launcher674465652XXXlaunch0 -> Launcher674465652XXXmakeGame0;
+Launcher674465652XXXmain1859653459 -> Launcher674465652XXXlaunch0;
+Launcher674465652XXXmakeGame0 -> GameFactory555908076XXXcreateSinglePlayerGame73313124;
+Launcher674465652XXXmakeGame0 -> Launcher674465652XXXmakeLevel0;
+Launcher674465652XXXmakeLevel0 -> MapParser48535646XXXparseMap1808118735;
+MapParser48535646XXXparseMap1808118735 -> MapParser48535646XXXparseMap1361886154;
+
+}
+@enduml
+
+PlantUML version 1.2021.13beta1(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
