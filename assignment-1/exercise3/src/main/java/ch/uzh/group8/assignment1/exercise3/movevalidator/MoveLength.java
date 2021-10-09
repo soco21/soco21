@@ -6,6 +6,10 @@ import ch.uzh.group8.assignment1.exercise3.Move;
 public class MoveLength implements MoveValidator {
   @Override
   public boolean validate(Move move, Board board) {
-    return true;
+    var start = move.start();
+    var end = move.end();
+    int diffMoveColumn = end.column().ordinal() - start.column().ordinal();
+    int diffMoveRow = end.row().ordinal() - start.row().ordinal();
+    return Math.abs(diffMoveRow) <= 2 && Math.abs(diffMoveColumn) <= 2;
   }
 }

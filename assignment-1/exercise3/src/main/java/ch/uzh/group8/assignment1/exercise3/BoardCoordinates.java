@@ -10,17 +10,17 @@ public record BoardCoordinates(Row row, Column column) {
     ROW_5,
     ROW_6,
     ROW_7,
-    ROW_8;
+    ROW_8
   }
 
   public enum Column {
-    A,
-    B,
-    C,
-    D,
-    E,
-    F,
-    G,
-    H
+    a,
+    b,
+    c,
+    d,
+    e,
+    f,
+    g,
+    h
   }
 }

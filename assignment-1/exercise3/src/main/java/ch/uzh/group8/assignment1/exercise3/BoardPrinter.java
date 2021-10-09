@@ -15,21 +15,22 @@ public class BoardPrinter {
 
   public void printBoard(Board board) {
     StringBuilder header = new StringBuilder();
-    header.append("\t\t");
+    header.append("        ");
     for (Column col : Column.values()) {
-      header.append(col.name()).append("\t\t");
+      header.append(col.name()).append("       ");
     }
     console.print(header.toString());
-    console.print("\t+------------------------------------------------------------------------+");
+    console.print("    +----------------------------------------------------------------+");
 
     var rows = Arrays.asList(Row.values());
     Collections.reverse(rows);
     for (Row row : rows) {
-      StringBuilder rowString = new StringBuilder(String.valueOf(row.ordinal() + 1) + "\t");
+      StringBuilder rowString = new StringBuilder((row.ordinal() + 1) + "   |");
       for (Column col : Column.values()) {
         var pieceAt = board.getPieceAt(new BoardCoordinates(row, col));
+        rowString.append(" ");
         if (pieceAt.isEmpty()) {
-          rowString.append("[\t\t]");
+          rowString.append("[    ]");
         } else {
           var piece = pieceAt.get();
           rowString.append("[");
@@ -44,10 +45,14 @@ public class BoardPrinter {
           } else {
             rowString.append("P");
           }
-          rowString.append("\t]");
+          rowString.append(" ]");
         }
+        rowString.append(" ");
       }
-      console.print(rowString.toString());
+      console.print(rowString + "|   " + (row.ordinal() + 1));
     }
+
+    console.print("    +----------------------------------------------------------------+");
+    console.print(header.toString());
   }
 }
