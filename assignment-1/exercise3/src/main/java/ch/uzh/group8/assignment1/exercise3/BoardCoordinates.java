@@ -14,13 +14,13 @@ public record BoardCoordinates(Row row, Column column) {
   }
 
   public enum Column {
-    a,
-    b,
-    c,
-    d,
-    e,
-    f,
-    g,
-    h
+    A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H
   }
 }

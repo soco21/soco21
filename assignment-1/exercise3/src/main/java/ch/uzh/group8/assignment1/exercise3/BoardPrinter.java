@@ -4,6 +4,7 @@ import static ch.uzh.group8.assignment1.exercise3.BoardCoordinates.*;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Locale;
 
 @SuppressWarnings("ClassCanBeRecord")
 public class BoardPrinter {
@@ -17,10 +18,10 @@ public class BoardPrinter {
     StringBuilder header = new StringBuilder();
     header.append("        ");
     for (Column col : Column.values()) {
-      header.append(col.name()).append("       ");
+      header.append(col.name().toLowerCase(Locale.ROOT)).append("     ");
     }
     console.print(header.toString());
-    console.print("    +----------------------------------------------------------------+");
+    console.print("    +-------------------------------------------------+");
 
     var rows = Arrays.asList(Row.values());
     Collections.reverse(rows);
@@ -30,7 +31,7 @@ public class BoardPrinter {
         var pieceAt = board.getPieceAt(new BoardCoordinates(row, col));
         rowString.append(" ");
         if (pieceAt.isEmpty()) {
-          rowString.append("[    ]");
+          rowString.append("[   ]");
         } else {
           var piece = pieceAt.get();
           rowString.append("[");
@@ -45,14 +46,13 @@ public class BoardPrinter {
           } else {
             rowString.append("P");
           }
-          rowString.append(" ]");
+          rowString.append("]");
         }
-        rowString.append(" ");
       }
-      console.print(rowString + "|   " + (row.ordinal() + 1));
+      console.print(rowString + " |   " + (row.ordinal() + 1));
     }
 
-    console.print("    +----------------------------------------------------------------+");
+    console.print("    +-------------------------------------------------+");
     console.print(header.toString());
   }
 }
