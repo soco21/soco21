@@ -1,7 +1,100 @@
 @startuml
-object package1
-object package2
+package jpacman{
+package board #Cyan {
+class Board
+class BoardFactory
+class Direction
+class Square
+class Unit
+}
 
-package1 <-- package2
+package game #Lime {
+class Game
+class GameFactory
+class SinglePlayerGame
+}
+package level #Red{
+class CollisionInteractionMap
+class CollisionMap
+class DefaultPlayerInteractionMap
+class Level
+class LevelFactory
+class MapParser
+class Pellet
+class Player
+class PlayerCollisions
+class PlayerFactory
+}
+Level : LevelObserver
+package npc  {
+package ghost #Orange{
+class Blinky
+class Clyde
+class Inky
+class Pinky
+class GhostColor
+class GhostFactory
+class Navigation
+}
+class Ghost
+
+}
+package sprite #MediumVioletRed{
+class AnimatedSprite
+class EmptySprite
+class ImageSprite
+class PacManSprites
+class Sprite
+class SpriteStore
+}
+package ui #Brown{
+class Action
+class BoardPanel
+class ButtonPanel
+class PacKeyListener
+class PacManUI
+class PacManUIBuilder
+class ScorePanel
+ScorePanel : ScoreFormatter
+}
+class Launcher #Blue
+class PacmanConfigurationException
+}
+
+board -[#Cyan]-> sprite
+
+game -[#Lime]-> board
+game -[#Lime]-> level
+
+level -[#Red]-> board
+level -[#Red]-> npc
+level -[#Red]-> PacmanConfigurationException
+level -[#Red]-> sprite
+
+
+npc -[#Orange]-> board
+npc -[#Orange]-> level
+npc -[#Orange]-> sprite
+ghost -[#Orange]-> Ghost
+npc -[#Orange]-> sprite
+
+
+sprite -[#MediumVioletRed]-> PacmanConfigurationException
+sprite -[#MediumVioletRed]-> board
+sprite -[#MediumVioletRed]-> ghost
+
+
+ui -[#Brown]-> board
+ui -[#Brown]-> game
+PacManUI -[#Brown]-> ScorePanel::ScoreFormatter
+ui -[#Brown]-> level
+
+Launcher -[#Blue]-> board
+Launcher -[#Blue]-> game
+Launcher -[#Blue]-> level
+Launcher -[#Blue]-> npc
+Launcher -[#Blue]-> sprite
+Launcher -[#Blue]-> ui
+
 
 @enduml
