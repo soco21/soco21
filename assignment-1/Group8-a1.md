@@ -25,7 +25,7 @@ different packages.
 #### Description of the system based on the diagram above
 
 Hereby we learn, that the entire game is divided into 6 larger packages. Most of the classes are inside their respective
-packages, only the classes "Launcher" and "PacManConfigurationException" build exceptions. Initially, we can see that
+packages, only the classes "Launcher" and "PacManConfigurationException" throw exceptions. Initially, we can see that
 the class "Launcher" depends on all other packages and imports classes from them. Classes in the packages 
 "sprite" and "board" are also imported in most of the other packages. This is logical, since both the board and the 
 actual PacMan figure (Sprite) are both fundamental parts of the implementation of a PacMan game. These two packages are 
