@@ -74,7 +74,7 @@ merged, or removed
 Draw the class diagram of the aforementioned main elements of your game (do not forget to use
 elements such as parametrized classes or association constrains, if necessary)
 
-#### Class diagramm
+#### Class diagram
 
 ### Part 5
 
