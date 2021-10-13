@@ -22,7 +22,21 @@ and (iii) describe what you understood from this depiction of the system
 
 #### Task
 
-The call graph below shows the methods called
+Draw a call graph, starting from what you deem the most prominent entry point. You have to: (i)
+decide how many levels you want to have in the call graph, (ii) use natural language to explain your
+decision, and (iii) explain what you have understood from this call graph about the dynamic behavior
+of the system. Hint: this project may have several entry points; those contained in an example or test
+folder/class are hardly the most prominent ones
+
+#### Call graph diagram
+
+![pacman-project-structure](exercise1/pacman-project-callgraph.svg)
+
+#### Why was this level of abstraction used?
+
+#### Description of the dynamic behaviour of the system based on the diagram above
+
+The call graph above shows the methods called
 to create a PacMan character and its 2D map.
 
 As seen in the diagram, the Main function first calls launch.
@@ -32,11 +46,6 @@ new level(level design and map boundaries) in the game.
 
 At the same time, we step into creating a single Player game inside the created level.
 This in turn call the createPacMan() method creates new PacMan character.
-
-#### Call graph diagram
-
-
-![pacman-project-structure](exercise1/pacman-project-callgraph.svg)
 
 ## Exercise 2 - A Checkers Game - Design
 
