@@ -62,6 +62,16 @@ the final cards in your answers
 
 #### Description of the steps which lead to these CRC cards
 
+Initially, we identified the different classes by going through the requirements of the game and by 
+looking at the rules that we should implement. We separated classes that we knew would turn out to 
+be essential from classes which we were uncertain of whether we should implement them. We then, added 
+responsibilities to each class as we thought would be adequate. We stumbled upon the problem, that our
+"Board" class had too many responsibilities. So, to avoid a confusing project structure, we tried to 
+divide the responsibilities onto as many classes as was logical. Lastly, we identified the collaborators 
+of the subclasses and added arrows to facilitate getting a quick and easy overview of the class structure 
+of our project just by getting a glance at the CRC cards. This would help with the further implementation 
+of our classes into the actual code itself.
+
 ### Part 2
 
 #### Task
