@@ -18,17 +18,25 @@ and (iii) describe what you understood from this depiction of the system
 
 #### Description of the system based on the diagram above
 
-### Part 27om what you deem the most prominent entry point. You have to: (i)
-decide how many levels you want to have in the call graph, (ii) use natural language to explain your
-decision, and (iii) explain what you have understood from this call graph about the dynamic behavior
-of the system. Hint: this project may have several entry points; those contained in an example or test
-folder/class are hardly the most prominent ones
+### Part 2
+
+#### Task
+
+The call graph below shows the methods called
+to create a PacMan character and its 2D map.
+
+As seen in the diagram, the Main function first calls launch.
+As the name suggests, the method "launches" the game in its initial setup.
+The makeGame() method is a crucial component to make a
+new level(level design and map boundaries) in the game.
+
+At the same time, we step into creating a single Player game inside the created level.
+This in turn call the createPacMan() method creates new PacMan character.
 
 #### Call graph diagram
 
-#### Why was this level of abstraction used?
 
-#### Description of the dynamic behaviour of the system based on the diagram above
+![pacman-project-structure](exercise1/pacman-project-callgraph.svg)
 
 ## Exercise 2 - A Checkers Game - Design
 
@@ -44,16 +52,6 @@ the final cards in your answers
 ![checkers crc cards](./exercise2/checkers-crc.svg)
 
 #### Description of the steps which lead to these CRC cards
-Initially, we identified the different classes by going through the requirements of the game and by 
-looking at the rules that we should implement. We separated classes that we knew would turn out to 
-be essential from classes which we were uncertain of whether we should implement them. We then, added 
-responsibilities to each class as we thought would be adequate. We stumbled upon the problem, that our
-"Board" class had too many responsibilities. So, to avoid a confusing project structure, we tried to 
-divide the responsibilities onto as many classes as was logical. Lastly, we identified the collaborators 
-of the subclasses and added arrows to facilitate getting a quick and easy overview of the class structure 
-of our project just by getting a glance at the CRC cards. This would help with the further implementation 
-of our classes into the actual code itself.
-
 
 ### Part 2
 
@@ -76,7 +74,7 @@ merged, or removed
 Draw the class diagram of the aforementioned main elements of your game (do not forget to use
 elements such as parametrized classes or association constrains, if necessary)
 
-#### Class diagramm
+#### Class diagram
 
 ### Part 5
 

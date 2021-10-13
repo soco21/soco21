@@ -2,9 +2,9 @@ name: Render PlantUML and generate PDF
 on:
   push:
     paths:
-      - '*.md'
-      - '*.pdf'
-      - '*.puml'
+      - '**/*.md'
+      - '**/*.pdf'
+      - '**/*.puml'
       - '.github/workflows/documents.yml'
   workflow_dispatch:
 jobs:
