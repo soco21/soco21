@@ -8,11 +8,7 @@ import java.util.Optional;
 public class TargetFieldEmpty implements MoveValidator {
   @Override
   public boolean validate(Move move, Board board) {
-    Optional<Piece> pieceAt = board.getPieceAt(move.start());
-
-    Piece piece = pieceAt.get();
-
-    pieceAt = board.getPieceAt(move.end());
+    Optional<Piece> pieceAt = board.getPieceAt(move.end());
     return pieceAt.isEmpty();
   }
 }
