@@ -16,7 +16,20 @@ and (iii) describe what you understood from this depiction of the system
 
 #### Why was this level of abstraction used?
 
+The graph above depicts a simplified version of a class diagram for the Java Pacman Game. Since there 
+are a lot of dependencies between the classes drawing all of the lines between them would've caused lots of confusion
+and it would be very difficult to differ between the distinct lines going from one class to another.
+Hence to simplify, we used a color coding scheme for each package and only drew the connecting lines between the 
+different packages. 
+
 #### Description of the system based on the diagram above
+
+Hereby we learn, that the entire game is divided into 6 larger packages. Most of the classes are inside their respective
+packages, only the classes "Launcher" and "PacManConfigurationException" throw exceptions. Initially, we can see that
+the class "Launcher" depends on all other packages and imports classes from them. Classes in the packages 
+"sprite" and "board" are also imported in most of the other packages. This is logical, since both the board and the 
+actual PacMan figure (Sprite) are both fundamental parts of the implementation of a PacMan game. These two packages are 
+the main packages of the Java PacManImplementation.
 
 ### Part 2
 
