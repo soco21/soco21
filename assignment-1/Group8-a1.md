@@ -92,6 +92,21 @@ Following the Responsibility Driven Design, describe the main classes you design
 project in terms of responsibilities and collaborations
 
 #### Description of the main classes
+In our checkers game design, we have 3 main groups of classes: GameLogic, Board and Rules.
+
+It can be easily identified that, in terms of responsibilities and collaborations, a main 
+class we came up with is the GameLogic class. As the name already states, it dictates the 
+flow of the game. Examples of its main responsibilities include; checking whether move input valid,
+after each move it checks if the win conditions were met or not. For this, the class collaborates 
+with the classes Rules and WinCondition respectively.
+
+Another main class in our design is the Rules class. Despite its lack of collaborators, it acts as a list 
+for the possible moves and the pieces found on the board. It validates the possible moves a piece can make, whether it be 
+a simple move, jump move, if piece is a king in can move in any direction etc.
+
+The Board class is also a crucial component in our design. It is this class that is responsible for moving the 
+pieces around and delete them from the board when captured. The state of the board is thus directly related to 
+the win conditions, as one of the win conditions is to check whether any opponent pieces are left on the board.  
 
 ### Part 3
 
@@ -99,6 +114,12 @@ project in terms of responsibilities and collaborations
 Why do you consider the other classes as less important? Following the Responsibility Driven De-
 sign, reflect if some of those non-main classes have similar/little responsibility and could be changed,
 merged, or removed
+
+In the terms of responsibilities, the other classes such as BoardPrinter and Move do not have many chores 
+to perform. The BoardPrinter class prints the board after every move in the terminal. It can be argued that 
+this class can be merged with the Board class itself as they both share similarities. The WinCondition can also
+be merged with GameLogic. However, this would lead us to our original problem of overloading the classes.
+
 
 ### Part 4
 
