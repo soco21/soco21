@@ -92,14 +92,16 @@ Following the Responsibility Driven Design, describe the main classes you design
 project in terms of responsibilities and collaborations
 
 #### Description of the main classes
+In our checkers game design, we have 3 main groups of classes: GameLogic, Board and Rules.
+
 It can be easily identified that, in terms of responsibilities and collaborations, a main 
 class we came up with is the GameLogic class. As the name already states, it dictates the 
 flow of the game. Examples of its main responsibilities include; checking whether move input valid,
 after each move it checks if the win conditions were met or not. For this, the class collaborates 
 with the classes Rules and WinCondition respectively.
 
-Another main class in our design is the Rules class. Despite its lack of collaborators, it acts as a checklist 
-for the moves and the pieces found on the board. It validates the possible moves a piece can make, whether it be 
+Another main class in our design is the Rules class. Despite its lack of collaborators, it acts as a list 
+for the possible moves and the pieces found on the board. It validates the possible moves a piece can make, whether it be 
 a simple move, jump move, if piece is a king in can move in any direction etc.
 
 The Board class is also a crucial component in our design. It is this class that is responsible for moving the 
