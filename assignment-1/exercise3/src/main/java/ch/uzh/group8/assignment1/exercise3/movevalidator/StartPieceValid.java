@@ -12,8 +12,7 @@ public class StartPieceValid implements MoveValidator {
     var col = BoardCoordinates.Column.values();
 
     var startPiece =
-        board.getPieceAt(
-            new BoardCoordinates(row[start.row().ordinal()], col[start.column().ordinal()]));
+        board.getPieceAt(start);
 
     if (startPiece.isEmpty()) {
       return false;
