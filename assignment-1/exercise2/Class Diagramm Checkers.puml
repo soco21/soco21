@@ -1,0 +1,36 @@
+@startuml
+package exercise3{
+package movevalidator {
+class MoveIsDiagonal
+class MoveIsForward
+class MoveLength
+class MoveValidator
+class NoOtherJumpMovePossible
+class OpponentPieceBetweenJump
+class StartPieceValid
+class TargetFieldEmpty
+}
+class Board
+class BoardCoordinates
+class BoardPrinter
+class Console
+class GameLogic
+class Main
+class Move
+class Piece
+class Player
+class WinCondition
+}
+movevalidator --> Board
+movevalidator --> Move
+movevalidator --> Piece
+movevalidator --> Player
+movevalidator --> BoardCoordinates
+Board --> BoardCoordinates
+BoardPrinter --> BoardCoordinates
+GameLogic --> MoveValidator
+GameLogic --> NoOtherJumpMovePossible
+Main --> movevalidator
+Move --> BoardCoordinates
+WinCondition --> MoveValidator
+@enduml
