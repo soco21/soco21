@@ -11,14 +11,14 @@ public class StartPieceValid implements MoveValidator {
     var row = BoardCoordinates.Row.values();
     var col = BoardCoordinates.Column.values();
 
-    var startPiece = board.getPieceAt(new BoardCoordinates(row[start.row().ordinal()], col[start.column().ordinal()]));
+    var startPiece =
+        board.getPieceAt(
+            new BoardCoordinates(row[start.row().ordinal()], col[start.column().ordinal()]));
 
-    if (startPiece.isEmpty()){
+    if (startPiece.isEmpty()) {
       return false;
     }
 
     return startPiece.get().owner() == move.player();
-
   }
-
 }
