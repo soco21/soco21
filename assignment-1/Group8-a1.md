@@ -115,6 +115,7 @@ Why do you consider the other classes as less important? Following the Responsib
 reflect if some of those non-main classes have similar/little responsibility and could be changed,
 merged, or removed
 
+#### Discussion of less important classes
 In the terms of responsibilities, the other classes such as BoardPrinter and Move do not have many chores 
 to perform. The BoardPrinter class prints the board after every move in the terminal. It can be argued that 
 this class can be merged with the Board class itself as they both share similarities. The WinCondition can also
