@@ -13,7 +13,6 @@ class TargetFieldEmpty
 class Board
 class BoardPrinter
 class GameLogic
-class Main
 class Move
 class Piece
 enum Player
@@ -25,6 +24,5 @@ movevalidator --> Piece
 movevalidator --> Player
 GameLogic --> MoveValidator
 GameLogic --> NoOtherJumpMovePossible
-Main --> movevalidator
 WinCondition --> MoveValidator
 @enduml
