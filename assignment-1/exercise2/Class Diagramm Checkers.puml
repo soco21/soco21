@@ -18,7 +18,7 @@ class GameLogic
 class Main
 class Move
 class Piece
-class Player
+enum Player
 class WinCondition
 }
 movevalidator --> Board
