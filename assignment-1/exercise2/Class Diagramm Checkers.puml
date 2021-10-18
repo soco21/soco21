@@ -4,7 +4,7 @@ package movevalidator {
 class MoveIsDiagonal
 class MoveIsForward
 class MoveLength
-class MoveValidator
+interface MoveValidator
 class NoOtherJumpMovePossible
 class OpponentPieceBetweenJump
 class StartPieceValid
@@ -31,4 +31,12 @@ GameLogic ..> Player
 GameLogic ..> MoveValidator
 GameLogic ..> NoOtherJumpMovePossible
 WinCondition ..> MoveValidator
+
+MoveValidator <|.. NoOtherJumpMovePossible
+MoveValidator <|.. MoveIsDiagonal
+MoveValidator <|.. MoveIsForward
+MoveValidator <|.. MoveLength
+MoveValidator <|.. OpponentPieceBetweenJump
+MoveValidator <|.. StartPieceValid
+MoveValidator <|.. TargetFieldEmpty
 @enduml
