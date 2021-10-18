@@ -10,12 +10,14 @@ public class Main {
     var boardPrinter = new BoardPrinter(console);
 
     var moveIsDiagonal = new MoveIsDiagonal();
-    var moveIsForwardIfNotKing = new MoveIsForwardIfNotKing();
     var moveLength = new MoveLength();
-    var noOtherMoveToJumpPossible = new NoOtherMoveToJumpPossible();
+    var moveIsForwardIfNotKing = new MoveIsForwardIfNotKing();
     var opponentPieceBetweenJump = new OpponentPieceBetweenJump();
-    var startPieceValid = new StartPieceValid();
     var targetFieldEmpty = new TargetFieldEmpty();
+    var noOtherMoveToJumpPossible =
+        new NoOtherMoveToJumpPossible(
+            moveIsForwardIfNotKing, opponentPieceBetweenJump, targetFieldEmpty);
+    var startPieceValid = new StartPieceValid();
 
     var moveValidators =
         List.of(
