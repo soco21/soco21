@@ -3,7 +3,6 @@ package ch.uzh.group8.assignment1.exercise3.movevalidator;
 import static ch.uzh.group8.assignment1.exercise3.BoardCoordinates.*;
 
 import ch.uzh.group8.assignment1.exercise3.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class NoOtherMoveToJumpPossible implements MoveValidator {
@@ -49,17 +48,8 @@ public class NoOtherMoveToJumpPossible implements MoveValidator {
     }
     var pieceOwner = pieceAt.get().owner();
 
-    var rowIndex = boardCoordinates.row().ordinal();
-    var colIndex = boardCoordinates.column().ordinal();
-    List<Move> possibleJumpMoves = new ArrayList<>();
-    Move.of(pieceOwner, boardCoordinates, rowIndex + 2, colIndex + 2)
-        .ifPresent(possibleJumpMoves::add);
-    Move.of(pieceOwner, boardCoordinates, rowIndex + 2, colIndex - 2)
-        .ifPresent(possibleJumpMoves::add);
-    Move.of(pieceOwner, boardCoordinates, rowIndex - 2, colIndex + 2)
-        .ifPresent(possibleJumpMoves::add);
-    Move.of(pieceOwner, boardCoordinates, rowIndex - 2, colIndex - 2)
-        .ifPresent(possibleJumpMoves::add);
+    List<Move> possibleJumpMoves =
+        Move.generatePossibleMoves(boardCoordinates, pieceOwner, List.of(2));
 
     return possibleJumpMoves.stream()
         .anyMatch(

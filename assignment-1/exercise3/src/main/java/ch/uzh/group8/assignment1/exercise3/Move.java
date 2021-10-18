@@ -2,6 +2,8 @@ package ch.uzh.group8.assignment1.exercise3;
 
 import static ch.uzh.group8.assignment1.exercise3.BoardCoordinates.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public record Move(Player player, BoardCoordinates start, BoardCoordinates end) {
@@ -18,7 +20,26 @@ public record Move(Player player, BoardCoordinates start, BoardCoordinates end) 
     return new Move(player, start, end);
   }
 
-  public static Optional<Move> of(
+  public static List<Move> generatePossibleMoves(
+      BoardCoordinates boardCoordinates, Player pieceOwner, List<Integer> distances) {
+    var rowIndex = boardCoordinates.row().ordinal();
+    var colIndex = boardCoordinates.column().ordinal();
+    List<Move> possibleJumpMoves = new ArrayList<>();
+
+    for (Integer distance : distances) {
+      of(pieceOwner, boardCoordinates, rowIndex + distance, colIndex + distance)
+          .ifPresent(possibleJumpMoves::add);
+      of(pieceOwner, boardCoordinates, rowIndex + distance, colIndex - distance)
+          .ifPresent(possibleJumpMoves::add);
+      of(pieceOwner, boardCoordinates, rowIndex - distance, colIndex + distance)
+          .ifPresent(possibleJumpMoves::add);
+      of(pieceOwner, boardCoordinates, rowIndex - distance, colIndex - distance)
+          .ifPresent(possibleJumpMoves::add);
+    }
+    return possibleJumpMoves;
+  }
+
+  private static Optional<Move> of(
       Player player, BoardCoordinates start, int rowIndex, int colIndex) {
     var rows = Row.values();
     var columns = Column.values();
