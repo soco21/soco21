@@ -3,6 +3,7 @@ package ch.uzh.group8.assignment1.exercise3;
 import static org.mockito.Mockito.*;
 
 import java.util.List;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class GameLogicTest {
@@ -143,6 +144,38 @@ class GameLogicTest {
     gameLogic.run();
 
     verify(console).print("Congratulations, player " + Player.PLAYER_WHITE + " has won");
+  }
+
+  @Test
+  public void only_allow_multiple_jump_with_same_piece() {
+    var console = mock(Console.class);
+    doCallRealMethod().when(console).print(notNull());
+    var gameLogic = Main.createGameLogic(console);
+    // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
+    when(console.getUserInput())
+        // RED
+        .thenReturn(fromNumbers(11, 15))
+        // WHITE
+        .thenReturn(fromNumbers(23, 19))
+        // RED
+        .thenReturn(fromNumbers(8, 11))
+        // WHITE
+        .thenReturn(fromNumbers(22, 17))
+        // RED
+        .thenReturn(fromNumbers(11, 16))
+        // WHITE
+        .thenReturn(fromNumbers(24, 20))
+        // RED
+        .thenReturn(fromNumbers(16, 23))
+        // WHITE
+        .thenReturn(fromNumbers(27, 18))
+        // WHITE
+        .thenReturn(fromNumbers(26, 11))
+        .thenThrow(RuntimeException.class);
+
+    Assertions.assertThrows(RuntimeException.class, gameLogic::run);
+
+    verify(console).print("For a multiple jump move, the same piece has to be used. Try again");
   }
 
   private static String fromNumbers(int start, int end) {
