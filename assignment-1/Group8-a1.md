@@ -58,7 +58,7 @@ The makeGame() method is a crucial component to make a
 new level(level design and map boundaries) in the game.
 
 At the same time, we step into creating a single Player game inside the created level.
-This in turn call the createPacMan() method creates new PacMan character.
+This in turn calls the createPacMan() method and creates the new PacMan character.
 
 ## Exercise 2 - A Checkers Game - Design
 
@@ -96,8 +96,8 @@ In our checkers game design, we have 3 main groups of classes: GameLogic, Board 
 
 It can be easily identified that, in terms of responsibilities and collaborations, a main 
 class we came up with is the GameLogic class. As the name already states, it dictates the 
-flow of the game. Examples of its main responsibilities include; checking whether move input valid,
-after each move it checks if the win conditions were met or not. For this, the class collaborates 
+flow of the game. Examples of its main responsibilities include: Checking whether a move input is valid or if the 
+wincondition is met or not. For this, the class collaborates 
 with the classes Rules and WinCondition respectively.
 
 Another main class in our design is the Rules class. Despite its lack of collaborators, it acts as a list 
@@ -111,8 +111,8 @@ the win conditions, as one of the win conditions is to check whether any opponen
 ### Part 3
 
 #### Task
-Why do you consider the other classes as less important? Following the Responsibility Driven De-
-sign, reflect if some of those non-main classes have similar/little responsibility and could be changed,
+Why do you consider the other classes as less important? Following the Responsibility Driven Design,
+reflect if some of those non-main classes have similar/little responsibility and could be changed,
 merged, or removed
 
 In the terms of responsibilities, the other classes such as BoardPrinter and Move do not have many chores 
