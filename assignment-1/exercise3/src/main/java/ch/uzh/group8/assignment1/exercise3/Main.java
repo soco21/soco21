@@ -5,8 +5,13 @@ import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
+    GameLogic gameLogic = createGameLogic(new Console());
+
+    gameLogic.run();
+  }
+
+  public static GameLogic createGameLogic(Console console) {
     var board = new Board();
-    var console = new Console();
     var boardPrinter = new BoardPrinter(console);
 
     var moveIsDiagonal = new MoveIsDiagonal();
@@ -29,12 +34,17 @@ public class Main {
             startPieceValid,
             targetFieldEmpty);
 
-    var winCondition = new WinCondition(moveValidators);
+    var winCondition =
+        new WinCondition(
+            List.of(
+                moveIsDiagonal,
+                moveLength,
+                moveIsForwardIfNotKing,
+                opponentPieceBetweenJump,
+                targetFieldEmpty,
+                startPieceValid));
 
-    var gameLogic =
-        new GameLogic(
-            console, board, boardPrinter, moveValidators, noOtherMoveToJumpPossible, winCondition);
-
-    gameLogic.run();
+    return new GameLogic(
+        console, board, boardPrinter, moveValidators, noOtherMoveToJumpPossible, winCondition);
   }
 }
