@@ -129,4 +129,14 @@ class MoveLengthTest {
             new BoardCoordinates(BoardCoordinates.Row.ROW_3, BoardCoordinates.Column.A));
     assertThat(moveLength.validate(move, board), is(true));
   }
+
+  @Test
+  public void return_false_if_move_does_not_change_position() {
+    var move =
+        new Move(
+            Player.PLAYER_RED,
+            new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
+            new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A));
+    assertThat(moveLength.validate(move, board), is(false));
+  }
 }
