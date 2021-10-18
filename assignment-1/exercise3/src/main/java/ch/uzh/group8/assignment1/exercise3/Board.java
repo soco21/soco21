@@ -78,7 +78,24 @@ public class Board {
             new Piece(Player.PLAYER_RED, false)));
   }
 
-  public void executeMove(Move move) {}
+  public void executeMove(Move move) {
+    var piece = getPieceAt(move.start()).orElseThrow();
+    removePiece(move.start());
+    addPiece(move.end(), piece);
+
+    var coordinatesBetween = move.getCoordinatesBetween();
+    coordinatesBetween.ifPresent(this::removePiece);
+
+    if (move.player() == Player.PLAYER_WHITE) {
+      if (move.end().row() == Row.ROW_8) {
+        addPiece(move.end(), new Piece(Player.PLAYER_WHITE, true));
+      }
+    } else {
+      if (move.end().row() == Row.ROW_1) {
+        addPiece(move.end(), new Piece(Player.PLAYER_RED, true));
+      }
+    }
+  }
 
   public List<Piece> getAllPieces() {
     return Collections.emptyList();
@@ -95,5 +112,33 @@ public class Board {
   /** Important that LinkedHashMap is used: this preserves the order */
   public Map<Row, Map<Column, Piece>> getBoard() {
     return boardMatrix;
+  }
+
+  private void removePiece(BoardCoordinates start) {
+    boardMatrix.compute(
+        start.row(),
+        (row, columnPieceMap) -> {
+          if (columnPieceMap == null) {
+            return new HashMap<>();
+          } else {
+            var columnPieceHashMap = new HashMap<>(columnPieceMap);
+            columnPieceHashMap.remove(start.column());
+            return columnPieceHashMap;
+          }
+        });
+  }
+
+  private void addPiece(BoardCoordinates boardCoordinates, Piece piece) {
+    boardMatrix.compute(
+        boardCoordinates.row(),
+        (row, columnPieceMap) -> {
+          if (columnPieceMap == null) {
+            return Map.of(boardCoordinates.column(), piece);
+          } else {
+            var columnPieceHashMap = new HashMap<>(columnPieceMap);
+            columnPieceHashMap.put(boardCoordinates.column(), piece);
+            return columnPieceHashMap;
+          }
+        });
   }
 }
