@@ -22,6 +22,7 @@ movevalidator ..> Board
 movevalidator ..> Move
 movevalidator ..> Piece
 movevalidator ..> Player
+
 GameLogic ..> BoardPrinter
 GameLogic ..> Board
 GameLogic ..> WinCondition
@@ -30,6 +31,9 @@ GameLogic ..> Piece
 GameLogic ..> Player
 GameLogic ..> MoveValidator
 GameLogic ..> NoOtherJumpMovePossible
+
+BoardPrinter ..> Board
+
 WinCondition ..> MoveValidator
 
 MoveValidator <|.. NoOtherJumpMovePossible
