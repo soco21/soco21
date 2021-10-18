@@ -8,6 +8,10 @@ public class MoveIsDiagonal implements MoveValidator {
   public boolean validate(Move move, Board board) {
     var start = move.start();
     var end = move.end();
-    return start.row() != end.row() && start.column() != end.column();
+    var bothDirectionsChange = start.row() != end.row() && start.column() != end.column();
+
+    var rowDiff = Math.abs(start.row().ordinal() - end.row().ordinal());
+    var colDiff = Math.abs(start.column().ordinal() - end.column().ordinal());
+    return bothDirectionsChange && rowDiff == colDiff;
   }
 }
