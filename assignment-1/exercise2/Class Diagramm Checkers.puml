@@ -12,7 +12,6 @@ class TargetFieldEmpty
 }
 class Board
 class BoardPrinter
-class Console
 class GameLogic
 class Main
 class Move
