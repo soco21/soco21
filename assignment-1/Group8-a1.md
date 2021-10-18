@@ -120,6 +120,7 @@ to perform. The BoardPrinter class prints the board after every move in the term
 this class can be merged with the Board class itself as they both share similarities. The WinCondition can also
 be merged with GameLogic. However, this would lead us to our original problem of overloading the classes.
 
+\newpage
 
 ### Part 4
 
@@ -129,6 +130,10 @@ elements such as parametrized classes or association constrains, if necessary)
 
 #### Class diagram
 
+![checkers class diagram](exercise2/Class%20Diagramm%20Checkers.svg)
+
+\newpage
+
 ### Part 5
 
 #### Task
@@ -136,3 +141,5 @@ Draw the sequence diagram to describe how the main elements of your game interac
 asynchrony and constraints, if necessary)
 
 #### Sequence diagram
+
+![checkers-sequence-diagram](exercise2/Sequence-Diagram-Checkers.svg)
