@@ -22,6 +22,10 @@ movevalidator --> Board
 movevalidator --> Move
 movevalidator --> Piece
 movevalidator --> Player
+GameLogic --> BoardPrinter
+GameLogic --> Board
+GameLogic --> WinCondition
+BoardPrinter --> Board
 GameLogic --> MoveValidator
 GameLogic --> NoOtherJumpMovePossible
 WinCondition --> MoveValidator
