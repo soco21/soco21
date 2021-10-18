@@ -22,7 +22,7 @@ public class OpponentPieceBetweenJump implements MoveValidator {
 
     var pieceBetweenJump = board.getPieceAt(new BoardCoordinates(row1, col1));
 
-    if (diffMoveRow == 2 && diffMoveColumn == 2) {
+    if (Math.abs(diffMoveRow) == 2 && Math.abs(diffMoveColumn) == 2) {
       if (pieceBetweenJump.isEmpty()) {
         return false;
       }
