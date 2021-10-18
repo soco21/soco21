@@ -10,6 +10,9 @@ public class MoveLength implements MoveValidator {
     var end = move.end();
     int diffMoveColumn = end.column().ordinal() - start.column().ordinal();
     int diffMoveRow = end.row().ordinal() - start.row().ordinal();
+    if (diffMoveColumn == 0 && diffMoveRow == 0) {
+      return false;
+    }
     return Math.abs(diffMoveRow) <= 2 && Math.abs(diffMoveColumn) <= 2;
   }
 }
