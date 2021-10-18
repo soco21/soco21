@@ -30,7 +30,7 @@ public class GameLogic {
 
   public void run() {
     console.print("Welcome to checkers");
-    Player currentPlayer = Player.PLAYER_WHITE;
+    Player currentPlayer = Player.PLAYER_RED;
     while (true) {
       boardPrinter.printBoard(board);
       console.print(currentPlayer + ", make your move");
