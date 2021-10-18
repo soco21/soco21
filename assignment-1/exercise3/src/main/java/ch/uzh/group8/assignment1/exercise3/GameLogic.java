@@ -46,6 +46,7 @@ public class GameLogic {
   }
 
   private boolean doPlayerMove(Player player) {
+    BoardCoordinates startCoordinatesForMultipleJump = null;
     while (true) {
       var userInput = console.getUserInput();
       Move move;
@@ -53,6 +54,11 @@ public class GameLogic {
         move = Move.parse(player, userInput);
       } catch (IllegalArgumentException e) {
         console.print("Invalid input, try again");
+        continue;
+      }
+      if (startCoordinatesForMultipleJump != null
+          && !startCoordinatesForMultipleJump.equals(move.start())) {
+        console.print("For a multiple jump move, the same piece has to be used. Try again");
         continue;
       }
       var pieceAtStart = board.getPieceAt(move.start());
@@ -78,6 +84,8 @@ public class GameLogic {
           || !noOtherMoveToJumpPossible.jumpMovePossibleFrom(move.end(), board)) {
         return false;
       }
+      console.print("Multiple jump move for " + player + ". Enter your next jump.");
+      startCoordinatesForMultipleJump = move.end();
     }
   }
 
