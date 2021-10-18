@@ -117,7 +117,7 @@ reflect if some of those non-main classes have similar/little responsibility and
 merged, or removed
 
 #### Discussion of less important classes
-In the terms of responsibilities, the other classes such as BoardPrinter and Move do not have many chores 
+In the terms of responsibilities, the other classes such as BoardPrinter and Move do not have many responsibilities 
 to perform. The BoardPrinter class prints the board after every move in the terminal. It can be argued that 
 this class can be merged with the Board class itself as they both share similarities. The WinCondition can also
 be merged with GameLogic. However, this would lead us to our original problem of overloading the classes.
