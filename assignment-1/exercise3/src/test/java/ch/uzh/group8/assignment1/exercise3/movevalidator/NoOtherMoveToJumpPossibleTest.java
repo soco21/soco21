@@ -41,6 +41,18 @@ class NoOtherMoveToJumpPossibleTest {
   }
 
   @Test
+  public void return_true_if_move_is_jump_move() {
+    when(board.getPieceAt(notNull())).thenReturn(Optional.empty());
+
+    var move =
+        new Move(
+            Player.PLAYER_RED,
+            new BoardCoordinates(Row.ROW_1, Column.A),
+            new BoardCoordinates(Row.ROW_3, Column.C));
+    assertThat(noOtherMoveToJumpPossible.validate(move, board), is(true));
+  }
+
+  @Test
   public void does_not_crash_if_piece_is_at_edge() {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_1, Column.A)))
         .thenReturn(Optional.of(WHITE_PAWN));

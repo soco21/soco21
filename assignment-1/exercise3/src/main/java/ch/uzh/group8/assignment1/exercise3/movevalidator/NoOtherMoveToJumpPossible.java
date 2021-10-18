@@ -20,12 +20,12 @@ public class NoOtherMoveToJumpPossible implements MoveValidator {
   public boolean validate(Move move, Board board) {
     var rows = Row.values();
     var columns = Column.values();
+    if (move.isJumpMove()) {
+      return true;
+    }
     for (var row : rows) {
       for (var col : columns) {
         var currentCoordinates = new BoardCoordinates(row, col);
-        if (move.start().equals(currentCoordinates)) {
-          continue;
-        }
         var pieceAt = board.getPieceAt(currentCoordinates);
         if (pieceAt.isEmpty()) {
           continue;
