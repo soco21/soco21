@@ -100,9 +100,10 @@ flow of the game. Examples of its main responsibilities include: Checking whethe
 wincondition is met or not. For this, the class collaborates 
 with the classes Rules and WinCondition respectively.
 
-Another main class in our design is the Rules class. Despite its lack of collaborators, it acts as a list 
-for the possible moves and the pieces found on the board. It validates the possible moves a piece can make, whether it be 
-a simple move, jump move, if piece is a king in can move in any direction etc.
+Another main part in our design are the list of rules. The different rules are implementations of the Rule interface.
+Each Rule validates one part of the given ruleset, e.g. if the direction of the move is forward for a pawn.
+The GameLogic goes through all the rules. If they all say that the move is valid, GameLogic
+can execute the move.
 
 The Board class is also a crucial component in our design. It is this class that is responsible for moving the 
 pieces around and delete them from the board when captured. The state of the board is thus directly related to 
