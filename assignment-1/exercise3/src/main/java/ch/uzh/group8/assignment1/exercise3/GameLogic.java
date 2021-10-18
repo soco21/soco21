@@ -70,8 +70,12 @@ public class GameLogic {
       }
 
       var pieceAtEnd = board.getPieceAt(move.end());
-      if (!wasKingCreated(pieceAtStart.orElse(null), pieceAtEnd.orElse(null))
-          && !noOtherMoveToJumpPossible.jumpMovePossibleFrom(move.end(), board)) {
+      var wasKingCreated = wasKingCreated(pieceAtStart.orElse(null), pieceAtEnd.orElse(null));
+      if (wasKingCreated) {
+        return false;
+      }
+      if (!move.isJumpMove()
+          || !noOtherMoveToJumpPossible.jumpMovePossibleFrom(move.end(), board)) {
         return false;
       }
     }
