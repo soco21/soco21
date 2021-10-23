@@ -97,21 +97,12 @@ public class Board {
     }
   }
 
-  public List<Piece> getAllPieces() {
-    return Collections.emptyList();
-  }
-
   public Optional<Piece> getPieceAt(BoardCoordinates boardCoordinates) {
     var columnOptionalMap = boardMatrix.get(boardCoordinates.row());
     if (columnOptionalMap == null) {
       return Optional.empty();
     }
     return Optional.ofNullable(columnOptionalMap.get(boardCoordinates.column()));
-  }
-
-  /** Important that LinkedHashMap is used: this preserves the order */
-  public Map<Row, Map<Column, Piece>> getBoard() {
-    return boardMatrix;
   }
 
   private void removePiece(BoardCoordinates start) {
