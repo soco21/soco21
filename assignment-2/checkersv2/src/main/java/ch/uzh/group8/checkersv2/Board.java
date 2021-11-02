@@ -94,7 +94,7 @@ public class Board {
         addPiece(move.end(), new Piece(Player.PLAYER_WHITE, true));
       }
     } else {
-      if (move.end().row() == Row.ROW_1) {
+      if (move.end().row().isFirstRow()) {
         addPiece(move.end(), new Piece(Player.PLAYER_RED, true));
       }
     }

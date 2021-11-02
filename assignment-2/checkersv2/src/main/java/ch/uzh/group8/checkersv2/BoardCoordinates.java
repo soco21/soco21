@@ -15,6 +15,10 @@ public record BoardCoordinates(Row row, Column column) {
     public boolean isLastRow() {
       return this == ROW_8;
     }
+
+    public boolean isFirstRow() {
+      return this == ROW_1;
+    }
   }
 
   public enum Column {
