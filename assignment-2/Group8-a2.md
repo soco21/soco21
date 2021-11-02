@@ -26,7 +26,10 @@ before copying the checkers game.
 The row enum can determine itself if it's the last row. This way
 we can hide that the coordinates are implemented with an enum.
 
-- [ ] Board: move check if it's the firstrow to Row enum
+- [x] Board: move check if it's the firstrow to Row enum
+
+The row enum can determine itself if it's the first row. This way
+we can hide that the coordinates are implemented with an enum.
 
 - [ ] Move:getCoordinatesBetween: RowIndex between in Row selber berechnen
 
