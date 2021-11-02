@@ -10,7 +10,11 @@ public record BoardCoordinates(Row row, Column column) {
     ROW_5,
     ROW_6,
     ROW_7,
-    ROW_8
+    ROW_8;
+
+    public boolean isLastRow() {
+      return this == ROW_8;
+    }
   }
 
   public enum Column {

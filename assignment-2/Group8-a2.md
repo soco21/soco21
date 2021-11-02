@@ -21,7 +21,10 @@ This getter is unused, thus it can safely be refactored.
 Was done in [ea632f1](https://github.com/soco21/soco21-group8/commit/ea632f1182b187b326fe2dd593204a4484cf5cdf),
 before copying the checkers game.
 
-- [ ] Board: move check if it's the last row to Row enum
+- [x] Board: move check if it's the last row to Row enum
+
+The row enum can determine itself if it's the last row. This way
+we can hide that the coordinates are implemented with an enum.
 
 - [ ] Board: move check if it's the firstrow to Row enum
 
