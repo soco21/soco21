@@ -90,7 +90,7 @@ public class Board {
     coordinatesBetween.ifPresent(this::removePiece);
 
     if (move.player() == Player.PLAYER_WHITE) {
-      if (move.end().row() == Row.ROW_8) {
+      if (move.end().row().isLastRow()) {
         addPiece(move.end(), new Piece(Player.PLAYER_WHITE, true));
       }
     } else {
