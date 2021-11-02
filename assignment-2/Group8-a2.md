@@ -9,9 +9,17 @@ cases, so that they are not necessary anymore and describe your refactoring/rede
 
 ### Description of the refactorings
 
-- [ ] Board: remove method getBoard
+- [x] Board: remove method getBoard
 
-- [ ] Board: remove method getAllPieces
+This getter is unused, thus it can safely be refactored.
+Was done in [ea632f1](https://github.com/soco21/soco21-group8/commit/ea632f1182b187b326fe2dd593204a4484cf5cdf),
+before copying the checkers game.
+
+- [x] Board: remove method getAllPieces
+
+This getter is unused, thus it can safely be refactored.
+Was done in [ea632f1](https://github.com/soco21/soco21-group8/commit/ea632f1182b187b326fe2dd593204a4484cf5cdf),
+before copying the checkers game.
 
 - [ ] Board: move check if it's the last row to Row enum
 
