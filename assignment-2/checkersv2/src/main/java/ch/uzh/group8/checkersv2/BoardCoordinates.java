@@ -19,6 +19,10 @@ public record BoardCoordinates(Row row, Column column) {
     public boolean isFirstRow() {
       return this == ROW_1;
     }
+
+    public int diffRow(Row row) {
+      return this.ordinal() - row.ordinal();
+    }
   }
 
   public enum Column {
@@ -29,6 +33,10 @@ public record BoardCoordinates(Row row, Column column) {
     E,
     F,
     G,
-    H
+    H;
+
+    public int diffCol(Column column) {
+      return this.ordinal() - column.ordinal();
+    }
   }
 }
