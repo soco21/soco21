@@ -8,8 +8,8 @@ public class MoveLength implements MoveValidator {
   public boolean validate(Move move, Board board) {
     var start = move.start();
     var end = move.end();
-    int diffMoveColumn = end.column().ordinal() - start.column().ordinal();
-    int diffMoveRow = end.row().ordinal() - start.row().ordinal();
+    int diffMoveColumn = start.column().diffCol(end.column());
+    int diffMoveRow = start.row().diffRow(end.row());
     if (diffMoveColumn == 0 && diffMoveRow == 0) {
       return false;
     }

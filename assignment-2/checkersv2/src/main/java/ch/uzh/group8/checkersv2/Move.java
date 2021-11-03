@@ -71,8 +71,8 @@ public record Move(Player player, BoardCoordinates start, BoardCoordinates end) 
   }
 
   public Optional<BoardCoordinates> getCoordinatesBetween() {
-    var rowDiff = end.row().ordinal() - start.row().ordinal();
-    var colDiff = end.column().ordinal() - start.column().ordinal();
+    var rowDiff = start.row().diffRow(end.row());
+    var colDiff = start.column().diffCol(end.column());
 
     if (Math.abs(rowDiff) != 2 || Math.abs(colDiff) != 2) {
       return Optional.empty();
@@ -90,8 +90,8 @@ public record Move(Player player, BoardCoordinates start, BoardCoordinates end) 
   }
 
   public boolean isJumpMove() {
-    int diffMoveColumn = end.column().ordinal() - start.column().ordinal();
-    int diffMoveRow = end.row().ordinal() - start.row().ordinal();
+    int diffMoveColumn = start.column().diffCol(end.column());
+    int diffMoveRow = start.row().diffRow(end.row());
     if (diffMoveColumn == 0 && diffMoveRow == 0) {
       return false;
     }
