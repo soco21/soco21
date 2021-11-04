@@ -4,7 +4,7 @@
 
 ### Task 1
 
-Where are getters/setters or public variables used3 in your source code? Refactor nine4 of these
+Where are getters/setters or public variables used in your source code? Refactor nine of these
 cases, so that they are not necessary anymore and describe your refactoring/redesign.
 
 ### Description of the refactorings
@@ -39,7 +39,7 @@ we can hide that the coordinates are implemented with an enum.
 
 - [ ] Move:isJumpMove: colDiff in Col berechnen
 
-- [ ] MoveLength: methoden von Row udn Col verwenden für die differenz
+- [ ] MoveLength: Use the methods in row and col to calculate the difference
 
 
 ## Exercise 2
@@ -55,6 +55,11 @@ Define your own requirements and get them approved by your tutor (especially in 
 Afterwards you must implement the requirements.
 
 #### Description of the requirements
+
+We decided to implement the following novel feature in our checkers game: 
+Before every jump move the current player has the option to toss a coin. If the coin
+lands on heads the current player loses its piece and his move is skipped. If its heads,
+the players jump move is executed, and he gets to move again. 
 
 ### Task 2
 
