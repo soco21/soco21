@@ -66,6 +66,16 @@ public class GameLogic {
         console.print("Invalid move, try again");
         continue;
       }
+      if (move.isJumpMove() || !noOtherMoveToJumpPossible.jumpMovePossibleFrom(move.end(), board)) {
+        boolean gambleDecision = Gamble.decision();
+        if (gambleDecision) {
+          if (Gamble.doGamble()) {
+            board.executeMove(move);
+
+          }
+
+        }
+      }
 
       board.executeMove(move);
 
