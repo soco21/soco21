@@ -11,6 +11,7 @@ public record Move(Player player, BoardCoordinates start, BoardCoordinates end) 
   public static Move parse(Player player, String string) {
     //    string = "b3xa5";
     //    var test = new String[]{"b3", "a5"};
+    string = string.replace("X", "x").replace("[", "").replace("]", "");
     var startAndEnd = string.split("x");
     if (startAndEnd.length < 2) {
       throw new IllegalArgumentException("invalid input");
