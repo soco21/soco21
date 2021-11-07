@@ -68,6 +68,9 @@ The uppercase X is implemented by replacing uppercase x with lowercase x in the 
 the change was very small, we didn't create a design document. All the changes are made in Move::parse in
 commit [58cb81b](https://github.com/soco21/soco21-group8/commit/58cb81b2c6f519e4b857099ba97a513a7ea15e80).
 
+To improve the readability of the code, we will replace all type inference
+using the "var" keyword with explicit type definition.
+
 ### Task 2
 
 During the analysis and design phases of this extension use responsibility driven design and UML
