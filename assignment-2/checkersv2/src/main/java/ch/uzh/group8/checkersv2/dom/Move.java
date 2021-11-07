@@ -85,11 +85,9 @@ public record Move(
       return Optional.empty();
     }
 
-    Column[] columns = Column.values();
-    int colIndexBetween = (end.column().ordinal() + start.column().ordinal()) / 2;
-    Column colBetween = columns[colIndexBetween];
-
-    return Optional.of(new BoardCoordinates(start.row().getRowBetween(end.row()), colBetween));
+    return Optional.of(
+        new BoardCoordinates(
+            start.row().getRowBetween(end.row()), start.column().getColBetween(end.column())));
   }
 
   public boolean isJumpMove() {
