@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface BoardObserver {
+    + boardChanged(Board board)
+}
+
+class PrintBoardObserver {
+    - BoardPrinter boardPrinter
+    + boardChanged(Board board)
+}
+
+note left: Implemented as lambda
+
+class Board {
+    + List<BoardObserver> observers
+    + void executeMove(Move move)
+    + void registerObserver(BoardObserver observer)
+}
+
+Board *..> "*" BoardObserver
+BoardObserver <|.. PrintBoardObserver
+
+@enduml

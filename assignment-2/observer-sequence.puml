@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+activate Main
+activate Board
+activate BoardObserver
+activate BoardPrinter
+Main --> Board: register Observer, which calls BoardPrinter
+[--> Board: executeMove
+Board --> BoardObserver: boardChanged
+BoardObserver --> BoardPrinter: printBoard
+BoardObserver <-- BoardPrinter
+Board <-- BoardObserver
+[<-- Board
+
+@enduml

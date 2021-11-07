@@ -3,12 +3,11 @@ package ch.uzh.group8.checkersv2.dom;
 import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Column;
 import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Row;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class Board {
   private final Map<Row, Map<Column, Piece>> boardMatrix;
+  private final List<BoardObserver> boardObservers = new ArrayList<>();
 
   public Board() {
     boardMatrix = new HashMap<>();
@@ -84,6 +83,7 @@ public class Board {
   public void executeMove(Move move) {
     if (move.jumpGambleResult() == JumpGambleResult.LOST) {
       removePiece(move.start());
+      boardObservers.forEach(boardObserver -> boardObserver.boardChanged(this));
       return;
     }
     Piece piece = getPieceAt(move.start()).orElseThrow();
@@ -102,6 +102,7 @@ public class Board {
         addPiece(move.end(), new Piece(Player.PLAYER_RED, true));
       }
     }
+    boardObservers.forEach(boardObserver -> boardObserver.boardChanged(this));
   }
 
   public Optional<Piece> getPieceAt(BoardCoordinates boardCoordinates) {
@@ -110,6 +111,10 @@ public class Board {
       return Optional.empty();
     }
     return Optional.ofNullable(columnOptionalMap.get(boardCoordinates.column()));
+  }
+
+  public void registerObserver(BoardObserver boardObserver) {
+    boardObservers.add(boardObserver);
   }
 
   private void removePiece(BoardCoordinates start) {

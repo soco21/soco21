@@ -3,7 +3,6 @@ package ch.uzh.group8.checkersv2;
 import ch.uzh.group8.checkersv2.dom.*;
 import ch.uzh.group8.checkersv2.movevalidator.MoveValidator;
 import ch.uzh.group8.checkersv2.movevalidator.NoOtherMoveToJumpPossible;
-import ch.uzh.group8.checkersv2.util.BoardPrinter;
 import ch.uzh.group8.checkersv2.util.Console;
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +11,6 @@ import java.util.Optional;
 public class GameLogic {
   private final Console console;
   private final Board board;
-  private final BoardPrinter boardPrinter;
   private final List<MoveValidator> moveValidators;
   private final MoveExecutor moveExecutor;
   private final NoOtherMoveToJumpPossible noOtherMoveToJumpPossible;
@@ -21,14 +19,12 @@ public class GameLogic {
   public GameLogic(
       Console console,
       Board board,
-      BoardPrinter boardPrinter,
       List<MoveValidator> moveValidators,
       MoveExecutor moveExecutor,
       NoOtherMoveToJumpPossible noOtherMoveToJumpPossible,
       WinCondition winCondition) {
     this.console = console;
     this.board = board;
-    this.boardPrinter = boardPrinter;
     this.moveValidators = moveValidators;
     this.moveExecutor = moveExecutor;
     this.noOtherMoveToJumpPossible = noOtherMoveToJumpPossible;
@@ -36,10 +32,8 @@ public class GameLogic {
   }
 
   public void run() {
-    console.print("Welcome to checkers");
     Player currentPlayer = Player.PLAYER_RED;
     while (true) {
-      boardPrinter.printBoard(board);
       console.print(currentPlayer + ", make your move");
       if (doPlayerMove(currentPlayer)) {
         return;
@@ -84,7 +78,6 @@ public class GameLogic {
 
       if (executedMove.jumpGambleResult() == JumpGambleResult.WON) {
         console.print("The gamble has been won, " + player + " can play again.");
-        boardPrinter.printBoard(board);
         console.print(player + ", make your move");
         continue;
       }

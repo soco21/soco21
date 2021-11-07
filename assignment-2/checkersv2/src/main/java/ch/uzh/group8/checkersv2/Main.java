@@ -17,6 +17,7 @@ public class Main {
   public static GameLogic createGameLogic(Console console, CoinTosser coinTosser) {
     Board board = new Board();
     BoardPrinter boardPrinter = new BoardPrinter(console);
+    board.registerObserver(boardPrinter::printBoard);
 
     MoveIsDiagonal moveIsDiagonal = new MoveIsDiagonal();
     MoveLength moveLength = new MoveLength();
@@ -49,13 +50,12 @@ public class Main {
                 startPieceValid));
 
     MoveExecutor moveExecutor = new MoveExecutor(board, coinTosser, console);
-    return new GameLogic(
-        console,
-        board,
-        boardPrinter,
-        moveValidators,
-        moveExecutor,
-        noOtherMoveToJumpPossible,
-        winCondition);
+    GameLogic gameLogic =
+        new GameLogic(
+            console, board, moveValidators, moveExecutor, noOtherMoveToJumpPossible, winCondition);
+
+    console.print("Welcome to checkers");
+    boardPrinter.printBoard(board);
+    return gameLogic;
   }
 }
