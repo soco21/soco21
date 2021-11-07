@@ -69,7 +69,7 @@ the change was very small, we didn't create a design document. All the changes a
 commit [58cb81b](https://github.com/soco21/soco21-group8/commit/58cb81b2c6f519e4b857099ba97a513a7ea15e80).
 
 To improve the readability of the code, we will replace all type inference
-using the "var" keyword with explicit type definition.
+using the "var" keyword with explicit type definition. [df5464b](https://github.com/soco21/soco21-group8/commit/df5464bc9009547a2a983f439ddbe8500b8b2197)
 
 To improve the package structure, we moved the Domain Object Model (Board, BoardCoordinates, Move, Piece, Player)
 to the separate package dom. [9f4b7d8](https://github.com/soco21/soco21-group8/commit/9f4b7d8f8f85d2cca159e9469ba82ab104f3b547)
