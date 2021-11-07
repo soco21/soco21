@@ -13,6 +13,7 @@ public class GameLogic {
   private final Board board;
   private final BoardPrinter boardPrinter;
   private final List<MoveValidator> moveValidators;
+  private final MoveExecutor moveExecutor;
   private final NoOtherMoveToJumpPossible noOtherMoveToJumpPossible;
   private final WinCondition winCondition;
 
@@ -21,12 +22,14 @@ public class GameLogic {
       Board board,
       BoardPrinter boardPrinter,
       List<MoveValidator> moveValidators,
+      MoveExecutor moveExecutor,
       NoOtherMoveToJumpPossible noOtherMoveToJumpPossible,
       WinCondition winCondition) {
     this.console = console;
     this.board = board;
     this.boardPrinter = boardPrinter;
     this.moveValidators = moveValidators;
+    this.moveExecutor = moveExecutor;
     this.noOtherMoveToJumpPossible = noOtherMoveToJumpPossible;
     this.winCondition = winCondition;
   }
@@ -70,12 +73,19 @@ public class GameLogic {
         continue;
       }
 
-      board.executeMove(move);
+      Move executedMove = moveExecutor.executeMove(move);
 
       var hasPlayerWon = winCondition.hasPlayerWon(player, board);
       if (hasPlayerWon) {
         console.print("Congratulations, player " + player + " has won");
         return true;
+      }
+
+      if (executedMove.jumpGambleResult() == JumpGambleResult.WON) {
+        console.print("The gamble has been won, " + player + " can play again.");
+        boardPrinter.printBoard(board);
+        console.print(player + ", make your move");
+        continue;
       }
 
       var pieceAtEnd = board.getPieceAt(move.end());

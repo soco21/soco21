@@ -5,6 +5,7 @@ import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Row;
 import static java.util.Optional.empty;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
 
 import java.util.List;
 import java.util.Optional;
@@ -88,5 +89,68 @@ public class BoardTest {
 
     assertThat(board.getPieceAt(move.start()), is(empty()));
     assertThat(board.getPieceAt(move.end()), is(Optional.of(new Piece(Player.PLAYER_RED, true))));
+  }
+
+  @Test
+  public void remove_start_piece_when_JumpGambleResult_is_lost() {
+    var board = new Board();
+    var move1 =
+        Move.of(
+            Player.PLAYER_WHITE,
+            new BoardCoordinates(Row.ROW_3, Column.A),
+            new BoardCoordinates(Row.ROW_4, Column.B));
+    var move2 =
+        Move.of(
+            Player.PLAYER_RED,
+            new BoardCoordinates(Row.ROW_6, Column.B),
+            new BoardCoordinates(Row.ROW_5, Column.C));
+    var move3 =
+        Move.of(
+            Player.PLAYER_WHITE,
+            new BoardCoordinates(Row.ROW_3, Column.C),
+            new BoardCoordinates(Row.ROW_4, Column.D));
+    var jumpMove =
+        Move.of(
+                Player.PLAYER_RED,
+                new BoardCoordinates(Row.ROW_5, Column.C),
+                new BoardCoordinates(Row.ROW_3, Column.A))
+            .withJumpGambleResult(JumpGambleResult.LOST);
+
+    List.of(move1, move2, move3, jumpMove).forEach(board::executeMove);
+
+    assertThat(board.getPieceAt(jumpMove.start()), is(Optional.empty()));
+    assertThat(board.getPieceAt(jumpMove.getCoordinatesBetween().orElseThrow()), is(not(empty())));
+  }
+
+  @Test
+  public void execute_normal_jump_move_if_JumpGambleResult_is_won() {
+    var board = new Board();
+    var move1 =
+        Move.of(
+            Player.PLAYER_WHITE,
+            new BoardCoordinates(Row.ROW_3, Column.A),
+            new BoardCoordinates(Row.ROW_4, Column.B));
+    var move2 =
+        Move.of(
+            Player.PLAYER_RED,
+            new BoardCoordinates(Row.ROW_6, Column.B),
+            new BoardCoordinates(Row.ROW_5, Column.C));
+    var move3 =
+        Move.of(
+            Player.PLAYER_WHITE,
+            new BoardCoordinates(Row.ROW_3, Column.C),
+            new BoardCoordinates(Row.ROW_4, Column.D));
+    var jumpMove =
+        Move.of(
+                Player.PLAYER_RED,
+                new BoardCoordinates(Row.ROW_5, Column.C),
+                new BoardCoordinates(Row.ROW_3, Column.A))
+            .withJumpGambleResult(JumpGambleResult.WON);
+
+    List.of(move1, move2, move3, jumpMove).forEach(board::executeMove);
+
+    assertThat(
+        board.getPieceAt(move1.start()), is(Optional.of(new Piece(Player.PLAYER_RED, false))));
+    assertThat(board.getPieceAt(move1.end()), is(empty()));
   }
 }
