@@ -6,6 +6,7 @@ import ch.uzh.group8.checkersv2.movevalidator.NoOtherMoveToJumpPossible;
 import ch.uzh.group8.checkersv2.util.BoardPrinter;
 import ch.uzh.group8.checkersv2.util.Console;
 import java.util.List;
+import java.util.Optional;
 
 @SuppressWarnings("ClassCanBeRecord")
 public class GameLogic {
@@ -54,7 +55,7 @@ public class GameLogic {
   private boolean doPlayerMove(Player player) {
     BoardCoordinates startCoordinatesForMultipleJump = null;
     while (true) {
-      var userInput = console.getUserInput();
+      String userInput = console.getUserInput();
       Move move;
       try {
         move = Move.parse(player, userInput);
@@ -67,7 +68,7 @@ public class GameLogic {
         console.print("For a multiple jump move, the same piece has to be used. Try again");
         continue;
       }
-      var pieceAtStart = board.getPieceAt(move.start());
+      Optional<Piece> pieceAtStart = board.getPieceAt(move.start());
       if (!moveValidators.stream().allMatch(moveValidator -> moveValidator.validate(move, board))) {
         console.print("Invalid move, try again");
         continue;
@@ -75,7 +76,7 @@ public class GameLogic {
 
       Move executedMove = moveExecutor.executeMove(move);
 
-      var hasPlayerWon = winCondition.hasPlayerWon(player, board);
+      boolean hasPlayerWon = winCondition.hasPlayerWon(player, board);
       if (hasPlayerWon) {
         console.print("Congratulations, player " + player + " has won");
         return true;
@@ -88,8 +89,8 @@ public class GameLogic {
         continue;
       }
 
-      var pieceAtEnd = board.getPieceAt(move.end());
-      var wasKingCreated = wasKingCreated(pieceAtStart.orElse(null), pieceAtEnd.orElse(null));
+      Optional<Piece> pieceAtEnd = board.getPieceAt(move.end());
+      boolean wasKingCreated = wasKingCreated(pieceAtStart.orElse(null), pieceAtEnd.orElse(null));
       if (wasKingCreated) {
         return false;
       }

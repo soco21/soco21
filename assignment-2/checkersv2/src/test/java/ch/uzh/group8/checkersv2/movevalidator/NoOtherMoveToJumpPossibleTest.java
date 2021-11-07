@@ -33,7 +33,7 @@ class NoOtherMoveToJumpPossibleTest {
   public void return_true_if_no_other_pieces_exist() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.empty());
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -45,7 +45,7 @@ class NoOtherMoveToJumpPossibleTest {
   public void return_true_if_move_is_jump_move() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.empty());
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -64,7 +64,7 @@ class NoOtherMoveToJumpPossibleTest {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_8, Column.G)))
         .thenReturn(Optional.of(WHITE_PAWN));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -80,7 +80,7 @@ class NoOtherMoveToJumpPossibleTest {
         .thenReturn(Optional.of(RED_PAWN));
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_6, Column.G))).thenReturn(Optional.empty());
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -96,7 +96,7 @@ class NoOtherMoveToJumpPossibleTest {
         .thenReturn(Optional.of(WHITE_PAWN));
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_4, Column.E))).thenReturn(Optional.empty());
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -112,7 +112,7 @@ class NoOtherMoveToJumpPossibleTest {
         .thenReturn(Optional.of(WHITE_PAWN));
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_6, Column.G))).thenReturn(Optional.empty());
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),

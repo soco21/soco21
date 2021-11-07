@@ -3,10 +3,9 @@ package ch.uzh.group8.checkersv2.movevalidator;
 import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Column;
 import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Row;
 
-import ch.uzh.group8.checkersv2.dom.Board;
-import ch.uzh.group8.checkersv2.dom.BoardCoordinates;
-import ch.uzh.group8.checkersv2.dom.Move;
+import ch.uzh.group8.checkersv2.dom.*;
 import java.util.List;
+import java.util.Optional;
 
 public class NoOtherMoveToJumpPossible implements MoveValidator {
 
@@ -21,15 +20,15 @@ public class NoOtherMoveToJumpPossible implements MoveValidator {
 
   @Override
   public boolean validate(Move move, Board board) {
-    var rows = Row.values();
-    var columns = Column.values();
+    Row[] rows = Row.values();
+    Column[] columns = Column.values();
     if (move.isJumpMove()) {
       return true;
     }
-    for (var row : rows) {
-      for (var col : columns) {
-        var currentCoordinates = new BoardCoordinates(row, col);
-        var pieceAt = board.getPieceAt(currentCoordinates);
+    for (Row row : rows) {
+      for (Column col : columns) {
+        BoardCoordinates currentCoordinates = new BoardCoordinates(row, col);
+        Optional<Piece> pieceAt = board.getPieceAt(currentCoordinates);
         if (pieceAt.isEmpty()) {
           continue;
         }
@@ -45,11 +44,11 @@ public class NoOtherMoveToJumpPossible implements MoveValidator {
   }
 
   public boolean jumpMovePossibleFrom(BoardCoordinates boardCoordinates, Board board) {
-    var pieceAt = board.getPieceAt(boardCoordinates);
+    Optional<Piece> pieceAt = board.getPieceAt(boardCoordinates);
     if (pieceAt.isEmpty()) {
       return false;
     }
-    var pieceOwner = pieceAt.get().owner();
+    Player pieceOwner = pieceAt.get().owner();
 
     List<Move> possibleJumpMoves =
         Move.generatePossibleMoves(boardCoordinates, pieceOwner, List.of(2));

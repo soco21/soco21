@@ -30,7 +30,7 @@ class StartPieceValidTest {
   public void return_false_if_no_piece() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.empty());
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -43,7 +43,7 @@ class StartPieceValidTest {
   public void return_true_if_piece_belongs_to_player_red() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(RED_PAWN));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -56,7 +56,7 @@ class StartPieceValidTest {
   public void return_true_if_piece_belongs_to_player_white() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(WHITE_PAWN));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -69,7 +69,7 @@ class StartPieceValidTest {
   public void return_false_if_piece_belongs_to_opponent_player_white() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(RED_PAWN));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -82,7 +82,7 @@ class StartPieceValidTest {
   public void return_false_if_piece_belongs_to_opponent_player_red() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(WHITE_PAWN));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),

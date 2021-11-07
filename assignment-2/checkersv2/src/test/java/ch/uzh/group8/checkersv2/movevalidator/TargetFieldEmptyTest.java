@@ -29,7 +29,7 @@ class TargetFieldEmptyTest {
   public void return_true_if_target_field_empty() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.empty());
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -41,7 +41,7 @@ class TargetFieldEmptyTest {
   public void return_false_if_target_field_not_empty() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(PIECE));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),

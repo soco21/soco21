@@ -5,10 +5,9 @@ import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Row;
 
 import ch.uzh.group8.checkersv2.dom.Board;
 import ch.uzh.group8.checkersv2.dom.BoardCoordinates;
+import ch.uzh.group8.checkersv2.dom.Piece;
 import ch.uzh.group8.checkersv2.dom.Player;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Locale;
+import java.util.*;
 
 @SuppressWarnings("ClassCanBeRecord")
 public class BoardPrinter {
@@ -27,17 +26,17 @@ public class BoardPrinter {
     console.print(header.toString());
     console.print("    +-------------------------------------------------+");
 
-    var rows = Arrays.asList(Row.values());
+    List<Row> rows = Arrays.asList(Row.values());
     Collections.reverse(rows);
     for (Row row : rows) {
       StringBuilder rowString = new StringBuilder((row.ordinal() + 1) + "   |");
       for (Column col : Column.values()) {
-        var pieceAt = board.getPieceAt(new BoardCoordinates(row, col));
+        Optional<Piece> pieceAt = board.getPieceAt(new BoardCoordinates(row, col));
         rowString.append(" ");
         if (pieceAt.isEmpty()) {
           rowString.append("[   ]");
         } else {
-          var piece = pieceAt.get();
+          Piece piece = pieceAt.get();
           rowString.append("[");
           if (piece.owner() == Player.PLAYER_WHITE) {
             rowString.append("W");

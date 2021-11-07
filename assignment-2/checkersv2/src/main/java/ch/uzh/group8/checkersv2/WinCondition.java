@@ -3,12 +3,10 @@ package ch.uzh.group8.checkersv2;
 import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Column;
 import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Row;
 
-import ch.uzh.group8.checkersv2.dom.Board;
-import ch.uzh.group8.checkersv2.dom.BoardCoordinates;
-import ch.uzh.group8.checkersv2.dom.Move;
-import ch.uzh.group8.checkersv2.dom.Player;
+import ch.uzh.group8.checkersv2.dom.*;
 import ch.uzh.group8.checkersv2.movevalidator.MoveValidator;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Check if one player cannot move or has no pieces. This can be done in one go, as if one player
@@ -23,18 +21,18 @@ public class WinCondition {
   }
 
   public boolean hasPlayerWon(Player player, Board board) {
-    for (var row : Row.values()) {
-      for (var col : Column.values()) {
-        var currentCoordinates = new BoardCoordinates(row, col);
-        var pieceAt = board.getPieceAt(currentCoordinates);
+    for (Row row : Row.values()) {
+      for (Column col : Column.values()) {
+        BoardCoordinates currentCoordinates = new BoardCoordinates(row, col);
+        Optional<Piece> pieceAt = board.getPieceAt(currentCoordinates);
         if (pieceAt.isEmpty()) {
           continue;
         }
-        var piece = pieceAt.get();
+        Piece piece = pieceAt.get();
         if (piece.owner() == player) {
           continue;
         }
-        var possibleMoves =
+        List<Move> possibleMoves =
             Move.generatePossibleMoves(currentCoordinates, piece.owner(), List.of(1, 2));
         if (possibleMoves.stream()
             .anyMatch(
