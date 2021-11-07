@@ -1,13 +1,17 @@
 package ch.uzh.group8.checkersv2;
 
-import static ch.uzh.group8.checkersv2.BoardCoordinates.Column;
-import static ch.uzh.group8.checkersv2.BoardCoordinates.Row;
+import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Column;
+import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Row;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.notNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import ch.uzh.group8.checkersv2.dom.Board;
+import ch.uzh.group8.checkersv2.dom.BoardCoordinates;
+import ch.uzh.group8.checkersv2.dom.Piece;
+import ch.uzh.group8.checkersv2.dom.Player;
 import ch.uzh.group8.checkersv2.movevalidator.MoveValidator;
 import java.util.List;
 import java.util.Optional;

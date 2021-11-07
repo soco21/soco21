@@ -1,7 +1,7 @@
 package ch.uzh.group8.checkersv2.movevalidator;
 
-import ch.uzh.group8.checkersv2.Board;
-import ch.uzh.group8.checkersv2.Move;
+import ch.uzh.group8.checkersv2.dom.Board;
+import ch.uzh.group8.checkersv2.dom.Move;
 
 public class MoveIsDiagonal implements MoveValidator {
   @Override

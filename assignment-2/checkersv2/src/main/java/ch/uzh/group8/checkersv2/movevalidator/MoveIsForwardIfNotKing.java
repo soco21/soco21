@@ -1,9 +1,9 @@
 package ch.uzh.group8.checkersv2.movevalidator;
 
-import ch.uzh.group8.checkersv2.Board;
-import ch.uzh.group8.checkersv2.Move;
-import ch.uzh.group8.checkersv2.Piece;
-import ch.uzh.group8.checkersv2.Player;
+import ch.uzh.group8.checkersv2.dom.Board;
+import ch.uzh.group8.checkersv2.dom.Move;
+import ch.uzh.group8.checkersv2.dom.Piece;
+import ch.uzh.group8.checkersv2.dom.Player;
 import java.util.Optional;
 
 public class MoveIsForwardIfNotKing implements MoveValidator {

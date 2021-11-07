@@ -1,5 +1,6 @@
 package ch.uzh.group8.checkersv2;
 
+import ch.uzh.group8.checkersv2.dom.Board;
 import ch.uzh.group8.checkersv2.movevalidator.*;
 import java.util.List;
 

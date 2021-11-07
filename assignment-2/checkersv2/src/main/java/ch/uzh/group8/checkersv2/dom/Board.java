@@ -1,7 +1,7 @@
-package ch.uzh.group8.checkersv2;
+package ch.uzh.group8.checkersv2.dom;
 
-import static ch.uzh.group8.checkersv2.BoardCoordinates.Column;
-import static ch.uzh.group8.checkersv2.BoardCoordinates.Row;
+import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Column;
+import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Row;
 
 import java.util.HashMap;
 import java.util.Map;

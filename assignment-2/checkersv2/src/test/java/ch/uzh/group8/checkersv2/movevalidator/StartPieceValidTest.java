@@ -1,14 +1,14 @@
 package ch.uzh.group8.checkersv2.movevalidator;
 
-import static ch.uzh.group8.checkersv2.BoardCoordinates.Column;
-import static ch.uzh.group8.checkersv2.BoardCoordinates.Row;
+import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Column;
+import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Row;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.notNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import ch.uzh.group8.checkersv2.*;
+import ch.uzh.group8.checkersv2.dom.*;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
