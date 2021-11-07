@@ -104,14 +104,23 @@ Write a natural language description of why and how the pattern is implemented i
 
 #### Description of why and how the pattern is implemented
 
+Currently, the GameLogic decides when to print the board. But the board could also notify 
+an Observer when it's state changes, and that observer could print the board.
+That way the GameLogic does not need to depend on BoardPrinter. And the players always want
+to see the changes made to the board.
+
 ### Task 2
 
 Make a sequence diagram of how the pattern works dynamically in your code
 
 #### Sequence diagram
 
+![Observer sequence diagram](observer-sequence.svg)
+
 ### Task 3
 
 Make a class diagram of how the pattern is structured statically in your code
 
 #### Class diagram
+
+![Observer class diagram](observer-class.svg)
