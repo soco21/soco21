@@ -86,11 +86,11 @@ public class Board {
       removePiece(move.start());
       return;
     }
-    var piece = getPieceAt(move.start()).orElseThrow();
+    Piece piece = getPieceAt(move.start()).orElseThrow();
     removePiece(move.start());
     addPiece(move.end(), piece);
 
-    var coordinatesBetween = move.getCoordinatesBetween();
+    Optional<BoardCoordinates> coordinatesBetween = move.getCoordinatesBetween();
     coordinatesBetween.ifPresent(this::removePiece);
 
     if (move.player() == Player.PLAYER_WHITE) {
@@ -105,7 +105,7 @@ public class Board {
   }
 
   public Optional<Piece> getPieceAt(BoardCoordinates boardCoordinates) {
-    var columnOptionalMap = boardMatrix.get(boardCoordinates.row());
+    Map<Column, Piece> columnOptionalMap = boardMatrix.get(boardCoordinates.row());
     if (columnOptionalMap == null) {
       return Optional.empty();
     }
@@ -119,7 +119,7 @@ public class Board {
           if (columnPieceMap == null) {
             return new HashMap<>();
           } else {
-            var columnPieceHashMap = new HashMap<>(columnPieceMap);
+            HashMap<Column, Piece> columnPieceHashMap = new HashMap<>(columnPieceMap);
             columnPieceHashMap.remove(start.column());
             return columnPieceHashMap;
           }
@@ -133,7 +133,7 @@ public class Board {
           if (columnPieceMap == null) {
             return Map.of(boardCoordinates.column(), piece);
           } else {
-            var columnPieceHashMap = new HashMap<>(columnPieceMap);
+            HashMap<Column, Piece> columnPieceHashMap = new HashMap<>(columnPieceMap);
             columnPieceHashMap.put(boardCoordinates.column(), piece);
             return columnPieceHashMap;
           }

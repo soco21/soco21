@@ -28,7 +28,7 @@ class OpponentPieceBetweenJumpTest {
 
   @Test
   public void return_true_if_no_jump() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -40,7 +40,7 @@ class OpponentPieceBetweenJumpTest {
   public void return_false_if_no_piece_between_jump() {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_2, Column.B))).thenReturn(Optional.empty());
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -53,7 +53,7 @@ class OpponentPieceBetweenJumpTest {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_2, Column.B)))
         .thenReturn(Optional.of(RED_PAWN));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
@@ -66,7 +66,7 @@ class OpponentPieceBetweenJumpTest {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_2, Column.B)))
         .thenReturn(Optional.of(WHITE_PAWN));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.C),
@@ -79,7 +79,7 @@ class OpponentPieceBetweenJumpTest {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_2, Column.B)))
         .thenReturn(Optional.of(WHITE_PAWN));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.C),
@@ -91,7 +91,7 @@ class OpponentPieceBetweenJumpTest {
   public void return_false_if_piece_between_belongs_to_same_player_red() {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(RED_PAWN));
 
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),

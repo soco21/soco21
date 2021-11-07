@@ -13,15 +13,13 @@ public record Move(
     BoardCoordinates end,
     JumpGambleResult jumpGambleResult) {
   public static Move parse(Player player, String string) {
-    //    string = "b3xa5";
-    //    var test = new String[]{"b3", "a5"};
     string = string.replace("X", "x").replace("[", "").replace("]", "");
-    var startAndEnd = string.split("x");
+    String[] startAndEnd = string.split("x");
     if (startAndEnd.length < 2) {
       throw new IllegalArgumentException("invalid input");
     }
-    var start = parseBoardCoordinates(startAndEnd[0]);
-    var end = parseBoardCoordinates(startAndEnd[1]);
+    BoardCoordinates start = parseBoardCoordinates(startAndEnd[0]);
+    BoardCoordinates end = parseBoardCoordinates(startAndEnd[1]);
 
     return Move.of(player, start, end);
   }
@@ -32,8 +30,8 @@ public record Move(
 
   public static List<Move> generatePossibleMoves(
       BoardCoordinates boardCoordinates, Player pieceOwner, List<Integer> distances) {
-    var rowIndex = boardCoordinates.row().ordinal();
-    var colIndex = boardCoordinates.column().ordinal();
+    int rowIndex = boardCoordinates.row().ordinal();
+    int colIndex = boardCoordinates.column().ordinal();
     List<Move> possibleJumpMoves = new ArrayList<>();
 
     for (Integer distance : distances) {
@@ -51,8 +49,8 @@ public record Move(
 
   private static Optional<Move> of(
       Player player, BoardCoordinates start, int rowIndex, int colIndex) {
-    var rows = Row.values();
-    var columns = Column.values();
+    Row[] rows = Row.values();
+    Column[] columns = Column.values();
 
     if (rowIndex >= 0 && rowIndex < rows.length && colIndex >= 0 && colIndex < columns.length) {
       return Optional.of(
@@ -62,16 +60,16 @@ public record Move(
   }
 
   private static BoardCoordinates parseBoardCoordinates(String s) {
-    var columnAndRow = s.split("");
+    String[] columnAndRow = s.split("");
     if (columnAndRow.length != 2) {
       throw new IllegalArgumentException("invalid input");
     }
-    var columnString = columnAndRow[0];
-    var column = Column.valueOf(columnString.toUpperCase());
+    String columnString = columnAndRow[0];
+    Column column = Column.valueOf(columnString.toUpperCase());
 
-    var rowString = columnAndRow[1];
+    String rowString = columnAndRow[1];
     for (Row row : Row.values()) {
-      var enumValue = row.ordinal() + 1;
+      int enumValue = row.ordinal() + 1;
       if (rowString.equals(String.valueOf(enumValue))) {
         return new BoardCoordinates(row, column);
       }
@@ -80,18 +78,18 @@ public record Move(
   }
 
   public Optional<BoardCoordinates> getCoordinatesBetween() {
-    var rowDiff = start.row().diffRow(end.row());
-    var colDiff = start.column().diffCol(end.column());
+    int rowDiff = start.row().diffRow(end.row());
+    int colDiff = start.column().diffCol(end.column());
 
     if (Math.abs(rowDiff) != 2 || Math.abs(colDiff) != 2) {
       return Optional.empty();
     }
 
-    var rows = Row.values();
+    Row[] rows = Row.values();
     int rowIndexBetween = (end.row().ordinal() + start.row().ordinal()) / 2;
     Row rowBetween = rows[rowIndexBetween];
 
-    var columns = Column.values();
+    Column[] columns = Column.values();
     int colIndexBetween = (end.column().ordinal() + start.column().ordinal()) / 2;
     Column colBetween = columns[colIndexBetween];
 

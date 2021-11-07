@@ -15,20 +15,20 @@ public class Main {
   }
 
   public static GameLogic createGameLogic(Console console, CoinTosser coinTosser) {
-    var board = new Board();
-    var boardPrinter = new BoardPrinter(console);
+    Board board = new Board();
+    BoardPrinter boardPrinter = new BoardPrinter(console);
 
-    var moveIsDiagonal = new MoveIsDiagonal();
-    var moveLength = new MoveLength();
-    var moveIsForwardIfNotKing = new MoveIsForwardIfNotKing();
-    var opponentPieceBetweenJump = new OpponentPieceBetweenJump();
-    var targetFieldEmpty = new TargetFieldEmpty();
-    var noOtherMoveToJumpPossible =
+    MoveIsDiagonal moveIsDiagonal = new MoveIsDiagonal();
+    MoveLength moveLength = new MoveLength();
+    MoveIsForwardIfNotKing moveIsForwardIfNotKing = new MoveIsForwardIfNotKing();
+    OpponentPieceBetweenJump opponentPieceBetweenJump = new OpponentPieceBetweenJump();
+    TargetFieldEmpty targetFieldEmpty = new TargetFieldEmpty();
+    NoOtherMoveToJumpPossible noOtherMoveToJumpPossible =
         new NoOtherMoveToJumpPossible(
             moveIsForwardIfNotKing, opponentPieceBetweenJump, targetFieldEmpty);
-    var startPieceValid = new StartPieceValid();
+    StartPieceValid startPieceValid = new StartPieceValid();
 
-    var moveValidators =
+    List<MoveValidator> moveValidators =
         List.of(
             moveIsDiagonal,
             moveIsForwardIfNotKing,
@@ -38,7 +38,7 @@ public class Main {
             startPieceValid,
             targetFieldEmpty);
 
-    var winCondition =
+    WinCondition winCondition =
         new WinCondition(
             List.of(
                 moveIsDiagonal,

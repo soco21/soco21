@@ -14,8 +14,8 @@ import org.junit.jupiter.api.Test;
 public class BoardTest {
   @Test
   public void move_a_piece_from_a_to_b() {
-    var board = new Board();
-    var move =
+    Board board = new Board();
+    Move move =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
@@ -30,23 +30,23 @@ public class BoardTest {
 
   @Test
   public void remove_piece_between_jump_move() {
-    var board = new Board();
-    var move1 =
+    Board board = new Board();
+    Move move1 =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
             new BoardCoordinates(Row.ROW_4, Column.B));
-    var move2 =
+    Move move2 =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_6, Column.B),
             new BoardCoordinates(Row.ROW_5, Column.C));
-    var move3 =
+    Move move3 =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.C),
             new BoardCoordinates(Row.ROW_4, Column.D));
-    var jumpMove =
+    Move jumpMove =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_5, Column.C),
@@ -61,9 +61,9 @@ public class BoardTest {
 
   @Test
   public void convert_piece_to_king_if_at_end_for_white() {
-    var board = new Board();
+    Board board = new Board();
     // this move is not valid, but the board doesn't know that
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
@@ -77,9 +77,9 @@ public class BoardTest {
 
   @Test
   public void convert_piece_to_king_if_at_end_for_red() {
-    var board = new Board();
+    Board board = new Board();
     // this move is not valid, but the board doesn't know that
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_6, Column.B),
@@ -93,23 +93,23 @@ public class BoardTest {
 
   @Test
   public void remove_start_piece_when_JumpGambleResult_is_lost() {
-    var board = new Board();
-    var move1 =
+    Board board = new Board();
+    Move move1 =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
             new BoardCoordinates(Row.ROW_4, Column.B));
-    var move2 =
+    Move move2 =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_6, Column.B),
             new BoardCoordinates(Row.ROW_5, Column.C));
-    var move3 =
+    Move move3 =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.C),
             new BoardCoordinates(Row.ROW_4, Column.D));
-    var jumpMove =
+    Move jumpMove =
         Move.of(
                 Player.PLAYER_RED,
                 new BoardCoordinates(Row.ROW_5, Column.C),
@@ -124,23 +124,23 @@ public class BoardTest {
 
   @Test
   public void execute_normal_jump_move_if_JumpGambleResult_is_won() {
-    var board = new Board();
-    var move1 =
+    Board board = new Board();
+    Move move1 =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
             new BoardCoordinates(Row.ROW_4, Column.B));
-    var move2 =
+    Move move2 =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_6, Column.B),
             new BoardCoordinates(Row.ROW_5, Column.C));
-    var move3 =
+    Move move3 =
         Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.C),
             new BoardCoordinates(Row.ROW_4, Column.D));
-    var jumpMove =
+    Move jumpMove =
         Move.of(
                 Player.PLAYER_RED,
                 new BoardCoordinates(Row.ROW_5, Column.C),

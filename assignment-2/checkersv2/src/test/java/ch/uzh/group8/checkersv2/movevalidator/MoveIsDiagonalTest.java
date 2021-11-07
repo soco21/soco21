@@ -25,7 +25,7 @@ class MoveIsDiagonalTest {
 
   @Test
   public void return_true_for_diagonal_move_up_right() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -36,7 +36,7 @@ class MoveIsDiagonalTest {
 
   @Test
   public void return_true_for_diagonal_move_up_left() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.B),
@@ -47,7 +47,7 @@ class MoveIsDiagonalTest {
 
   @Test
   public void return_true_for_diagonal_move_down_right() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_2, Column.A),
@@ -58,7 +58,7 @@ class MoveIsDiagonalTest {
 
   @Test
   public void return_true_for_diagonal_move_down_left() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_2, Column.B),
@@ -69,7 +69,7 @@ class MoveIsDiagonalTest {
 
   @Test
   public void return_true_for_diagonal_jump_move_up_right() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -80,7 +80,7 @@ class MoveIsDiagonalTest {
 
   @Test
   public void return_true_for_diagonal_jump_move_down_left() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_3, Column.C),
@@ -91,7 +91,7 @@ class MoveIsDiagonalTest {
 
   @Test
   public void return_false_for_move_to_the_right() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -102,7 +102,7 @@ class MoveIsDiagonalTest {
 
   @Test
   public void return_false_for_move_up() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
@@ -113,7 +113,7 @@ class MoveIsDiagonalTest {
 
   @Test
   public void return_false_for_move_one_up_and_two_right() {
-    var move =
+    Move move =
         Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),

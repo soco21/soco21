@@ -14,10 +14,10 @@ import org.mockito.InOrder;
 class GameLogicTest {
   @Test
   public void end_game_with_winner() {
-    var console = mock(Console.class);
+    Console console = mock(Console.class);
     doCallRealMethod().when(console).print(notNull());
     CoinTosser coinTosser = mock(CoinTosser.class);
-    var gameLogic = Main.createGameLogic(console, coinTosser);
+    GameLogic gameLogic = Main.createGameLogic(console, coinTosser);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
         // RED
@@ -216,10 +216,10 @@ class GameLogicTest {
 
   @Test
   public void only_allow_multiple_jump_with_same_piece() {
-    var console = mock(Console.class);
+    Console console = mock(Console.class);
     doCallRealMethod().when(console).print(notNull());
     CoinTosser coinTosser = mock(CoinTosser.class);
-    var gameLogic = Main.createGameLogic(console, coinTosser);
+    GameLogic gameLogic = Main.createGameLogic(console, coinTosser);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
         // RED
@@ -251,11 +251,11 @@ class GameLogicTest {
 
   @Test
   public void let_same_player_play_again_if_jumpgamble_is_won() {
-    var console = mock(Console.class);
+    Console console = mock(Console.class);
     doCallRealMethod().when(console).print(notNull());
     CoinTosser coinTosser = mock(CoinTosser.class);
     when(coinTosser.toss()).thenReturn(Result.HEADS);
-    var gameLogic = Main.createGameLogic(console, coinTosser);
+    GameLogic gameLogic = Main.createGameLogic(console, coinTosser);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
         // RED
@@ -283,11 +283,11 @@ class GameLogicTest {
 
   @Test
   public void switch_player_if_jumpgamble_is_lost() {
-    var console = mock(Console.class);
+    Console console = mock(Console.class);
     doCallRealMethod().when(console).print(notNull());
     CoinTosser coinTosser = mock(CoinTosser.class);
     when(coinTosser.toss()).thenReturn(Result.TAILS);
-    var gameLogic = Main.createGameLogic(console, coinTosser);
+    GameLogic gameLogic = Main.createGameLogic(console, coinTosser);
     InOrder inOrder = inOrder(console);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
@@ -316,7 +316,7 @@ class GameLogicTest {
   }
 
   private static String fromNumbers(int start, int end) {
-    var numberCoordinatesMap =
+    List<String> numberCoordinatesMap =
         List.of(
             "B8", "D8", "F8", "H8", "A7", "C7", "E7", "G7", "B6", "D6", "F6", "H6", "A5", "C5",
             "E5", "G5", "B4", "D4", "F4", "H4", "A3", "C3", "E3", "G3", "B2", "D2", "F2", "H2",
