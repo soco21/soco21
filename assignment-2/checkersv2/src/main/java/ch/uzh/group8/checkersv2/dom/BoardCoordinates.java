@@ -43,5 +43,10 @@ public record BoardCoordinates(Row row, Column column) {
     public int diffCol(Column column) {
       return this.ordinal() - column.ordinal();
     }
+
+    public Column getColBetween(Column column) {
+      int indexBetween = (this.ordinal() + column.ordinal()) / 2;
+      return Column.values()[indexBetween];
+    }
   }
 }

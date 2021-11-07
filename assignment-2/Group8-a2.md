@@ -35,7 +35,9 @@ we can hide that the coordinates are implemented with an enum.
 
 The Row enum can determine itself which row is between itself and another row.
 
-- [ ] Move:getCoordinatesBetween: ColIndex between in Column selber berechnen
+- [x] Move:getCoordinatesBetween: calculate ColIndexBetween in Column
+
+The Column enum can determine itself which column is between itself and another column.
 
 - [ ] Move:isJumpMove: rowDiff in Row berechnen
 
