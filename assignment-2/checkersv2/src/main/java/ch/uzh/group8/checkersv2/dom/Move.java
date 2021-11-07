@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public record Move(Player player, BoardCoordinates start, BoardCoordinates end) {
+public record Move(
+    Player player,
+    BoardCoordinates start,
+    BoardCoordinates end,
+    JumpGambleResult jumpGambleResult) {
   public static Move parse(Player player, String string) {
     //    string = "b3xa5";
     //    var test = new String[]{"b3", "a5"};
@@ -23,7 +27,7 @@ public record Move(Player player, BoardCoordinates start, BoardCoordinates end) 
   }
 
   public static Move of(Player player, BoardCoordinates start, BoardCoordinates end) {
-    return new Move(player, start, end);
+    return new Move(player, start, end, JumpGambleResult.NO_GAMBLE);
   }
 
   public static List<Move> generatePossibleMoves(
@@ -101,5 +105,15 @@ public record Move(Player player, BoardCoordinates start, BoardCoordinates end) 
       return false;
     }
     return Math.abs(diffMoveRow) == 2 && Math.abs(diffMoveColumn) == 2;
+  }
+
+  public Move withJumpGambleResult(JumpGambleResult jumpGambleResult) {
+    if (jumpGambleResult != JumpGambleResult.NO_GAMBLE && !isJumpMove()) {
+      throw new IllegalArgumentException(
+          "cannot create move with JumpGambleResult"
+              + jumpGambleResult
+              + ", when the move is no jump move");
+    }
+    return new Move(player, start, end, jumpGambleResult);
   }
 }

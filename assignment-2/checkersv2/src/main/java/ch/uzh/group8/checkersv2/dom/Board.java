@@ -82,6 +82,10 @@ public class Board {
   }
 
   public void executeMove(Move move) {
+    if (move.jumpGambleResult() == JumpGambleResult.LOST) {
+      removePiece(move.start());
+      return;
+    }
     var piece = getPieceAt(move.start()).orElseThrow();
     removePiece(move.start());
     addPiece(move.end(), piece);
