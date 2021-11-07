@@ -23,7 +23,7 @@ class MoveLengthTest {
   @Test
   public void return_true_if_player_moves_1_row() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_2, BoardCoordinates.Column.A));
@@ -33,7 +33,7 @@ class MoveLengthTest {
   @Test
   public void return_true_if_player_moves_2_row() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_3, BoardCoordinates.Column.A));
@@ -43,7 +43,7 @@ class MoveLengthTest {
   @Test
   public void return_false_if_player_moves_3_row() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_4, BoardCoordinates.Column.A));
@@ -53,7 +53,7 @@ class MoveLengthTest {
   @Test
   public void return_true_if_player_moves_7_row() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_8, BoardCoordinates.Column.A));
@@ -63,7 +63,7 @@ class MoveLengthTest {
   @Test
   public void return_true_if_player_moves_1_col() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.B));
@@ -73,7 +73,7 @@ class MoveLengthTest {
   @Test
   public void return_true_if_player_moves_2_col() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.C));
@@ -83,7 +83,7 @@ class MoveLengthTest {
   @Test
   public void return_false_if_player_moves_3_col() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.D));
@@ -93,7 +93,7 @@ class MoveLengthTest {
   @Test
   public void return_true_if_player_moves_7_col() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.H));
@@ -103,7 +103,7 @@ class MoveLengthTest {
   @Test
   public void return_true_if_player_moves_1_row_back() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_2, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A));
@@ -113,7 +113,7 @@ class MoveLengthTest {
   @Test
   public void return_true_if_player_moves_1_col_back() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.B),
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A));
@@ -123,7 +123,7 @@ class MoveLengthTest {
   @Test
   public void return_true_if_player_moves_1_col_and_2_rows() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.B),
             new BoardCoordinates(BoardCoordinates.Row.ROW_3, BoardCoordinates.Column.A));
@@ -133,7 +133,7 @@ class MoveLengthTest {
   @Test
   public void return_false_if_move_does_not_change_position() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A),
             new BoardCoordinates(BoardCoordinates.Row.ROW_1, BoardCoordinates.Column.A));

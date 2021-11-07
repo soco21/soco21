@@ -15,7 +15,7 @@ public class BoardTest {
   public void move_a_piece_from_a_to_b() {
     var board = new Board();
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
             new BoardCoordinates(Row.ROW_4, Column.B));
@@ -31,22 +31,22 @@ public class BoardTest {
   public void remove_piece_between_jump_move() {
     var board = new Board();
     var move1 =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
             new BoardCoordinates(Row.ROW_4, Column.B));
     var move2 =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_6, Column.B),
             new BoardCoordinates(Row.ROW_5, Column.C));
     var move3 =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.C),
             new BoardCoordinates(Row.ROW_4, Column.D));
     var jumpMove =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_5, Column.C),
             new BoardCoordinates(Row.ROW_3, Column.A));
@@ -63,7 +63,7 @@ public class BoardTest {
     var board = new Board();
     // this move is not valid, but the board doesn't know that
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
             new BoardCoordinates(Row.ROW_8, Column.B));
@@ -79,7 +79,7 @@ public class BoardTest {
     var board = new Board();
     // this move is not valid, but the board doesn't know that
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_6, Column.B),
             new BoardCoordinates(Row.ROW_1, Column.B));
