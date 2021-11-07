@@ -1,0 +1,104 @@
+@startuml
+
+rectangle "Main Classes" {
+    rectangle "GameLogic" as gamelogic {
+        note as gamelogicnote
+          |= Responsibilities |= Collaborators |
+          | knows which players play | Board |
+          | print welcome message | List<Rule> |
+          | Print instructions to player | List<WinCondition> |
+          | decide which player should move (attention, double Jump rule) | BoardPrinter |
+          | check win conditions ||
+          | print win message ||
+          | check that input move has correct format ||
+          | check if move is valid ||
+          | get move from player ||
+          | print error message ||
+          | <color: #006400> if JumpGambleResult is won, same player can play again | JumpGambleResult, MoveExecutor |
+        endnote
+    }
+
+    rectangle "MoveExecutor" as moveexecutor #006400 {
+       note as moveexecutornote
+         |= Responsibilities |= Collaborators |
+         | execute normal move with board | Board, Move |
+         | ask if player wants to gamble | Console |
+         | toss coin | CoinTosser |
+         | execute move with JumpGambleResult | Board, Move, JumpGambleResult |
+       endnote
+    }
+}
+
+rectangle "Data classes" {
+    rectangle "Board" as board {
+        note as boardnote
+          |= Responsibilities |= Collaborators |
+          | create init state ||
+          | move piece ||
+          | decide if piece was captured and maybe remove piece ||
+          | Decide if transform to King ||
+          | <color: #006400> also execute jumpgambleresult moves | JumpGambleResult |
+        endnote
+    }
+
+    rectangle Move as move {
+      note as Move
+        |= Move |= |
+        |= Responsibilities |= Collaborators |
+        | hold move parameters (From field A to field B) ||
+        | decide if move is a jump move or not ||
+        | <color: #006400> hold the gamble result ||
+      endnote
+    }
+
+    rectangle JumpGambleResult as jumpGambleResult #006400 {
+        note as jumpGambleResultNote
+            |= Responsibilities |= Collaborators |
+            | represent the result of the gamble, possible are: NO_GAMBLE, WON, LOST ||
+        endnote
+    }
+}
+
+rectangle "Helper classes" {
+    rectangle "Console" as console {
+        note as consolenote
+          |= Responsibilities |= Collaborators |
+          | get input from console ||
+          | print output ||
+        endnote
+    }
+
+    rectangle "CoinTosser" as cointosser #006400 {
+        note as cointossernote
+          |= Responsibilities |= Collaborators |
+          | return HEADS or TAILS randomly ||
+        endnote
+    }
+}
+
+gamelogic --> console
+gamelogic --> moveexecutor
+moveexecutor --> console
+moveexecutor --> board
+moveexecutor --> cointosser
+moveexecutor --> move
+move --> jumpGambleResult
+
+rectangle "Legend" {
+    rectangle "Existing class" {
+        note as existingclass
+          |= Responsibilities |= Collaborators |
+          | existing responsability ||
+          |  <color: #006400>new responsability ||
+        endnote
+    }
+
+    rectangle "New class" #006400 {
+        note as newclass
+          |= Responsibilities |= Collaborators |
+          | responsability ||
+        endnote
+    }
+}
+
+@enduml

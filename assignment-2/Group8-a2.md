@@ -80,6 +80,11 @@ During the analysis and design phases of this extension use responsibility drive
 
 ##### CRC Cards
 
+![Gamble CRC Cards](gamble-crc.svg)
+
+That it's possible to write unittests, we extract the random generator to the separate class CoinTosser.
+Then we can mock the result.
+
 ##### UML
 
 ## Exercise 3
