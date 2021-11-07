@@ -87,6 +87,8 @@ Then we can mock the result.
 
 ##### UML
 
+![Sequence Diagram](gamble-sequence.svg)
+
 ## Exercise 3
 
 ### Task 1

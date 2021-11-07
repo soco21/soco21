@@ -1,0 +1,42 @@
+@startuml
+
+autonumber
+activate GameLogic
+activate BoardPrinter
+activate Board
+activate MoveExecutor
+activate CoinTosser
+activate MoveValidator
+activate WinCondition
+loop while there is no winner
+    GameLogic -> BoardPrinter: Print Board
+    BoardPrinter -> Board: GetPieceAt
+    Board -> BoardPrinter: Return piece
+    GameLogic -> Move: Parse Input
+    activate Move
+    GameLogic <- Move: Either valid move or exception
+    GameLogic -> Board: Get piece at start coordinates
+    Board -> GameLogic: Either is empty or returns piece
+    GameLogic -> MoveValidator: Check if move is valid
+    MoveValidator -> GameLogic: Move is valid / not valid
+    GameLogic -> MoveExecutor: Execute move
+    loop while the anser to gamble is invalid
+        MoveExecutor -> MoveExecutor: If jump move, ask if player wants to gamble
+    end
+    MoveExecutor -> CoinTosser: If gamble, toss coin
+    CoinTosser -> MoveExecutor: return coin result
+    MoveExecutor -> Move: add gamble result
+    Move -> MoveExecutor: return move with added gamble result
+    MoveExecutor -> Board: execute Move
+    Board -> MoveExecutor
+    MoveExecutor -> GameLogic: return Move with gamble result
+    GameLogic -> WinCondition: Has the current player won?
+    WinCondition -> GameLogic: Player has won / not won
+    GameLogic -> Board: Get piece at end coordinates
+    Board -> GameLogic: Either is empty or returns piece
+    GameLogic -> MoveValidator: Check if no other jump move is possible
+    MoveValidator -> GameLogic: Another jump move is possible / not possible
+    deactivate Move
+end
+
+@enduml
