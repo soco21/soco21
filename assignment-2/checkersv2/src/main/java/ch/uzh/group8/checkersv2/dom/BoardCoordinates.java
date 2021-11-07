@@ -23,6 +23,11 @@ public record BoardCoordinates(Row row, Column column) {
     public int diffRow(Row row) {
       return this.ordinal() - row.ordinal();
     }
+
+    public Row getRowBetween(Row row) {
+      int indexBetween = (this.ordinal() + row.ordinal()) / 2;
+      return Row.values()[indexBetween];
+    }
   }
 
   public enum Column {
