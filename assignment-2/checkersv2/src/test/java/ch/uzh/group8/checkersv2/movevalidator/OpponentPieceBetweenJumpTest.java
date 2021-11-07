@@ -29,7 +29,7 @@ class OpponentPieceBetweenJumpTest {
   @Test
   public void return_true_if_no_jump() {
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));
@@ -41,7 +41,7 @@ class OpponentPieceBetweenJumpTest {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_2, Column.B))).thenReturn(Optional.empty());
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_3, Column.C));
@@ -54,7 +54,7 @@ class OpponentPieceBetweenJumpTest {
         .thenReturn(Optional.of(RED_PAWN));
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.A),
             new BoardCoordinates(Row.ROW_1, Column.C));
@@ -67,7 +67,7 @@ class OpponentPieceBetweenJumpTest {
         .thenReturn(Optional.of(WHITE_PAWN));
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.C),
             new BoardCoordinates(Row.ROW_3, Column.A));
@@ -80,7 +80,7 @@ class OpponentPieceBetweenJumpTest {
         .thenReturn(Optional.of(WHITE_PAWN));
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_3, Column.C),
             new BoardCoordinates(Row.ROW_1, Column.A));
@@ -92,7 +92,7 @@ class OpponentPieceBetweenJumpTest {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(RED_PAWN));
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_3, Column.C));

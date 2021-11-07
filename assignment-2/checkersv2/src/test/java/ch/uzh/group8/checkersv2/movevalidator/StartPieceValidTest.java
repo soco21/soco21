@@ -31,7 +31,7 @@ class StartPieceValidTest {
     when(board.getPieceAt(notNull())).thenReturn(Optional.empty());
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));
@@ -44,7 +44,7 @@ class StartPieceValidTest {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(RED_PAWN));
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));
@@ -57,7 +57,7 @@ class StartPieceValidTest {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(WHITE_PAWN));
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));
@@ -70,7 +70,7 @@ class StartPieceValidTest {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(RED_PAWN));
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));
@@ -83,7 +83,7 @@ class StartPieceValidTest {
     when(board.getPieceAt(notNull())).thenReturn(Optional.of(WHITE_PAWN));
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));

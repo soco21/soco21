@@ -34,7 +34,7 @@ class NoOtherMoveToJumpPossibleTest {
     when(board.getPieceAt(notNull())).thenReturn(Optional.empty());
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));
@@ -46,7 +46,7 @@ class NoOtherMoveToJumpPossibleTest {
     when(board.getPieceAt(notNull())).thenReturn(Optional.empty());
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_3, Column.C));
@@ -65,7 +65,7 @@ class NoOtherMoveToJumpPossibleTest {
         .thenReturn(Optional.of(WHITE_PAWN));
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));
@@ -81,7 +81,7 @@ class NoOtherMoveToJumpPossibleTest {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_6, Column.G))).thenReturn(Optional.empty());
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_WHITE,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));
@@ -97,7 +97,7 @@ class NoOtherMoveToJumpPossibleTest {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_4, Column.E))).thenReturn(Optional.empty());
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));
@@ -113,7 +113,7 @@ class NoOtherMoveToJumpPossibleTest {
     when(board.getPieceAt(new BoardCoordinates(Row.ROW_6, Column.G))).thenReturn(Optional.empty());
 
     var move =
-        new Move(
+        Move.of(
             Player.PLAYER_RED,
             new BoardCoordinates(Row.ROW_1, Column.A),
             new BoardCoordinates(Row.ROW_2, Column.B));

@@ -19,6 +19,10 @@ public record Move(Player player, BoardCoordinates start, BoardCoordinates end) 
     var start = parseBoardCoordinates(startAndEnd[0]);
     var end = parseBoardCoordinates(startAndEnd[1]);
 
+    return Move.of(player, start, end);
+  }
+
+  public static Move of(Player player, BoardCoordinates start, BoardCoordinates end) {
     return new Move(player, start, end);
   }
 
@@ -48,7 +52,7 @@ public record Move(Player player, BoardCoordinates start, BoardCoordinates end) 
 
     if (rowIndex >= 0 && rowIndex < rows.length && colIndex >= 0 && colIndex < columns.length) {
       return Optional.of(
-          new Move(player, start, new BoardCoordinates(rows[rowIndex], columns[colIndex])));
+          Move.of(player, start, new BoardCoordinates(rows[rowIndex], columns[colIndex])));
     }
     return Optional.empty();
   }
