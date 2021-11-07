@@ -59,7 +59,14 @@ Afterwards you must implement the requirements.
 We decided to implement the following novel feature in our checkers game: 
 Before every jump move the current player has the option to toss a coin. If the coin
 lands on heads the current player loses its piece and his move is skipped. If its heads,
-the players jump move is executed, and he gets to move again. 
+the players jump move is executed, and he gets to move again.
+
+Additionally, we will fix the bug that the inputs with square brackets ([a3]x[b4]) are accepted,
+and that inputs with an uppercase X (a3Xb4, [a3]X[b4]) are accepted too. We implement that by removing
+square brackets from the input. Like that, even incomplete inputs ([a3x[b4) are allowed.
+The uppercase X is implemented by replacing uppercase x with lowercase x in the input. Because
+the change was very small, we didn't create a design document. All the changes are made in Move::parse in
+commit [58cb81b](https://github.com/soco21/soco21-group8/commit/58cb81b2c6f519e4b857099ba97a513a7ea15e80).
 
 ### Task 2
 
