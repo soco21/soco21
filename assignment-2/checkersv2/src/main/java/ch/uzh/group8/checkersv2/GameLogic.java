@@ -3,6 +3,8 @@ package ch.uzh.group8.checkersv2;
 import ch.uzh.group8.checkersv2.dom.*;
 import ch.uzh.group8.checkersv2.movevalidator.MoveValidator;
 import ch.uzh.group8.checkersv2.movevalidator.NoOtherMoveToJumpPossible;
+import ch.uzh.group8.checkersv2.util.BoardPrinter;
+import ch.uzh.group8.checkersv2.util.Console;
 import java.util.List;
 
 @SuppressWarnings("ClassCanBeRecord")

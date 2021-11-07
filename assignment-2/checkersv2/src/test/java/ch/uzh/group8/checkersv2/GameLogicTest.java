@@ -3,6 +3,7 @@ package ch.uzh.group8.checkersv2;
 import static org.mockito.Mockito.*;
 
 import ch.uzh.group8.checkersv2.dom.Player;
+import ch.uzh.group8.checkersv2.util.Console;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
