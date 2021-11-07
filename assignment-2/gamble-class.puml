@@ -1,0 +1,59 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package dom {
+    enum JumpGambleResult {
+      NO_GAMBLE
+      WON
+      LOST
+    }
+
+    class Board {
+        + void executeMove(Move move)
+    }
+
+    class Move {
+        - Player player
+        - BoardCoordinates start
+        - BoardCoordinates end
+        - JumpGambleResult jumpGambleResult
+    }
+}
+
+package util {
+    class CoinTosser {
+        - Random random
+        + CoinTosser.Result toss()
+    }
+
+    enum CoinTosser.Result {
+        HEADS
+        TAILS
+    }
+}
+
+class MoveExecutor {
+    - Board board
+    - CoinTosser coinTosser
+    - Console console;
+    + Move executeMove(Move move)
+}
+
+class GameLogic {
+    - Console console
+    - Board board
+    - BoardPrinter boardPrinter
+    - List<MoveValidator> moveValidators
+    - MoveExecutor moveExecutor
+    - NoOtherMoveToJumpPossible noOtherMoveToJumpPossible
+    - WinCondition winCondition
+    + void run()
+}
+
+GameLogic ..> "1" Board
+GameLogic ..> "1" MoveExecutor
+MoveExecutor ..> "1" CoinTosser
+MoveExecutor ..> "1" Board
+Move *-- "1" JumpGambleResult
+
+@enduml

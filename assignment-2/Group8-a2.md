@@ -94,6 +94,7 @@ Then we can mock the result.
 ##### UML
 
 ![Sequence Diagram](gamble-sequence.svg)
+![Class Diagram](gamble-class.svg)
 
 ## Exercise 3
 
