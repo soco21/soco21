@@ -71,6 +71,9 @@ commit [58cb81b](https://github.com/soco21/soco21-group8/commit/58cb81b2c6f519e4
 To improve the readability of the code, we will replace all type inference
 using the "var" keyword with explicit type definition.
 
+To improve the package structure, we moved the Domain Object Model (Board, BoardCoordinates, Move, Piece, Player)
+to the separate package dom. [9f4b7d8](https://github.com/soco21/soco21-group8/commit/9f4b7d8f8f85d2cca159e9469ba82ab104f3b547)
+
 ### Task 2
 
 During the analysis and design phases of this extension use responsibility driven design and UML
