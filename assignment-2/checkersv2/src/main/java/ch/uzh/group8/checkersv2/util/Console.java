@@ -1,4 +1,4 @@
-package ch.uzh.group8.checkersv2;
+package ch.uzh.group8.checkersv2.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;

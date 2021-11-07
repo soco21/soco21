@@ -1,4 +1,4 @@
-package ch.uzh.group8.checkersv2;
+package ch.uzh.group8.checkersv2.util;
 
 import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Column;
 import static ch.uzh.group8.checkersv2.dom.BoardCoordinates.Row;
