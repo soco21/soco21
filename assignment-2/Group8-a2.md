@@ -31,7 +31,9 @@ we can hide that the coordinates are implemented with an enum.
 The row enum can determine itself if it's the first row. This way
 we can hide that the coordinates are implemented with an enum.
 
-- [ ] Move:getCoordinatesBetween: RowIndex between in Row selber berechnen
+- [x] Move:getCoordinatesBetween: calculate RowIndexBetween in Row
+
+The Row enum can determine itself which row is between itself and another row.
 
 - [ ] Move:getCoordinatesBetween: ColIndex between in Column selber berechnen
 
