@@ -39,11 +39,15 @@ The Row enum can determine itself which row is between itself and another row.
 
 The Column enum can determine itself which column is between itself and another column.
 
-- [ ] Move:isJumpMove: rowDiff in Row berechnen
+- [x] Move:isJumpMove: calculate row distance in Row enum.
 
-- [ ] Move:isJumpMove: colDiff in Col berechnen
+We can calculate the distance between two Rows in the Row enum.
 
-- [ ] MoveLength: Use the methods in row and col to calculate the difference
+- [x] Move:isJumpMove: calculate the column distance in the Column enum.
+
+We can calculate the distance between two Columns in the Column enum.
+
+- [x] MoveLength: Use the methods in Row and Column to calculate the difference
 
 
 ## Exercise 2
