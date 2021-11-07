@@ -1,8 +1,8 @@
 package ch.uzh.group8.checkersv2.movevalidator;
 
-import ch.uzh.group8.checkersv2.Board;
-import ch.uzh.group8.checkersv2.BoardCoordinates;
-import ch.uzh.group8.checkersv2.Move;
+import ch.uzh.group8.checkersv2.dom.Board;
+import ch.uzh.group8.checkersv2.dom.BoardCoordinates;
+import ch.uzh.group8.checkersv2.dom.Move;
 
 public class StartPieceValid implements MoveValidator {
   @Override

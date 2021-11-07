@@ -3,10 +3,10 @@ package ch.uzh.group8.checkersv2.movevalidator;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-import ch.uzh.group8.checkersv2.Board;
-import ch.uzh.group8.checkersv2.BoardCoordinates;
-import ch.uzh.group8.checkersv2.Move;
-import ch.uzh.group8.checkersv2.Player;
+import ch.uzh.group8.checkersv2.dom.Board;
+import ch.uzh.group8.checkersv2.dom.BoardCoordinates;
+import ch.uzh.group8.checkersv2.dom.Move;
+import ch.uzh.group8.checkersv2.dom.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
