@@ -3,18 +3,19 @@ package ch.uzh.group8.checkersv3;
 import ch.uzh.group8.checkersv3.dom.Board;
 import ch.uzh.group8.checkersv3.movevalidator.*;
 import ch.uzh.group8.checkersv3.util.BoardPrinter;
-import ch.uzh.group8.checkersv3.util.CoinTosser;
 import ch.uzh.group8.checkersv3.util.Console;
+import ch.uzh.group8.checkersv3.util.Gambler;
+
 import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
-    GameLogic gameLogic = createGameLogic(new Console(), new CoinTosser());
+    GameLogic gameLogic = createGameLogic(new Console(), new Gambler());
 
     gameLogic.run();
   }
 
-  public static GameLogic createGameLogic(Console console, CoinTosser coinTosser) {
+  public static GameLogic createGameLogic(Console console, Gambler gambler) {
     Board board = new Board();
     BoardPrinter boardPrinter = new BoardPrinter(console);
     board.registerObserver(boardPrinter::printBoard);
@@ -49,7 +50,7 @@ public class Main {
                 targetFieldEmpty,
                 startPieceValid));
 
-    MoveExecutor moveExecutor = new MoveExecutor(board, coinTosser, console);
+    MoveExecutor moveExecutor = new MoveExecutor(board, gambler, console);
     GameLogic gameLogic =
         new GameLogic(
             console, board, moveValidators, moveExecutor, noOtherMoveToJumpPossible, winCondition);

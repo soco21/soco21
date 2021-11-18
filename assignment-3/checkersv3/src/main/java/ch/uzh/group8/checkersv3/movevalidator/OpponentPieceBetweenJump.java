@@ -6,6 +6,7 @@ import ch.uzh.group8.checkersv3.dom.Move;
 import ch.uzh.group8.checkersv3.dom.Piece;
 import java.util.Optional;
 
+
 public class OpponentPieceBetweenJump implements MoveValidator {
   @Override
   public boolean validate(Move move, Board board) {
