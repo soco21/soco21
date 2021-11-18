@@ -1,7 +1,5 @@
 package ch.uzh.group8.checkersv3;
 
-import static ch.uzh.group8.checkersv3.util.Gambler.gambleCalculator;
-import static ch.uzh.group8.checkersv3.util.Gambler.gambleExecutor;
 import static org.mockito.Mockito.*;
 
 import ch.uzh.group8.checkersv3.dom.Board;
@@ -260,7 +258,7 @@ class GameLogicTest {
     Move move = mock(Move.class);
     doCallRealMethod().when(console).print(notNull());
     Gambler gambler = mock(Gambler.class);
-    when(gambleExecutor(gambleCalculator(board, move))).thenReturn(true);
+    when(gambler.gambleExecutor(gambler.calculateOdds(board,move))).thenReturn(true);
     GameLogic gameLogic = Main.createGameLogic(console, gambler);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
@@ -294,7 +292,7 @@ class GameLogicTest {
     Gambler gambler = mock(Gambler.class);
     Move move = mock(Move.class);
     Board board = mock(Board.class);
-    when(gambleExecutor(gambleCalculator(board, move))).thenReturn(false);
+    when(gambler.gambleExecutor(gambler.calculateOdds(board, move))).thenReturn(false);
     GameLogic gameLogic = Main.createGameLogic(console, gambler);
     InOrder inOrder = inOrder(console);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm

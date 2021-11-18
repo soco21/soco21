@@ -24,7 +24,7 @@ public class MoveExecutor {
       return move;
     }
     console.print(move.player() + " is making a jump move. Now " + move.player() + " may gamble.");
-    console.print(move.player() + " your odds of winning are "+ 100 * Gambler.gambleCalculator(board, move)+"%");
+    console.print(move.player() + " your odds of winning are "+ 100 * gambler.calculateOdds(board, move)+"%");
     console.print("If " + move.player() + " does not gamble, the jump move is executed normally.");
     console.print("If " + move.player() + " does gamble, a coin will be tossed.");
     console.print(
@@ -50,7 +50,7 @@ public class MoveExecutor {
       board.executeMove(move);
       return move;
     }
-    boolean tossResult = Gambler.gambleExecutor(Gambler.gambleCalculator(board, move));
+    boolean tossResult = gambler.gambleExecutor(gambler.calculateOdds(board, move));
     JumpGambleResult jumpGambleResult =
         tossResult ? JumpGambleResult.WON : JumpGambleResult.LOST;
     console.print("The gamble was " + jumpGambleResult);

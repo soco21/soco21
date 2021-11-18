@@ -6,7 +6,7 @@ import java.util.Optional;
 import java.util.Random;
 
 public class Gambler {
-    public static float gambleCalculator(Board board, Move move) {
+    public float calculateOdds(Board board, Move move) {
         float pointsPlayerWhite = 0;
         float pointsPlayerRed = 0;
         float pointsTotal;
@@ -42,7 +42,7 @@ public class Gambler {
         }
         return (float) winChance;
     }
-    public static boolean gambleExecutor(float winChance){
+    public boolean gambleExecutor(float winChance){
         Random random = new Random();
         float nextFloat = random.nextFloat();
         return nextFloat <= winChance;

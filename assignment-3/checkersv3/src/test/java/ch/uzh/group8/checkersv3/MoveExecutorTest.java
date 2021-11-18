@@ -2,7 +2,6 @@ package ch.uzh.group8.checkersv3;
 
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Column.*;
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Row.*;
-import static ch.uzh.group8.checkersv3.util.Gambler.gambleCalculator;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.sameInstance;
 import static org.mockito.ArgumentMatchers.same;
@@ -91,7 +90,7 @@ class MoveExecutorTest {
   @Test
   public void execute_gamble_win_move_if_player_types_yes_and_wins() {
     when(console.getUserInput()).thenReturn("yes");
-    when(Gambler.gambleExecutor(gambleCalculator(board,move))).thenReturn(true);
+    when(gambler.gambleExecutor(gambler.calculateOdds(board,move))).thenReturn(true);
 
     Move executedMove = moveExecutor.executeMove(JUMP_MOVE);
 
@@ -102,7 +101,7 @@ class MoveExecutorTest {
   @Test
   public void execute_gamble_lost_move_if_player_types_yes_and_loses() {
     when(console.getUserInput()).thenReturn("yes");
-    when(Gambler.gambleExecutor(gambleCalculator(board,move))).thenReturn(false);
+    when(gambler.gambleExecutor(gambler.calculateOdds(board,move))).thenReturn(false);
 
     Move executedMove = moveExecutor.executeMove(JUMP_MOVE);
 
