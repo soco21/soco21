@@ -2,13 +2,17 @@ package ch.uzh.group8.checkersv3;
 
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Column.*;
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Row.*;
-import static ch.uzh.group8.checkersv3.util.CoinTosser.*;
+import static ch.uzh.group8.checkersv3.util.CoinTosser.Result;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.sameInstance;
 import static org.mockito.ArgumentMatchers.same;
 import static org.mockito.Mockito.*;
 
-import ch.uzh.group8.checkersv3.dom.*;
+import ch.uzh.group8.checkersv3.dom.BoardCoordinates;
+import ch.uzh.group8.checkersv3.dom.JumpGambleResult;
+import ch.uzh.group8.checkersv3.dom.Move;
+import ch.uzh.group8.checkersv3.dom.Player;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import ch.uzh.group8.checkersv3.util.CoinTosser;
 import ch.uzh.group8.checkersv3.util.Console;
 import org.hamcrest.Matchers;

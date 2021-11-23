@@ -1,6 +1,6 @@
 package ch.uzh.group8.checkersv3.util;
 
-import static ch.uzh.group8.checkersv3.util.CoinTosser.Result.*;
+import static ch.uzh.group8.checkersv3.util.CoinTosser.Result.HEADS;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import java.util.stream.IntStream;

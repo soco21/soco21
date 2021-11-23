@@ -3,10 +3,10 @@ package ch.uzh.group8.checkersv3.util;
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Column;
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Row;
 
-import ch.uzh.group8.checkersv3.dom.Board;
 import ch.uzh.group8.checkersv3.dom.BoardCoordinates;
 import ch.uzh.group8.checkersv3.dom.Piece;
 import ch.uzh.group8.checkersv3.dom.Player;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import java.util.*;
 
 @SuppressWarnings("ClassCanBeRecord")

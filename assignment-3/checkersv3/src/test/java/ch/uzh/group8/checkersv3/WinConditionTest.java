@@ -8,10 +8,10 @@ import static org.mockito.ArgumentMatchers.notNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import ch.uzh.group8.checkersv3.dom.Board;
 import ch.uzh.group8.checkersv3.dom.BoardCoordinates;
 import ch.uzh.group8.checkersv3.dom.Piece;
 import ch.uzh.group8.checkersv3.dom.Player;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import ch.uzh.group8.checkersv3.movevalidator.MoveValidator;
 import java.util.List;
 import java.util.Optional;
