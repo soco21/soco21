@@ -18,4 +18,9 @@ class JumpGambleLostMove implements Command {
   public void execute() {
     store.removePiece(start.getKey());
   }
+
+  @Override
+  public void undo() {
+    store.addPiece(start.getKey(), start.getValue());
+  }
 }

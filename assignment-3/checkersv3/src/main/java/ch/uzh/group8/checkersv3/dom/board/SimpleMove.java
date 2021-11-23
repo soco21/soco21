@@ -22,4 +22,10 @@ public class SimpleMove implements Command {
     store.removePiece(start.getKey());
     store.addPiece(end.getKey(), end.getValue());
   }
+
+  @Override
+  public void undo() {
+    store.addPiece(start.getKey(), start.getValue());
+    store.removePiece(end.getKey());
+  }
 }
