@@ -17,6 +17,28 @@ Write a natural language description of why and how the pattern is implemented i
 
 #### Description of why and how the pattern is implemented
 
+For exercise 3, we would like to implement the undo command. For that we need a way to store
+the mutations of the board in a list, that we can undo them later. Currently, we have 3 mutations which
+are possible on the board:
+1. Move a piece from BoardCoordinates A to BoardCoordinates B.
+2. Make a jump move from BoardCoordinates A to BoardCoordinates C, which removes the Piece at BoardCoordinates B between
+A and C.
+3. When a jump gamble is lost, just remove the piece at the start of the jump move.
+
+Additionally, both of them may result in a pawn being converted to a king.
+In this step, instead of directly mutating the Board in the `Board::executeMove` method,
+we will construct a command, then execute it. Later in exercise 3, we will store the executed command
+at the end of the command list, than we can undo them in the reverse execution order.
+
+We have a special case for the command pattern here, because the Client and the Invoker are the same
+class and instance. Board is responsible for creating the correct instance of the Command,
+which may be a JumpGambleLostMove, a JumpMove or a SimpleMove. It also sets the Receiver of the Command,
+which is the Store, via the constructor of the command. This is the responsibility of the client.
+Then it directly executes the command, which is the responsibility of the Invoker.
+
+Below is the image of the command pattern as explained in the lecture to compare with our explanation.
+
+![Command pattern as explained in the lecture](exercise1/command-pattern/command-pattern-as-explained-in-lecture.png)
 
 #### Task 2
 
@@ -24,11 +46,15 @@ Make a sequence diagram of how the pattern works dynamically in your code
 
 #### Sequence diagram
 
+![Command pattern sequence diagram](exercise1/command-pattern/sequence.svg)
+
 #### Task 3
 
 Make a class diagram of how the pattern is structured statically in your code
 
 #### Class diagram
+
+![Command pattern sequence diagram](exercise1/command-pattern/class.svg)
 
 ### Design Pattern 2
 

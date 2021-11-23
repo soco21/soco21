@@ -1,0 +1,57 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Board {
+    - List<BoardObservers> boardObservers
+    - Store store
+    + void executeMove(Move move)
+    + Optional<Piece> getPieceAt(BoardCoordinates piece)
+    + void registerObserver(BoardObserver boardObserver)
+    - createCommand(Move move)
+    - isConvertToKing(Move move)
+}
+
+class Store {
+    - Map<BoardCoordinates, Map<BoardCoordinates, Piece>> boardMatrix
+    ~ void removePiece(BoardCoordinates boardCoordinates)
+    ~ void addPiece(BoardCoordinates boardCoordinates, Piece piece)
+}
+
+interface Command {
+    ~ void execute()
+}
+
+class JumpGambleLostMove {
+    - Store store
+    - Tuple<BoardCoordinates, Piece> start
+    + void execute()
+}
+
+class SimpleMove {
+    - Store store
+    - Tuple<BoardCoordinates, Piece> start
+    - Tuple<BoardCoordinates, Piece> end
+    + void execute()
+}
+
+class JumpMove {
+    - Store store
+    - Tuple<BoardCoordinates, Piece> start
+    - Tuple<BoardCoordinates, Piece> pieceBetween
+    - Tuple<BoardCoordinates, Piece> end
+    + void execute()
+}
+
+Command <|.. JumpGambleLostMove
+Command <|.. SimpleMove
+Command <|.. JumpMove
+
+Board ..> JumpGambleLostMove: instantiate
+Board ..> SimpleMove: instantiate
+Board ..> JumpMove: instantiate
+Board ..> Store
+JumpGambleLostMove ..> Store
+SimpleMove ..> Store
+JumpMove ..> Store
+
+@enduml

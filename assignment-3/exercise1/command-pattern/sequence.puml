@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+activate Board
+participant BoardCommand
+activate Store
+--> Board: executeMove
+Board --> BoardCommand: create Command
+activate BoardCommand
+BoardCommand --> Board
+Board --> BoardCommand: execute
+loop while command is not finished
+    BoardCommand --> Store: addPiece/removePiece
+    Store --> BoardCommand
+end
+BoardCommand --> Board
+deactivate BoardCommand
+<-- Board
+
+@enduml
