@@ -93,6 +93,28 @@ public class BoardTest {
   }
 
   @Test
+  public void piece_stays_king_if_it_was_king() {
+    Board board = new Board();
+    // this move is not valid, but the board doesn't know that
+    Move move1 =
+        Move.of(
+            Player.PLAYER_RED,
+            new BoardCoordinates(Row.ROW_6, Column.B),
+            new BoardCoordinates(Row.ROW_1, Column.B));
+    Move move2 =
+        Move.of(
+            Player.PLAYER_RED,
+            new BoardCoordinates(Row.ROW_1, Column.B),
+            new BoardCoordinates(Row.ROW_2, Column.C));
+
+    List.of(move1, move2).forEach(board::executeMove);
+
+    assertThat(board.getPieceAt(move1.start()), is(empty()));
+    assertThat(board.getPieceAt(move1.end()), is(empty()));
+    assertThat(board.getPieceAt(move2.end()), is(Optional.of(new Piece(Player.PLAYER_RED, true))));
+  }
+
+  @Test
   public void remove_start_piece_when_JumpGambleResult_is_lost() {
     Board board = new Board();
     Move move1 =
