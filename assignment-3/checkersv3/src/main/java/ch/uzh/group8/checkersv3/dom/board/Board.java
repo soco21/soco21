@@ -7,11 +7,30 @@ import java.util.*;
 public class Board {
   private final List<BoardObserver> boardObservers = new ArrayList<>();
   private final Store store = new Store();
+  private final List<Tuple<Player, Command>> executedCommands = new ArrayList<>();
 
   public void executeMove(Move move) {
     Command command = createCommand(move);
     command.execute();
+    executedCommands.add(Tuple.of(move.player(), command));
     boardObservers.forEach(boardObserver -> boardObserver.boardChanged(this));
+  }
+
+  public Player undoLastTurn() throws NoPreviousMovesException {
+    if (executedCommands.size() == 0) {
+      throw new NoPreviousMovesException();
+    }
+    Tuple<Player, Command> lastCommandTuple = executedCommands.get(executedCommands.size() - 1);
+    for (int i = executedCommands.size() - 1; i >= 0; i--) {
+      Tuple<Player, Command> currentCommandTuple = executedCommands.get(i);
+      if (!currentCommandTuple.getKey().equals(lastCommandTuple.getKey())) {
+        break;
+      }
+      currentCommandTuple.getValue().undo();
+      executedCommands.remove(i);
+    }
+    boardObservers.forEach(boardObserver -> boardObserver.boardChanged(this));
+    return lastCommandTuple.getKey();
   }
 
   public Optional<Piece> getPieceAt(BoardCoordinates boardCoordinates) {
@@ -46,5 +65,9 @@ public class Board {
       return move.end().row().isLastRow();
     }
     return move.end().row().isFirstRow();
+  }
+
+  public static class NoPreviousMovesException extends Exception {
+    private NoPreviousMovesException() {}
   }
 }

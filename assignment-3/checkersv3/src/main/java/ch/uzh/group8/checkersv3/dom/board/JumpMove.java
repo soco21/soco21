@@ -28,4 +28,11 @@ public class JumpMove implements Command {
     store.removePiece(pieceBetween.getKey());
     store.addPiece(end.getKey(), end.getValue());
   }
+
+  @Override
+  public void undo() {
+    store.addPiece(start.getKey(), start.getValue());
+    store.addPiece(pieceBetween.getKey(), pieceBetween.getValue());
+    store.removePiece(end.getKey());
+  }
 }
