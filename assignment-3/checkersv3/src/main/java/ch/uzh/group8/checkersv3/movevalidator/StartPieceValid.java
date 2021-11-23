@@ -1,9 +1,9 @@
 package ch.uzh.group8.checkersv3.movevalidator;
 
-import ch.uzh.group8.checkersv3.dom.Board;
 import ch.uzh.group8.checkersv3.dom.BoardCoordinates;
 import ch.uzh.group8.checkersv3.dom.Move;
 import ch.uzh.group8.checkersv3.dom.Piece;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import java.util.Optional;
 
 public class StartPieceValid implements MoveValidator {

@@ -1,6 +1,7 @@
 package ch.uzh.group8.checkersv3;
 
 import ch.uzh.group8.checkersv3.dom.*;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import ch.uzh.group8.checkersv3.movevalidator.MoveValidator;
 import ch.uzh.group8.checkersv3.movevalidator.NoOtherMoveToJumpPossible;
 import ch.uzh.group8.checkersv3.util.Console;

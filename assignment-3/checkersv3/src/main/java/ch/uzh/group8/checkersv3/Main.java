@@ -1,6 +1,6 @@
 package ch.uzh.group8.checkersv3;
 
-import ch.uzh.group8.checkersv3.dom.Board;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import ch.uzh.group8.checkersv3.movevalidator.*;
 import ch.uzh.group8.checkersv3.util.BoardPrinter;
 import ch.uzh.group8.checkersv3.util.CoinTosser;

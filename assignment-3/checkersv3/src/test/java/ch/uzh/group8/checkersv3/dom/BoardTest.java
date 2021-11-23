@@ -7,6 +7,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;

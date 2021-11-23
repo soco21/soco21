@@ -1,8 +1,9 @@
-package ch.uzh.group8.checkersv3.dom;
+package ch.uzh.group8.checkersv3.dom.board;
 
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Column;
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Row;
 
+import ch.uzh.group8.checkersv3.dom.*;
 import java.util.*;
 
 public class Board {
