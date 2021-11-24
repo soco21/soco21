@@ -108,7 +108,9 @@ distribution of the line coverage.
 
 ## Exercise 3
 
-### Task 1
+### Undo Feature
+
+#### Task 1
 
 Google (used to?) ask their employees to spend 20% of their time at Google on a project that their
 job description does not cover. As a result of the 20% Project, Google now has services such as
@@ -118,9 +120,34 @@ be an extension/improvement from any perspective, such as improved code quality 
 Define your own requirements and get them approved by your tutor (especially in terms of load).
 Afterwards you must implement the requirements.
 
-#### Description of the requirements
+##### Description of the requirements
 
-### Task 2
+#### Task 2
+
+During the analysis and design phases of this extension use responsibility driven design and UML
+(push to the repository the single PDF file including all the produced documents)
+
+##### Responsibility Driven Design
+
+##### CRC Cards
+
+##### UML
+
+### Balanced Gamble Feature
+
+#### Task 1
+
+Google (used to?) ask their employees to spend 20% of their time at Google on a project that their
+job description does not cover. As a result of the 20% Project, Google now has services such as
+Gmail and AdSense.
+This is your occasion to have similar freedom. You can decide what to do next to your game:5 It can
+be an extension/improvement from any perspective, such as improved code quality or novel features.
+Define your own requirements and get them approved by your tutor (especially in terms of load).
+Afterwards you must implement the requirements.
+
+##### Description of the requirements
+
+#### Task 2
 
 During the analysis and design phases of this extension use responsibility driven design and UML
 (push to the repository the single PDF file including all the produced documents)
