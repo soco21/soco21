@@ -6,7 +6,7 @@ package ch.uzh.group8.checkersv3 {
 
         package ch.uzh.group8.checkersv3.dom.board {
 
-            class Board {
+            class Board #71B93E {
                 - List<BoardObservers> boardObservers
                 - Store store
                 - List<Tuple<Player, Command>> executedCommands
@@ -33,14 +33,14 @@ package ch.uzh.group8.checkersv3 {
                 + void undo()
             }
 
-            class JumpGambleLostMove {
+            class JumpGambleLostMove #71B93E {
                 - Store store
                 - Tuple<BoardCoordinates, Piece> start
                 + void execute()
                 + void undo()
             }
 
-            class SimpleMove {
+            class SimpleMove #71B93E {
                 - Store store
                 - Tuple<BoardCoordinates, Piece> start
                 - Tuple<BoardCoordinates, Piece> end
@@ -48,7 +48,7 @@ package ch.uzh.group8.checkersv3 {
                 + void undo()
             }
 
-            class JumpMove {
+            class JumpMove #71B93E {
                 - Store store
                 - Tuple<BoardCoordinates, Piece> start
                 - Tuple<BoardCoordinates, Piece> pieceBetween
@@ -224,7 +224,7 @@ package ch.uzh.group8.checkersv3 {
         BoardPrinter --> Console
     }
 
-    class GameLogic {
+    class GameLogic #71B93E {
         - Console console
         - Board board
         - List<MoveValidator> moveValidators

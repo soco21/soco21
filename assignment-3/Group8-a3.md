@@ -122,6 +122,24 @@ Afterwards you must implement the requirements.
 
 ##### Description of the requirements
 
+To be able to improve one's checkers skills with our implementation of checkers, we will implement
+the possibility to undo a turn. The simple use case is that Player WHITE makes his turn and hands over
+the keyboard. Then Player WHITE realises, that his turn was not a good choice. Player WHITE asks player RED,
+if he can try his turn again. If Player RED agrees, he types 'undo' instead of his move, and hands back the keyboard.
+
+The second use case is if 2 Players want to test different strategies starting from a specific situation.
+They may make their moves until they reach the specific situation, and then try a strategy to win the game
+from this situation. Then they undo their moves again until they reach the situation again, and try a different one.
+
+The undo command has 3 different outcomes depending on the moment when the undo command is used.
+
+1. At the start of the game, there are no moves that can be undone. An error message is displayed and Player RED can
+try again to enter a valid move.
+2. A Player enters 'undo' instead of his first move in his turn. The last turn of the other player is undone, and the
+other player may try other moves for his turn.
+3. A Player enters 'undo' instead of a second (or more) jump move, or a second (or more) move for a won jump gamble move.
+Then all the previous moves of his turn are undone, and the Player starts his turn again.
+
 #### Task 2
 
 During the analysis and design phases of this extension use responsibility driven design and UML
@@ -129,9 +147,31 @@ During the analysis and design phases of this extension use responsibility drive
 
 ##### Responsibility Driven Design
 
-##### CRC Cards
+We have the following new responsibilities:
+
+1. If the user types 'undo' into the console, we have to trigger the undo
+This responsibility was given to the GameLogic class, as it already parses the input and triggers its effects
+2. We have to store the executed commands
+This responsibility was given to the Board class, as it already creates the correct Move Command
+(JumpGambleLostMove, JumpMove, SimpleMove) and executes it.
+3. When the undo is triggered, we need to iterate over the commands we need to undo and trigger that they are undone
+This responsibility was given to the Board class.
+4. For the 3 possible mutations of the board, we need to undo their respective effect.
+This responsibility was given to the respective commands JumpGambleLostMove, JumpMove and SimpleMove.
+
+![Undo feature CRC Cards](exercise3/undo-feature/crc.svg)
 
 ##### UML
+
+##### Sequence Diagram
+
+![Undo feature sequence diagram](exercise3/undo-feature/sequence.svg)
+
+##### Class Diagram
+
+The changed classes are in green.
+
+![Undo feature class diagram](exercise3/undo-feature/class.svg)
 
 ### Balanced Gamble Feature
 
