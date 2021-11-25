@@ -167,7 +167,7 @@ package ch.uzh.group8.checkersv3 {
         class MoveIsDiagonal {
             + boolean validate(Move move, Board board)
         }
-        class MoveIsForward {
+        class MoveIsForwardIfNotKing {
             + boolean validate(Move move, Board board)
         }
         class MoveLength {
@@ -185,7 +185,7 @@ package ch.uzh.group8.checkersv3 {
 
         MoveValidator <|.. NoOtherJumpMovePossible
         MoveValidator <|.. MoveIsDiagonal
-        MoveValidator <|.. MoveIsForward
+        MoveValidator <|.. MoveIsForwardIfNotKing
         MoveValidator <|.. MoveLength
         MoveValidator <|.. OpponentPieceBetweenJump
         MoveValidator <|.. StartPieceValid
