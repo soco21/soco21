@@ -93,9 +93,6 @@ public record Move(
   public boolean isJumpMove() {
     int diffMoveColumn = start.column().diffCol(end.column());
     int diffMoveRow = start.row().diffRow(end.row());
-    if (diffMoveColumn == 0 && diffMoveRow == 0) {
-      return false;
-    }
     return Math.abs(diffMoveRow) == 2 && Math.abs(diffMoveColumn) == 2;
   }
 
