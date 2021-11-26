@@ -148,8 +148,14 @@ distribution of the line coverage.
 
 #### Overall line coverage report
 
+The overall line coverage is currently 97 %.
+The source of this coverage report is the jacoco coverage report tool,
+of which the results can be seen in our continuous integration builds.
+[Link to Builds](https://github.com/soco21/soco21-group8/actions?query=branch%3Amain)
+
 #### Histogram of the line coverage distribution
 
+![Histogram of the line coverage distribution](exercise2/line-coverage-histogram.png)
 
 ## Exercise 3
 
