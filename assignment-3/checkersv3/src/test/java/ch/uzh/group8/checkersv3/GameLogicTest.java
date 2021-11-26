@@ -6,9 +6,8 @@ import ch.uzh.group8.checkersv3.dom.Board;
 import ch.uzh.group8.checkersv3.dom.Move;
 import ch.uzh.group8.checkersv3.dom.Player;
 import ch.uzh.group8.checkersv3.util.Console;
-import java.util.List;
-
 import ch.uzh.group8.checkersv3.util.Gambler;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
@@ -258,7 +257,7 @@ class GameLogicTest {
     Move move = mock(Move.class);
     doCallRealMethod().when(console).print(notNull());
     Gambler gambler = mock(Gambler.class);
-    when(gambler.gambleExecutor(gambler.calculateOdds(board,move))).thenReturn(true);
+    when(gambler.gambleExecutor()).thenReturn(true);
     GameLogic gameLogic = Main.createGameLogic(console, gambler);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
@@ -292,7 +291,7 @@ class GameLogicTest {
     Gambler gambler = mock(Gambler.class);
     Move move = mock(Move.class);
     Board board = mock(Board.class);
-    when(gambler.gambleExecutor(gambler.calculateOdds(board, move))).thenReturn(false);
+    when(gambler.gambleExecutor()).thenReturn(false);
     GameLogic gameLogic = Main.createGameLogic(console, gambler);
     InOrder inOrder = inOrder(console);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm

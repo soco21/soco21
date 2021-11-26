@@ -90,7 +90,7 @@ class MoveExecutorTest {
   @Test
   public void execute_gamble_win_move_if_player_types_yes_and_wins() {
     when(console.getUserInput()).thenReturn("yes");
-    when(gambler.gambleExecutor(gambler.calculateOdds(board,move))).thenReturn(true);
+    when(gambler.gambleExecutor()).thenReturn(true);
 
     Move executedMove = moveExecutor.executeMove(JUMP_MOVE);
 
@@ -101,7 +101,7 @@ class MoveExecutorTest {
   @Test
   public void execute_gamble_lost_move_if_player_types_yes_and_loses() {
     when(console.getUserInput()).thenReturn("yes");
-    when(gambler.gambleExecutor(gambler.calculateOdds(board,move))).thenReturn(false);
+    when(gambler.gambleExecutor()).thenReturn(false);
 
     Move executedMove = moveExecutor.executeMove(JUMP_MOVE);
 

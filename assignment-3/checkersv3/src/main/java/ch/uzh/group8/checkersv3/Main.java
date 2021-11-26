@@ -5,7 +5,6 @@ import ch.uzh.group8.checkersv3.movevalidator.*;
 import ch.uzh.group8.checkersv3.util.BoardPrinter;
 import ch.uzh.group8.checkersv3.util.Console;
 import ch.uzh.group8.checkersv3.util.Gambler;
-
 import java.util.List;
 
 public class Main {
