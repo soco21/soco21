@@ -10,7 +10,8 @@ import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
-    GameLogic gameLogic = createGameLogic(Console.getInstance(), new CoinTosser(new PointsCalculator()));
+    GameLogic gameLogic =
+        createGameLogic(Console.getInstance(), new CoinTosser(new PointsCalculator()));
 
     gameLogic.run();
   }

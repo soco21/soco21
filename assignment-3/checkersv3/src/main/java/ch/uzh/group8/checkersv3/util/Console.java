@@ -11,8 +11,7 @@ public class Console {
     return instance;
   }
 
-  private Console() {
-  }
+  private Console() {}
 
   public void print(String string) {
     System.out.println(string);
