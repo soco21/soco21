@@ -1,7 +1,7 @@
 package ch.uzh.group8.checkersv3.util;
 
-import ch.uzh.group8.checkersv3.dom.Board;
 import ch.uzh.group8.checkersv3.dom.Player;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import java.util.Map;
 import java.util.Random;
 

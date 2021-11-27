@@ -28,10 +28,17 @@ jobs:
       - name: check format
         run: mvn -f reactor.pom spotless:check --fail-at-end
 
-      - name: run tests
-        run: mvn -f reactor.pom test --fail-at-end
+      - name: run tests with coverage reports
+        run: mvn -f reactor.pom install
 
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1
         with:
           step: save
+
+      - name: upload coverage reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage reports
+          path: |
+            **/**/target/site/jacoco

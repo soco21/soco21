@@ -3,9 +3,9 @@ package ch.uzh.group8.checkersv3;
 import static ch.uzh.group8.checkersv3.util.CoinTosser.Result.HEADS;
 import static ch.uzh.group8.checkersv3.util.CoinTosser.Result.TAILS;
 
-import ch.uzh.group8.checkersv3.dom.Board;
 import ch.uzh.group8.checkersv3.dom.JumpGambleResult;
 import ch.uzh.group8.checkersv3.dom.Move;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import ch.uzh.group8.checkersv3.util.CoinTosser;
 import ch.uzh.group8.checkersv3.util.Console;
 

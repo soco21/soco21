@@ -1,0 +1,266 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package ch.uzh.group8.checkersv3 {
+    package ch.uzh.group8.checkersv3.dom {
+
+        package ch.uzh.group8.checkersv3.dom.board {
+
+            class Board {
+                - List<BoardObservers> boardObservers
+                - Store store
+                - List<Tuple<Player, Command>> executedCommands
+                + void executeMove(Move move)
+                + Player undoLastTurn()
+                + Optional<Piece> getPieceAt(BoardCoordinates piece)
+                + void registerObserver(BoardObserver boardObserver)
+                - createCommand(Move move)
+                - isConvertToKing(Move move)
+            }
+
+            interface BoardObserver {
+                void boardChanged(Board board)
+            }
+
+            class Store {
+                - Map<BoardCoordinates, Map<BoardCoordinates, Piece>> boardMatrix
+                ~ void removePiece(BoardCoordinates boardCoordinates)
+                ~ void addPiece(BoardCoordinates boardCoordinates, Piece piece)
+            }
+
+            interface Command {
+                + void execute()
+                + void undo()
+            }
+
+            class JumpGambleLostMove {
+                - Store store
+                - Tuple<BoardCoordinates, Piece> start
+                + void execute()
+                + void undo()
+            }
+
+            class SimpleMove {
+                - Store store
+                - Tuple<BoardCoordinates, Piece> start
+                - Tuple<BoardCoordinates, Piece> end
+                + void execute()
+                + void undo()
+            }
+
+            class JumpMove {
+                - Store store
+                - Tuple<BoardCoordinates, Piece> start
+                - Tuple<BoardCoordinates, Piece> pieceBetween
+                - Tuple<BoardCoordinates, Piece> end
+                + void execute()
+                + void undo()
+            }
+
+            Command <|.. JumpGambleLostMove
+            Command <|.. SimpleMove
+            Command <|.. JumpMove
+
+            Board ..> JumpGambleLostMove: instantiate
+            Board ..> SimpleMove: instantiate
+            Board ..> JumpMove: instantiate
+            Board ..> Store
+            Board *.. "many" BoardObserver
+            Board *.. "many" Command
+            JumpGambleLostMove ..> Store
+            SimpleMove ..> Store
+            JumpMove ..> Store
+        }
+
+        class BoardCoordinates {
+            - Row row
+            - Column column
+            + Row row()
+            + Column column()
+        }
+
+        enum BoardCoordinates.Row {
+            ROW_1
+            ROW_2
+            ROW_3
+            ROW_4
+            ROW_5
+            ROW_6
+            ROW_7
+            ROW_8
+
+            + boolean isLastRow()
+            + boolean isFirstRow()
+            + int diffRow(Row row)
+            + Row getRowBetween(Row row)
+        }
+
+        enum BoardCoordinates.Column {
+            A
+            B
+            C
+            D
+            E
+            F
+            G
+            H
+
+            + int diffRow(Column row)
+            + Row getRowBetween(Column row)
+        }
+
+        enum JumpGambleResult {
+          NO_GAMBLE,
+          WON,
+          LOST
+        }
+
+        class Move {
+            - Player player
+            - BoardCoordinates start
+            - BoardCoordinates end
+            - JumpGambleResult jumpGambleResult
+            + {static} Move parse(Player player, String string)
+            + {static} Move of(Player player, BoardCoordinates start, BoardCoordinates end)
+            + {static} List<Move> generatePossibleMoves(BoardCoordinates boardCoordinates, Player pieceOwner, List<Integer> distances)
+            - {static} Optional<Move> of(Player player, BoardCoordinates start, int rowIndex, int colIndex)
+            - {static} BoardCoordinates parseBoardCoordinates(String s)
+            + Optional<BoardCoordinates> getCoordinatesBetween()
+            + boolean isJumpMove()
+            + Move withJumpGambleResult(JumpGambleResult jumpGambleResult)
+        }
+
+        class Piece {
+            - Player owner
+            - boolean isKing
+            + Player owner()
+            + boolean isKing()
+        }
+
+        enum Player {
+          PLAYER_WHITE,
+          PLAYER_RED
+        }
+
+        BoardCoordinates *-- "1" BoardCoordinates.Row
+        BoardCoordinates *-- "1" BoardCoordinates.Column
+
+        Move *-- "1" BoardCoordinates: start
+        Move *-- "1" BoardCoordinates: end
+        Move *-- "1" Player
+        Move *-- "1" JumpGambleResult
+
+        Piece *-- "1" Player
+
+        Store o-- "many" Piece
+
+    }
+
+    package ch.uzh.group8.checkersv3.movevalidator {
+        class NoOtherJumpMovePossible {
+            + boolean validate(Move move, Board board)
+            + boolean jumpMovePossibleFrom(BoardCoordinates boardCoordinates, Board board)
+        }
+        interface MoveValidator {
+            + boolean validate(Move move, Board board)
+        }
+        class MoveIsDiagonal {
+            + boolean validate(Move move, Board board)
+        }
+        class MoveIsForward {
+            + boolean validate(Move move, Board board)
+        }
+        class MoveLength {
+            + boolean validate(Move move, Board board)
+        }
+        class OpponentPieceBetweenJump {
+            + boolean validate(Move move, Board board)
+        }
+        class StartPieceValid {
+            + boolean validate(Move move, Board board)
+        }
+        class TargetFieldEmpty {
+            + boolean validate(Move move, Board board)
+        }
+
+        MoveValidator <|.. NoOtherJumpMovePossible
+        MoveValidator <|.. MoveIsDiagonal
+        MoveValidator <|.. MoveIsForward
+        MoveValidator <|.. MoveLength
+        MoveValidator <|.. OpponentPieceBetweenJump
+        MoveValidator <|.. StartPieceValid
+        MoveValidator <|.. TargetFieldEmpty
+    }
+
+    package ch.uzh.group8.checkersv3.util {
+        class BoardPrinter {
+            - Console console
+            + void printBoard(Board board)
+        }
+
+        class CoinTosser {
+            - Random random
+            + Result toss()
+        }
+
+        class CoinTosser.Result {
+            HEADS,
+            TAILS
+        }
+
+        class Console {
+            + void print(String string)
+            + String getUserInput()
+        }
+
+        class Tuple<K,V> {
+            - K key
+            - V value
+            + {static} Tuple<K,V> of(K key, V value)
+            + K getKey()
+            + V getValue()
+        }
+
+        BoardPrinter --> Console
+    }
+
+    class GameLogic {
+        - Console console
+        - Board board
+        - List<MoveValidator> moveValidators
+        - MoveExecutor moveExecutor
+        - NoOtherMoveToJumpPossible noOtherMoveToJumpPossible
+        - WinCondition winCondition
+        + void run()
+        - boolean doPlayerMove(Player player)
+    }
+
+    class MoveExecutor {
+        - Board board
+        - CoinTosser coinTosser
+        - Console console
+        + Move executeMove(Move move)
+    }
+
+    class WinCondition {
+        - List<MoveValidator> moveValidators
+        + boolean hasPlayerWon(Player player, Board board)
+    }
+
+    GameLogic --> Console
+    GameLogic --> Board
+    GameLogic *-- "many" MoveValidator
+    GameLogic --> MoveExecutor
+    GameLogic -> NoOtherJumpMovePossible
+    GameLogic --> WinCondition
+    GameLogic --> Move: instantiate
+
+    MoveExecutor --> Board
+    MoveExecutor --> CoinTosser
+    MoveExecutor --> Console
+
+    WinCondition *-- "many" MoveValidator
+}
+
+
+@enduml

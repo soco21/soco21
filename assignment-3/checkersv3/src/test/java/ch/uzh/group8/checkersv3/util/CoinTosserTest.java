@@ -9,8 +9,8 @@ import static org.mockito.ArgumentMatchers.notNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import ch.uzh.group8.checkersv3.dom.Board;
 import ch.uzh.group8.checkersv3.dom.Player;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import java.util.Map;
 import java.util.Random;
 import java.util.stream.IntStream;
@@ -48,7 +48,7 @@ class CoinTosserTest {
   @Test
   public void use_even_chances_if_points_are_evenly_distributed() {
     when(pointsCalculator.calculatePoints(notNull()))
-            .thenReturn(Map.of(PLAYER_RED, 1, Player.PLAYER_WHITE, 1));
+        .thenReturn(Map.of(PLAYER_RED, 1, Player.PLAYER_WHITE, 1));
     CoinTosser coinTosser = new CoinTosser(pointsCalculator, random);
 
     when(random.nextFloat()).thenReturn(0.5f);
@@ -61,7 +61,7 @@ class CoinTosserTest {
   @Test
   public void increase_the_chance_for_the_weaker_player() {
     when(pointsCalculator.calculatePoints(notNull()))
-            .thenReturn(Map.of(PLAYER_RED, 1, Player.PLAYER_WHITE, 2));
+        .thenReturn(Map.of(PLAYER_RED, 1, Player.PLAYER_WHITE, 2));
     CoinTosser coinTosser = new CoinTosser(pointsCalculator, random);
 
     when(random.nextFloat()).thenReturn(0.6666f);
@@ -74,7 +74,7 @@ class CoinTosserTest {
   @Test
   public void decrease_the_chance_for_the_stronger_player() {
     when(pointsCalculator.calculatePoints(notNull()))
-            .thenReturn(Map.of(PLAYER_RED, 2, Player.PLAYER_WHITE, 1));
+        .thenReturn(Map.of(PLAYER_RED, 2, Player.PLAYER_WHITE, 1));
     CoinTosser coinTosser = new CoinTosser(pointsCalculator, random);
 
     when(random.nextFloat()).thenReturn(0.3333f);
@@ -84,7 +84,5 @@ class CoinTosserTest {
     assertThat(coinTosser.toss(board, PLAYER_RED), is(TAILS));
   }
 
-  private static class RandomWrapper extends Random {
-
-  }
+  private static class RandomWrapper extends Random {}
 }

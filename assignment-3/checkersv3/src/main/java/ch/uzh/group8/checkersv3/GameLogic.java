@@ -1,6 +1,7 @@
 package ch.uzh.group8.checkersv3;
 
 import ch.uzh.group8.checkersv3.dom.*;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import ch.uzh.group8.checkersv3.movevalidator.MoveValidator;
 import ch.uzh.group8.checkersv3.movevalidator.NoOtherMoveToJumpPossible;
 import ch.uzh.group8.checkersv3.util.Console;
@@ -34,7 +35,12 @@ public class GameLogic {
   public void run() {
     Player currentPlayer = Player.PLAYER_RED;
     while (true) {
-      console.print(currentPlayer + ", make your move");
+      Player otherPlayer =
+          currentPlayer == Player.PLAYER_RED ? Player.PLAYER_WHITE : Player.PLAYER_RED;
+      console.print(
+          currentPlayer
+              + ", make your move. Or type 'undo' to go back to the start of the turn of "
+              + otherPlayer);
       if (doPlayerMove(currentPlayer)) {
         return;
       }
@@ -50,6 +56,19 @@ public class GameLogic {
     BoardCoordinates startCoordinatesForMultipleJump = null;
     while (true) {
       String userInput = console.getUserInput();
+      if ("undo".equals(userInput.toLowerCase().trim())) {
+        try {
+          Player playerOfUndoneMove = board.undoLastTurn();
+          if (playerOfUndoneMove.equals(player)) {
+            continue;
+          } else {
+            return false;
+          }
+        } catch (Board.NoPreviousMovesException e) {
+          console.print("There were no previous moves to undo. Please make a move.");
+          continue;
+        }
+      }
       Move move;
       try {
         move = Move.parse(player, userInput);
@@ -78,7 +97,8 @@ public class GameLogic {
 
       if (executedMove.jumpGambleResult() == JumpGambleResult.WON) {
         console.print("The gamble has been won, " + player + " can play again.");
-        console.print(player + ", make your move");
+        console.print(
+            player + ", make your move. Or type 'undo' to go back to the start of your turn.");
         continue;
       }
 
@@ -92,6 +112,7 @@ public class GameLogic {
         return false;
       }
       console.print("Multiple jump move for " + player + ". Enter your next jump.");
+      console.print("Or type 'undo' to go back to the start of your turn.");
       startCoordinatesForMultipleJump = move.end();
     }
   }

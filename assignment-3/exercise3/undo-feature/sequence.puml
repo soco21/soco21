@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+activate GameLogic
+activate Console
+activate Board
+activate BoardCommand
+activate Store
+GameLogic --> Console: getInput
+GameLogic <-- Console: "undo"
+GameLogic --> Board: undoLastTurn
+loop while Player of command is the same
+    Board --> BoardCommand: undo
+    loop while command is not finished
+        BoardCommand --> Store: addPiece/removePiece
+        Store --> BoardCommand
+    end
+    Board --> Board: remove Command from list
+    deactivate BoardCommand
+end
+GameLogic <-- Board: Player of which the commands were undone
+GameLogic --> GameLogic: switch Player if necessary
+
+@enduml

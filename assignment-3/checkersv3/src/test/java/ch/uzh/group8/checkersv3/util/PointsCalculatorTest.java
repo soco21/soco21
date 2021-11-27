@@ -1,12 +1,13 @@
 package ch.uzh.group8.checkersv3.util;
 
-import static ch.uzh.group8.checkersv3.dom.Player.*;
+import static ch.uzh.group8.checkersv3.dom.Player.PLAYER_RED;
+import static ch.uzh.group8.checkersv3.dom.Player.PLAYER_WHITE;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.*;
 
-import ch.uzh.group8.checkersv3.dom.Board;
 import ch.uzh.group8.checkersv3.dom.Piece;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import java.util.Map;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;

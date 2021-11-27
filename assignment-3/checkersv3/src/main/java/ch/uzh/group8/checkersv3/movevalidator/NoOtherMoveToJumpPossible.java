@@ -3,7 +3,11 @@ package ch.uzh.group8.checkersv3.movevalidator;
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Column;
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Row;
 
-import ch.uzh.group8.checkersv3.dom.*;
+import ch.uzh.group8.checkersv3.dom.BoardCoordinates;
+import ch.uzh.group8.checkersv3.dom.Move;
+import ch.uzh.group8.checkersv3.dom.Piece;
+import ch.uzh.group8.checkersv3.dom.Player;
+import ch.uzh.group8.checkersv3.dom.board.Board;
 import java.util.List;
 import java.util.Optional;
 
