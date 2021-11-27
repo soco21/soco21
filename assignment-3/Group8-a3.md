@@ -88,7 +88,52 @@ Describe why these classes are important in your system’s design and what thei
 
 #### UML Diagram
 
+![Command pattern sequence diagram](global-class-diagram.svg)
+
 #### Description of the 10 most important classes and their responsibilities
+
+The 10 most important classes in are the following:
+
+1. GameLogic
+Controls the workflow of the game 
+Responsibilities:
+* Decide which players turn it is
+* when to parse input
+* when to decide if the chosen move is valid
+* delegate the execution of gamble or not to MoveExecutor class
+* when the win conditions should be checked
+* terminate the game if the win condition was met
+* decide which player has to be asked for the next input
+2. Board
+* Apply the valid changes applied by MoveExecutor
+* Store the history of changes
+* Apply the reversal of previous changes asked by GameLogic
+* Decide if a piece converts to a king at the end of a move
+3. Move
+* Parse the input of the player and convert the text input into the domain language
+* Store the start, the end, the player and the result of a possible gamble for a move
+* Generate the possible moves of a given BoardCoordinate and distances for a player
+* Calculate the coordinates between start and end of the move
+* Decide if the move itself is a jump move
+4. WinCondition
+* Decide if the given player has won on the given board
+5. MoveExecutor
+* If the move to execute is a jump move, guide the player through the gamble process
+* If the move is not a jump move, execute it without gamble process
+6. Store
+* Store the state of the board
+* Remove a piece at BoardCoordinates
+* Add a piece at BoardCoordinates
+* Return the piece of given BoardCoordinates if there is one
+7. BoardPrinter
+* Print the current state of the Board to the console
+8. NoOtherJumpMovePossible
+* Check if no other jump move is possible for the player if he did not make a jump move.
+* decide if a jump move is possible from the given coordinates
+9. MoveIsDiagonal
+* Check that the given move is diagonal
+10. Main
+* Instantiate the classes and start the game
 
 ### Task 2
 
@@ -103,8 +148,14 @@ distribution of the line coverage.
 
 #### Overall line coverage report
 
+The overall line coverage is currently 97 %.
+The source of this coverage report is the jacoco coverage report tool,
+of which the results can be seen in our continuous integration builds.
+[Link to Builds](https://github.com/soco21/soco21-group8/actions?query=branch%3Amain)
+
 #### Histogram of the line coverage distribution
 
+![Histogram of the line coverage distribution](exercise2/line-coverage-histogram.png)
 
 ## Exercise 3
 
