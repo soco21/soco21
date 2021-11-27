@@ -5,11 +5,12 @@ import ch.uzh.group8.checkersv3.movevalidator.*;
 import ch.uzh.group8.checkersv3.util.BoardPrinter;
 import ch.uzh.group8.checkersv3.util.CoinTosser;
 import ch.uzh.group8.checkersv3.util.Console;
+import ch.uzh.group8.checkersv3.util.PointsCalculator;
 import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
-    GameLogic gameLogic = createGameLogic(new Console(), new CoinTosser());
+    GameLogic gameLogic = createGameLogic(new Console(), new CoinTosser(new PointsCalculator()));
 
     gameLogic.run();
   }

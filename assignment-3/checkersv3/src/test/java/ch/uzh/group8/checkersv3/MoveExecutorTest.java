@@ -93,7 +93,7 @@ class MoveExecutorTest {
   @Test
   public void execute_gamble_win_move_if_player_types_yes_and_wins() {
     when(console.getUserInput()).thenReturn("yes");
-    when(coinTosser.toss()).thenReturn(Result.HEADS);
+    when(coinTosser.toss(notNull(), notNull())).thenReturn(Result.HEADS);
 
     Move executedMove = moveExecutor.executeMove(JUMP_MOVE);
 
@@ -104,7 +104,7 @@ class MoveExecutorTest {
   @Test
   public void execute_gamble_lost_move_if_player_types_yes_and_loses() {
     when(console.getUserInput()).thenReturn("yes");
-    when(coinTosser.toss()).thenReturn(Result.TAILS);
+    when(coinTosser.toss(notNull(), notNull())).thenReturn(Result.TAILS);
 
     Move executedMove = moveExecutor.executeMove(JUMP_MOVE);
 

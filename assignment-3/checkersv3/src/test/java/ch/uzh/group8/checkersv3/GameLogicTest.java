@@ -257,7 +257,7 @@ class GameLogicTest {
 
   @Test
   public void let_same_player_play_again_if_jumpgamble_is_won() {
-    when(coinTosser.toss()).thenReturn(Result.HEADS);
+    when(coinTosser.toss(notNull(), notNull())).thenReturn(Result.HEADS);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
         // RED
@@ -285,7 +285,7 @@ class GameLogicTest {
 
   @Test
   public void switch_player_if_jumpgamble_is_lost() {
-    when(coinTosser.toss()).thenReturn(Result.TAILS);
+    when(coinTosser.toss(notNull(), notNull())).thenReturn(Result.TAILS);
     InOrder inOrder = inOrder(console);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
@@ -351,7 +351,7 @@ class GameLogicTest {
 
   @Test
   public void undo_current_move_if_player_inputs_undo_during_turn() {
-    when(coinTosser.toss()).thenReturn(Result.HEADS);
+    when(coinTosser.toss(notNull(), notNull())).thenReturn(Result.HEADS);
     InOrder inOrder = inOrder(console);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())

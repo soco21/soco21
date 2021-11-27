@@ -56,7 +56,7 @@ public class MoveExecutor {
       board.executeMove(move);
       return move;
     }
-    CoinTosser.Result tossResult = coinTosser.toss();
+    CoinTosser.Result tossResult = coinTosser.toss(board, move.player());
     JumpGambleResult jumpGambleResult =
         tossResult == HEADS ? JumpGambleResult.WON : JumpGambleResult.LOST;
     console.print("Coin toss resulted in " + tossResult + ", the gamble was: " + jumpGambleResult);

@@ -1,13 +1,29 @@
 package ch.uzh.group8.checkersv3.util;
 
+import ch.uzh.group8.checkersv3.dom.Player;
+import ch.uzh.group8.checkersv3.dom.board.Board;
+import java.util.Map;
 import java.util.Random;
 
 public class CoinTosser {
-  private final Random random = new Random();
+  private final PointsCalculator pointsCalculator;
+  private final Random random;
 
-  public Result toss() {
-    int nextInt = random.nextInt(2);
-    return nextInt == 1 ? Result.HEADS : Result.TAILS;
+  public CoinTosser(PointsCalculator pointsCalculator) {
+    this(pointsCalculator, new Random());
+  }
+
+  CoinTosser(PointsCalculator pointsCalculator, Random random) {
+    this.pointsCalculator = pointsCalculator;
+    this.random = random;
+  }
+
+  public Result toss(Board board, Player player) {
+    Map<Player, Integer> playerPointsMap = pointsCalculator.calculatePoints(board);
+    int totalPoints =
+        playerPointsMap.get(Player.PLAYER_RED) + playerPointsMap.get(Player.PLAYER_WHITE);
+    float winChance = 1 - playerPointsMap.get(player).floatValue() / totalPoints;
+    return random.nextFloat() <= winChance ? Result.HEADS : Result.TAILS;
   }
 
   public enum Result {
