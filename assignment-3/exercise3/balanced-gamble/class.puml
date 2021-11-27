@@ -198,7 +198,7 @@ package ch.uzh.group8.checkersv3 {
             + void printBoard(Board board)
         }
 
-        class CoinTosser {
+        class CoinTosser #71B93E {
             - PointsCalculator pointsCalculator
             - Random random
             + Result toss(Board board, Player player)
@@ -209,7 +209,7 @@ package ch.uzh.group8.checkersv3 {
             TAILS
         }
 
-        class PointsCalculator {
+        class PointsCalculator #71B93E {
             + Map<Player, Integer> calculatePoints(Board board)
         }
 

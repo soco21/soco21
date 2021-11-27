@@ -187,6 +187,18 @@ Afterwards you must implement the requirements.
 
 ##### Description of the requirements
 
+To make the use of the gamble feature more interesting, we will increase the chances of the player
+with fewer pieces for a successful gamble. For that we will calculate a score for each player.
+For each normal piece, a player gets one point. For each king a player gets two points.
+The chance of a player to win a gamble is calculated as follows:
+winChance = (1 - (player score/total score on the board))
+
+Example:
+Player WHITE has 4 Pieces and 1 King, which is a score of 6.  
+Player RED has 10 Pieces, which is a score of 10.  
+If player WHITE gambles, he has a win chance of (1 -  6/16) = 10/16 = 62.5%  
+If player RED gambles, he has a win chance of (1 - 10/16) = 6/16 = 37.5%  
+
 #### Task 2
 
 During the analysis and design phases of this extension use responsibility driven design and UML
@@ -194,6 +206,22 @@ During the analysis and design phases of this extension use responsibility drive
 
 ##### Responsibility Driven Design
 
-##### CRC Cards
+We have 2 new Responsibilities:
+1. calculate the score of the players.
+This responsibility was given to the new class PointsCalculator.
+2. Use the calculated score to influence the chance to win a gamble
+This responsibility was given to the existing CoinTosser class.
+
+![Balanced gamble CRC Cards](exercise3/balanced-gamble/crc.svg)
 
 ##### UML
+
+##### Sequence Diagram
+
+![Balanced gamble sequence diagram](exercise3/balanced-gamble/sequence.svg)
+
+##### Class Diagram
+
+The changed classes are in green.
+
+![Balanced gamble class diagram](exercise3/balanced-gamble/class.svg)

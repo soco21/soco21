@@ -1,0 +1,162 @@
+@startuml
+
+rectangle "Main Classes" {
+    rectangle "GameLogic" as gamelogic {
+        note as gamelogicnote
+          |= Responsibilities |= Collaborators |
+          | knows which players play | Board |
+          | print welcome message | List<Rule> |
+          | Print instructions to player | List<WinCondition> |
+          | decide which player should move (attention, double Jump rule) | BoardPrinter |
+          | check win conditions ||
+          | print win message ||
+          | check that input move has correct format ||
+          | check if move is valid ||
+          | get move from player ||
+          | print error message ||
+          | if JumpGambleResult is won, same player can play again | JumpGambleResult, MoveExecutor |
+          | if input is 'undo' -> trigger undo | Board |
+        endnote
+    }
+
+    rectangle "MoveExecutor" as moveexecutor {
+       note as moveexecutornote
+         |= Responsibilities |= Collaborators |
+         | execute normal move with board | Board, Move |
+         | ask if player wants to gamble | Console |
+         | toss coin | CoinTosser |
+         | execute move with JumpGambleResult | Board, Move, JumpGambleResult |
+       endnote
+    }
+}
+
+rectangle "Data classes" {
+    rectangle "Board" as board {
+        note as boardnote
+          |= Responsibilities |= Collaborators |
+          | create init state ||
+          | move piece ||
+          | decide if piece was captured and maybe remove piece ||
+          | Decide if transform to King ||
+          | also execute jumpgambleresult moves | JumpGambleResult |
+          | store previously executed commands | Store, JumpGambleLostMove, JumpMove, SimpleMove |
+          | undo moves | JumpGambleLostMove, JumpMove, SimpleMove |
+        endnote
+    }
+
+    rectangle Move as move {
+      note as Move
+        |= Move |= |
+        |= Responsibilities |= Collaborators |
+        | hold move parameters (From field A to field B) ||
+        | decide if move is a jump move or not ||
+        | hold the gamble result ||
+      endnote
+    }
+
+    rectangle JumpGambleResult as jumpGambleResult {
+        note as jumpGambleResultNote
+            |= Responsibilities |= Collaborators |
+            | represent the result of the gamble, possible are: NO_GAMBLE, WON, LOST ||
+        endnote
+    }
+}
+
+rectangle "Helper classes" {
+    rectangle "Console" as console {
+        note as consolenote
+          |= Responsibilities |= Collaborators |
+          | get input from console ||
+          | print output ||
+        endnote
+    }
+
+    rectangle "CoinTosser" as cointosser {
+        note as cointossernote
+          |= Responsibilities |= Collaborators |
+          |  <color: #006400> use the score of the player to influence the chance for HEADS and TAILS | pointscalculator|
+          | return HEADS or TAILS randomly ||
+        endnote
+    }
+    
+    rectangle "PointsCalculator" as pointscalculator #006400 {
+        note as pointscalculatornote
+            |= Responsibilities |= Collaborators |
+            | calculate the score for all players | Board |
+        endnote
+    }
+
+    cointosser --> pointscalculator
+}
+
+rectangle "Internal Classes of Package Board" {
+    rectangle "JumpGambleLostMove" as JumpGambleLostMove {
+        note as JumpGambleLostMoveNote
+          |= Responsibilities |= Collaborators |
+          | execute a JumpGambleLostMove | Store |
+          | undo a JumpGambleLostMove | Store |
+        endnote
+    }
+    
+    rectangle "JumpMove" as JumpMove {
+        note as JumpMoveNote
+          |= Responsibilities |= Collaborators |
+          | execute a JumpMove | Store |
+          | undo a JumpMove | Store |
+        endnote
+    }
+    
+    rectangle "SimpleMove" as SimpleMove {
+        note as SimpleMoveNote
+          |= Responsibilities |= Collaborators |
+          | execute a SimpleMove | Store |
+          | undo a SimpleMove | Store |
+        endnote
+    }
+
+    rectangle "Store" as Store {
+        note as StoreNote
+          |= Responsibilities |= Collaborators |
+          | store the state of the board | |
+          | provide the possibility to add a piece | |
+          | provide the possibility to remove a piece | |
+        endnote
+    }
+
+    JumpGambleLostMove --> Store
+    JumpMove --> Store
+    SimpleMove --> Store
+}
+
+gamelogic --> console
+gamelogic --> board
+gamelogic --> moveexecutor
+moveexecutor --> console
+moveexecutor --> board
+moveexecutor --> cointosser
+moveexecutor --> move
+move --> jumpGambleResult
+
+board --> JumpGambleLostMove
+board --> JumpMove
+board --> SimpleMove
+Store <-- board
+
+rectangle "Legend" {
+    rectangle "Existing class" {
+        note as existingclass
+          |= Responsibilities |= Collaborators |
+          | existing responsability ||
+          |  <color: #006400>new responsability ||
+        endnote
+    }
+
+    rectangle "New class" #006400 {
+        note as newclass
+          |= Responsibilities |= Collaborators |
+          | responsability ||
+        endnote
+    }
+}
+
+@enduml

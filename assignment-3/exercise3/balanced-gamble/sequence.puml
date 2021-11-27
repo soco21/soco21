@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+activate CoinTosser
+activate PointsCalculator
+activate Board
+
+--> CoinTosser: toss(Board, Player)
+CoinTosser --> PointsCalculator: calculatePoints
+loop foreach BoardCoordinate
+    PointsCalculator --> Board: getPieceAt
+    PointsCalculator --> PointsCalculator: sum up points
+end
+CoinTosser <-- PointsCalculator: return score
+CoinTosser --> CoinTosser: calculate chance for Player
+CoinTosser --> CoinTosser: toss coin with calculated chances
+<-- CoinTosser: return HEADS/TAILS
+
+@enduml
