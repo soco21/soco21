@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+Main --> Console: import Console
+Console --> Console: instantiate static final field instance
+Main --> Console: getInstance
+Main <-- Console: the one and only instance of Console
+@enduml

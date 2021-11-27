@@ -214,6 +214,9 @@ package ch.uzh.group8.checkersv3 {
         }
 
         class Console {
+            - {static} Console instance
+            + {static} Console getInstance()
+            - Console()
             + void print(String string)
             + String getUserInput()
         }

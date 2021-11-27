@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Console {
+    - {static} Console instance
+    + {static} Console getInstance()
+    - Console()
+    + void print(String string)
+    + String getUserInput()
+}
+
+@enduml

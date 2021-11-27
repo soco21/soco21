@@ -64,6 +64,30 @@ Write a natural language description of why and how the pattern is implemented i
 
 #### Description of why and how the pattern is implemented
 
+For the second pattern, we use the Singleton pattern, because it's the easiest one.
+Another advantage is that we can save the other patterns for later because of the
+"excluding the pattern you already implemented" requirement.
+
+Opinion of Lucius Bachmann:
+I recommend to never use the Singleton antipattern, because it makes testing more difficult and
+adds a globally accessible object to the whole module (and all dependant modules).
+A better solution is to use a Dependency Injection framework like spring boot, the DI of quarkus or google juice,
+because they have ways to ensure that only one instance of an object exists without making
+testing harder. If that is not feasible due to the small size of a project, it's better to use "Pure DI"
+[https://blog.ploeh.dk/2014/06/10/pure-di/](https://blog.ploeh.dk/2014/06/10/pure-di/)
+and just instantiate the class once.
+
+Because the Singleton pattern is dangerous, we use a class at the edge of our system
+where we don't have to change much and it does not cause much damage.
+For that we can use the Console class, which is anyway a wrapper around the
+System.out.println function and the System.in InputStream, that allows us to write tests more easily.
+Because the System.in InputStream does not document anything about Thread Safety, there should only be one
+instance of Console. And that can be achieved with the Singleton pattern.
+
+For the Singleton pattern in its eager variant, we make the constructor of a class
+private, and instantiate a private static final field with the only instance of the class
+which should be created. Then we offer a public static method getInstance where
+the user of the class can get the instance.
 
 #### Task 2
 
@@ -71,11 +95,17 @@ Make a sequence diagram of how the pattern works dynamically in your code
 
 #### Sequence diagram
 
+![Singleton pattern sequence diagram](exercise1/singleton-pattern/sequence.svg)
+
 #### Task 3
 
 Make a class diagram of how the pattern is structured statically in your code
 
 #### Class diagram
+
+Because the Singleton pattern is implemented in one class, the class diagram only consists of one class.
+
+![Singleton pattern class diagram](exercise1/singleton-pattern/class.svg)
 
 ## Exercise 2
 
