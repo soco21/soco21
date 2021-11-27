@@ -1,12 +1,11 @@
 package ch.uzh.group8.checkersv3;
 
+import static ch.uzh.group8.checkersv3.util.CoinTosser.Result;
 import static org.mockito.Mockito.*;
 
-import ch.uzh.group8.checkersv3.dom.Board;
-import ch.uzh.group8.checkersv3.dom.Move;
 import ch.uzh.group8.checkersv3.dom.Player;
+import ch.uzh.group8.checkersv3.util.CoinTosser;
 import ch.uzh.group8.checkersv3.util.Console;
-import ch.uzh.group8.checkersv3.util.Gambler;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -17,8 +16,8 @@ class GameLogicTest {
   public void end_game_with_winner() {
     Console console = mock(Console.class);
     doCallRealMethod().when(console).print(notNull());
-    Gambler gambler = mock(Gambler.class);
-    GameLogic gameLogic = Main.createGameLogic(console, gambler);
+    CoinTosser coinTosser = mock(CoinTosser.class);
+    GameLogic gameLogic = Main.createGameLogic(console, coinTosser);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
         // RED
@@ -219,8 +218,8 @@ class GameLogicTest {
   public void only_allow_multiple_jump_with_same_piece() {
     Console console = mock(Console.class);
     doCallRealMethod().when(console).print(notNull());
-    Gambler gambler = mock(Gambler.class);
-    GameLogic gameLogic = Main.createGameLogic(console, gambler);
+    CoinTosser coinTosser = mock(CoinTosser.class);
+    GameLogic gameLogic = Main.createGameLogic(console, coinTosser);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
         // RED
@@ -253,12 +252,10 @@ class GameLogicTest {
   @Test
   public void let_same_player_play_again_if_jumpgamble_is_won() {
     Console console = mock(Console.class);
-    Board board = mock(Board.class);
-    Move move = mock(Move.class);
     doCallRealMethod().when(console).print(notNull());
-    Gambler gambler = mock(Gambler.class);
-    when(gambler.gambleExecutor()).thenReturn(true);
-    GameLogic gameLogic = Main.createGameLogic(console, gambler);
+    CoinTosser coinTosser = mock(CoinTosser.class);
+    when(coinTosser.toss(notNull(), notNull())).thenReturn(Result.HEADS);
+    GameLogic gameLogic = Main.createGameLogic(console, coinTosser);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
         // RED
@@ -288,11 +285,9 @@ class GameLogicTest {
   public void switch_player_if_jumpgamble_is_lost() {
     Console console = mock(Console.class);
     doCallRealMethod().when(console).print(notNull());
-    Gambler gambler = mock(Gambler.class);
-    Move move = mock(Move.class);
-    Board board = mock(Board.class);
-    when(gambler.gambleExecutor()).thenReturn(false);
-    GameLogic gameLogic = Main.createGameLogic(console, gambler);
+    CoinTosser coinTosser = mock(CoinTosser.class);
+    when(coinTosser.toss(notNull(), notNull())).thenReturn(Result.TAILS);
+    GameLogic gameLogic = Main.createGameLogic(console, coinTosser);
     InOrder inOrder = inOrder(console);
     // numbers were taken from: http://www.quadibloc.com/other/bo1211.htm
     when(console.getUserInput())
@@ -316,7 +311,7 @@ class GameLogicTest {
 
     Assertions.assertThrows(RuntimeException.class, gameLogic::run);
 
-    inOrder.verify(console).print("Gamble was lost");
+    inOrder.verify(console).print("Coin toss resulted in TAILS, the gamble was: LOST");
     inOrder.verify(console).print("5   | [   ] [   ] [   ] [   ] [R_P] [   ] [   ] [   ] |   5");
   }
 

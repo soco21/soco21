@@ -2,14 +2,15 @@ package ch.uzh.group8.checkersv3;
 
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Column.*;
 import static ch.uzh.group8.checkersv3.dom.BoardCoordinates.Row.*;
+import static ch.uzh.group8.checkersv3.util.CoinTosser.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.sameInstance;
 import static org.mockito.ArgumentMatchers.same;
 import static org.mockito.Mockito.*;
 
 import ch.uzh.group8.checkersv3.dom.*;
+import ch.uzh.group8.checkersv3.util.CoinTosser;
 import ch.uzh.group8.checkersv3.util.Console;
-import ch.uzh.group8.checkersv3.util.Gambler;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,19 +26,17 @@ class MoveExecutorTest {
       JUMP_MOVE.withJumpGambleResult(JumpGambleResult.WON);
   private static final Move JUMP_WITH_LOST_GAMBLE_RESULT =
       JUMP_MOVE.withJumpGambleResult(JumpGambleResult.LOST);
-  private Gambler gambler;
+  private CoinTosser coinTosser;
   private Board board;
   private MoveExecutor moveExecutor;
   private Console console;
-  private Move move;
 
   @BeforeEach
   public void setup() {
-    gambler = mock(Gambler.class);
+    coinTosser = mock(CoinTosser.class);
     board = mock(Board.class);
     console = mock(Console.class);
-    move = mock(Move.class);
-    moveExecutor = new MoveExecutor(board, gambler, console);
+    moveExecutor = new MoveExecutor(board, coinTosser, console);
   }
 
   @Test
@@ -90,7 +89,7 @@ class MoveExecutorTest {
   @Test
   public void execute_gamble_win_move_if_player_types_yes_and_wins() {
     when(console.getUserInput()).thenReturn("yes");
-    when(gambler.gambleExecutor()).thenReturn(true);
+    when(coinTosser.toss(notNull(), notNull())).thenReturn(Result.HEADS);
 
     Move executedMove = moveExecutor.executeMove(JUMP_MOVE);
 
@@ -101,7 +100,7 @@ class MoveExecutorTest {
   @Test
   public void execute_gamble_lost_move_if_player_types_yes_and_loses() {
     when(console.getUserInput()).thenReturn("yes");
-    when(gambler.gambleExecutor()).thenReturn(false);
+    when(coinTosser.toss(notNull(), notNull())).thenReturn(Result.TAILS);
 
     Move executedMove = moveExecutor.executeMove(JUMP_MOVE);
 
