@@ -182,6 +182,11 @@ The overall line coverage is currently 97 %.
 The source of this coverage report is the jacoco coverage report tool,
 of which the results can be seen in our continuous integration builds.
 [Link to Builds](https://github.com/soco21/soco21-group8/actions?query=branch%3Amain)
+Because the test report was done before all features of exercise 3 were implemented,
+some classes may be missing. The test report was done with the jacoco report of commit 
+[https://github.com/soco21/soco21-group8/tree/f0b5a0310956e25cb3f61184efdd95a74824d07c](https://github.com/soco21/soco21-group8/tree/f0b5a0310956e25cb3f61184efdd95a74824d07c),
+the corresponding build can be found here: [https://github.com/soco21/soco21-group8/actions/runs/1510869722](https://github.com/soco21/soco21-group8/actions/runs/1510869722).
+(Though from a later commit, but without changes to the code)
 
 #### Histogram of the line coverage distribution
 
