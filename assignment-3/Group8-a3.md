@@ -118,10 +118,20 @@ Describe why these classes are important in your system’s design and what thei
 
 #### UML Diagram
 
-![Command pattern sequence diagram](global-class-diagram.svg)
+![Global class diagram](global-class-diagram.svg)
 
 #### Description of the 10 most important classes and their responsibilities
 
+For the 10 most important classes, we started with ones with crucial logic like GameLogic, Board + Store and MoveExecutor.
+Store is just an internal class of the ch.uzh.group8.checkersv3.dom.board package, but it holds the state of the board
+and is thus important.
+The Main class is also important because it bootstraps the application and starts the game.
+It became number 1 because it's the entry point for playing the game.
+Move is also central to our application even though it started as a data class. But it also contains important factory
+methods. As the next class we chose WinCondition, because it makes it possible that one can win the game.
+Then it got more difficult, but for number 8 we chose BoardPrinter, because it's very
+important for the user that he sees the current state of the board.
+For 9 and 10 we chose 2 of the MoveValidator interface implementations.
 The 10 most important classes in are the following:
 
 1. Main

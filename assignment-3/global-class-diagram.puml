@@ -256,6 +256,11 @@ package ch.uzh.group8.checkersv3 {
         + boolean hasPlayerWon(Player player, Board board)
     }
 
+    class Main {
+        + {static} void main(String[] args)
+        + {static} GameLogic createGameLogic(Console console, CoinTosser coinTosser)
+    }
+
     GameLogic --> Console
     GameLogic --> Board
     GameLogic *-- "many" MoveValidator
@@ -269,6 +274,8 @@ package ch.uzh.group8.checkersv3 {
     MoveExecutor --> Console
 
     WinCondition *-- "many" MoveValidator
+
+    Main --> GameLogic: instantiate
 }
 
 
