@@ -47,4 +47,4 @@ and the artifact name `assignment-${number}-exercise${number}` and the parent [.
 4. Reference this main class in your pom.xml.
 5. Copy [./assignment-0/exercise1/.mvn](./assignment-0/exercise1/.mvn) to your exercise.  
 This step is needed, because the spotless-maven-plugin uses internal java api, which
-is not exported by default since java 16. 
+is not exported by default since java 16.
