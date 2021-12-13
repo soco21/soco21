@@ -1,0 +1,55 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+
+:set saldo to 100;
+:initialize pack with 6 decks (a 52 cards);
+repeat
+    :print player saldo;
+    if (player wants to stay) then (yes)
+    else (no)
+        :print final saldo;
+        stop
+    endif
+    while (0 < currentBetAmount <= saldo)
+        :ask player for bet;
+    endwhile
+    if (remaining cards < 100) then (yes)
+        :reinitialize pack with 6 decks (a 52 cards);
+    endif
+    :deal 2 cards to player and dealer;
+    :show cards;
+    note right: show both cards of player and 1 card of dealer
+    while (while player wants to hit) is (yes)
+        :deal card to player;
+        if (player is busted?) then (yes)
+            break;
+        else (no)
+        endif
+    endwhile (no)
+    if (player is busted?) then (yes)
+    else (no)
+        :turn second card of bank;
+        while (dealerScore < 17) is (yes)
+            :deal card to dealer;
+            if (dealer is busted) then (yes)
+                break;
+            else (no)
+            endif
+        endwhile (no)
+    endif
+    switch (result?)
+    case (playerWon)
+        :increase saldo by bet;
+    case (dealerWon)
+        :decrease saldo by bet;
+    case (tie)
+        :leave saldo as it is;
+    endswitch
+    if (playerSaldo == 0) then (yes)
+        :print you lost all your money;
+        stop
+    endif
+repeat while
+@enduml
