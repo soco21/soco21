@@ -1,0 +1,127 @@
+@startuml
+
+rectangle "flow control classes" {
+    rectangle BlackJack [
+        BlackJack
+        |= Responsibilities |= Collaborators |
+        | Print Players score | Player |
+        | Ask Player if he wants to play | Player |
+        | Start Round | Round |
+        | Check if Player still has money | Player |
+    ]
+
+    rectangle Round [
+        Round
+        |= Responsibilities |= Collaborators |
+        | reset hand of player and dealer | Player, Dealer|
+        | force Player to bet | Player |
+        | do players play | Play |
+        | do dealers play | Play |
+        | apply the result | |
+    ]
+
+    rectangle Play [
+        Play
+        |= Responsibilities |= Collaborators |
+        | ask player/dealer if he wants to hit | Player, Dealer |
+        | check if busted | Player, Dealer |
+    ]
+
+    BlackJack --> Round
+    Round --> Play
+}
+
+rectangle "classes with state" {
+    rectangle Dealer [
+        Dealer
+        |= Responsibilities |= Collaborators |
+        | hold dealer hand | Hand |
+        | print dealer hand | Hand |
+        | decide if dealer needs to hit | ScoreCalculator |
+    ]
+
+    rectangle Player [
+        Player
+        |= Responsibilities |= Collaborators |
+        | hold player saldo | |
+        | print saldo | |
+        | ask player if he wants to play | |
+        | get valid player bet | |
+        | hold current bet | |
+        | hold players hand | Hand |
+        | print player hand | Hand |
+        | get valid hit/stay | ScoreCalculator |
+    ]
+
+    rectangle Pack [
+        Pack
+        |= Responsibilities |= Collaborators |
+        | initialize the pack | Card |
+        | hold the pack with which currently is played | |
+        | provide a card | |
+        | reinitialize the pack if there are less than 100 cards | Card |
+    ]
+}
+
+rectangle "util classes" {
+
+    rectangle Console [
+        Console
+        |= Responsibilities |= Collaborators |
+        | Read from the stdin ||
+        | Write to stdout ||
+    ]
+}
+
+rectangle "data classes" {
+
+    rectangle Hand [
+        Hand
+        |= Responsibilities |= Collaborators |
+        | Hold the list of card for a player | Card |
+        | calculate the score | Card |
+    ]
+
+    rectangle Card [
+        Card
+        |= Responsibilities |= Collaborators |
+        | hold rank | Rank |
+        | hold suit | Suit |
+        | generate a Deck of all possible cards ||
+    ]
+
+    rectangle Rank [
+        Rank
+        |= Responsibilities |= Collaborators |
+        | Hold the concept of Rank | |
+    ]
+
+    rectangle Suit [
+        Suit
+        |= Responsibilities |= Collaborators |
+        | Hold the concept uf Suit | |
+    ]
+
+    Hand --> Card
+    Card --> Rank
+    Card --> Suit
+}
+
+BlackJack --> Player
+
+Round --> Player
+Round --> Dealer
+
+Play --> Dealer : either Dealer or Player
+Play --> Player : either Dealer or Player
+Play --> Pack
+
+Player --> Hand
+Dealer --> Hand
+
+Pack -> Card
+
+Player --> Console
+Dealer --> Console
+
+@enduml
