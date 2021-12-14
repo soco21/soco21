@@ -1,19 +1,17 @@
 package ch.uzh.group8.assignment4.exercise1;
 
-public class Card {
-  private Suit suit;
-  private Rank value;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-  public Card(Suit suit, Rank value) {
-    this.value = value;
-    this.suit = suit;
+public record Card(Suit suit, Rank rank) {
+  public static Card of(Suit suit, Rank rank) {
+    return new Card(suit, rank);
   }
 
-  public Rank getValue() {
-    return this.value;
-  }
-
-  public String toString() {
-    return this.value.toString() + "-" + this.suit.toString();
+  public static Set<Card> createDeck() {
+    return Arrays.stream(Suit.values())
+        .flatMap(suit -> Arrays.stream(Rank.values()).map(rank -> Card.of(suit, rank)))
+        .collect(Collectors.toSet());
   }
 }
