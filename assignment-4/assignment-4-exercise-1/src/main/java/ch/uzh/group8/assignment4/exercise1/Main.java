@@ -1,21 +1,15 @@
 package ch.uzh.group8.assignment4.exercise1;
 
+import ch.uzh.group8.assignment4.exercise1.util.Console;
+
 public class Main {
   public static void main(String[] args) {
-
-    Deck deck = new Deck();
-    deck.createDeck();
-
-    Hand playerHand = new Hand();
-    playerHand.draw(deck);
-    playerHand.draw(deck);
-
-    Hand dealerHand = new Hand();
-    dealerHand.draw(deck);
-    dealerHand.draw(deck);
-
-    System.out.println(deck);
-    System.out.println(playerHand);
-    System.out.println(dealerHand);
+    Pack pack = new Pack();
+    Console console = new Console();
+    HumanPlayer humanPlayer = new HumanPlayer(console);
+    Dealer dealer = new Dealer(console);
+    Play play = new Play(pack, console);
+    BlackJack blackJack = new BlackJack(console, humanPlayer, dealer, pack, play);
+    blackJack.run();
   }
 }
