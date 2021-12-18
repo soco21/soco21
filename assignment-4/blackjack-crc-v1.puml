@@ -1,0 +1,47 @@
+@startuml
+    rectangle Main [
+        Main
+        |= Responsibilities |= Collaborators |
+        | Hold player bet ||
+        | Hold players saldo ||
+        | Start each Round| Deck, Hand |
+        | ask player if they want to hit or stay ||
+        | reveal player and dealer hand values| Hand|
+        | identify a bust ||
+        | add won bet to players saldo ||
+    ]
+
+    rectangle Deck [
+        Deck
+        |= Responsibilities |= Collaborators |
+        | Create a deck of cards | Card |
+        | shuffle deck ||
+    ]
+
+    rectangle Hand [
+        Hand
+        |= Responsibilities |= Collaborators |
+        | Hold the list of card for a player | Deck |
+        | calculate the score | Card |
+    ]
+
+    rectangle Card [
+        Card
+        |= Responsibilities |= Collaborators |
+        | hold rank | Rank |
+        | hold suit | Suit |
+    ]
+
+    rectangle Rank [
+        Rank
+        |= Responsibilities |= Collaborators |
+        | Hold the concept of Rank | |
+    ]
+
+    rectangle Suit [
+        Suit
+        |= Responsibilities |= Collaborators |
+        | Hold the concept of Suit | |
+    ]
+
+@enduml
