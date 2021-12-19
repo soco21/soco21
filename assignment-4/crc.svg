@@ -29,7 +29,7 @@ link Player to Hand--><path codeLine="117" d="M1143,800.162 C1143,827.128 1143,8
 link Dealer to Hand--><path codeLine="118" d="M835.962,759.053 C869.82,779.705 909.521,803.432 946,824 C980.462,843.431 1018.87,863.878 1052.56,881.418 " fill="none" id="Dealer-to-Hand" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1057.07,883.763,1050.9205,876.0699,1052.6309,881.462,1047.2389,883.1725,1057.07,883.763" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b8b3019cfe85e076e293cd57ef92a70b]
 link Pack to Card--><path codeLine="120" d="M326.819,767.69 C379.665,835.369 475.086,942.864 584,997 C646.44,1028.036 808.975,1051.975 945.055,1067.414 " fill="none" id="Pack-to-Card" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="950.291,1068.006,941.797,1063.0208,945.3226,1067.4446,940.8988,1070.9702,950.291,1068.006" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c4faf1eb9de65130f99cd748f90cdf2c]
 link Player to Console--><path codeLine="122" d="M988.334,800.034 C974.079,808.239 959.809,816.333 946,824 C910.973,843.447 871.959,863.979 837.82,881.584 " fill="none" id="Player-to-Console" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="833.252,883.937,843.0848,883.3742,837.6975,881.6485,839.4232,876.2613,833.252,883.937" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2c971698b1012c911428e23d1a54f56d]
-link Dealer to Console--><path codeLine="123" d="M751.593,759.08 C750.609,795.153 749.304,843.034 748.336,878.52 " fill="none" id="Dealer-to-Console" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="748.196,883.663,752.4414,874.7761,748.3332,878.6649,744.4444,874.5567,748.196,883.663" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3df6e037191fc358d4a30e45f56ec204]
+link Dealer to Console--><path codeLine="123" d="M751.593,759.08 C750.609,795.153 749.304,843.034 748.336,878.52 " fill="none" id="Dealer-to-Console" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="748.196,883.663,752.4414,874.7761,748.3332,878.6649,744.4444,874.5567,748.196,883.663" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f53802831339eac635904a9837bebf49]
 @startuml
 rectangle "flow control classes" {
     rectangle BlackJack [
@@ -156,7 +156,7 @@ Player - -> Console
 Dealer - -> Console
 @enduml
 
-PlantUML version 1.2021.17beta1(Unknown compile time)
+PlantUML version 1.2021.17beta3(Unknown compile time)
 (GPL source distribution)
 Java Runtime: Java(TM) SE Runtime Environment
 JVM: Java HotSpot(TM) 64-Bit Server VM
