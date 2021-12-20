@@ -1,5 +1,8 @@
 package ch.uzh.group8.assignment4.exercise1;
 
+import ch.uzh.group8.assignment4.exercise1.state.Dealer;
+import ch.uzh.group8.assignment4.exercise1.state.HumanPlayer;
+import ch.uzh.group8.assignment4.exercise1.state.Pack;
 import ch.uzh.group8.assignment4.exercise1.util.Console;
 import java.util.Optional;
 
