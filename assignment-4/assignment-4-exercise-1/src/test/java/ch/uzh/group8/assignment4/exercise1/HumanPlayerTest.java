@@ -58,8 +58,7 @@ class HumanPlayerTest {
         .print(
             """
           Card 1: Card[suit=CLUBS, rank=ACE]
-          Card 2: Card[suit=CLUBS, rank=TEN]
-          """);
+          Card 2: Card[suit=CLUBS, rank=TEN]""");
   }
 
   @Test

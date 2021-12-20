@@ -56,7 +56,7 @@ class DealerTest {
 
     dealer.printInitialHand();
 
-    inOrder.verify(console).print("Card 1: Card[suit=CLUBS, rank=ACE]\n");
+    inOrder.verify(console).print("Card 1: Card[suit=CLUBS, rank=ACE]");
     inOrder.verify(console).print("Card 2: Hidden");
   }
 
