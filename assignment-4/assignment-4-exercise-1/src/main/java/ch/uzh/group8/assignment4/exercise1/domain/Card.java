@@ -1,4 +1,4 @@
-package ch.uzh.group8.assignment4.exercise1;
+package ch.uzh.group8.assignment4.exercise1.domain;
 
 import java.util.Arrays;
 import java.util.LinkedHashSet;

@@ -1,10 +1,10 @@
 package ch.uzh.group8.assignment4.exercise1;
 
-import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import ch.uzh.group8.assignment4.exercise1.domain.Card;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;

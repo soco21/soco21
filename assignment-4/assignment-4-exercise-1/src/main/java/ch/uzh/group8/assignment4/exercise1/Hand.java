@@ -1,5 +1,7 @@
 package ch.uzh.group8.assignment4.exercise1;
 
+import ch.uzh.group8.assignment4.exercise1.domain.Card;
+import ch.uzh.group8.assignment4.exercise1.domain.Rank;
 import ch.uzh.group8.assignment4.exercise1.util.Console;
 import java.util.ArrayList;
 import java.util.List;
