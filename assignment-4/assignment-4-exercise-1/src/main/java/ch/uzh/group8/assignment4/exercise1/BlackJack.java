@@ -30,15 +30,9 @@ public class BlackJack {
 
       humanPlayer.placeBet();
 
-      humanPlayer.addCard(pack.drawCard());
-      humanPlayer.addCard(pack.drawCard());
-      dealer.addCard(pack.drawCard());
-      dealer.addCard(pack.drawCard());
+      dealCards();
 
-      console.print("Dealers initial hand:");
-      dealer.printInitialHand();
-      console.print("\n\nYour initial hand:");
-      humanPlayer.printInitialHand();
+      printInitialHands();
 
       Optional<Integer> humanPlayerScoreOptional = play.doPlayFor(humanPlayer);
 
@@ -48,28 +42,50 @@ public class BlackJack {
         dealerScoreOptional = play.doPlayFor(dealer);
       }
 
-      if (humanPlayerScoreOptional.isEmpty()) {
-        console.print("You were busted");
-      } else if (dealerScoreOptional.isEmpty()) {
-        console.print("The dealer was busted");
-      }
+      boolean dealerBusted = dealerScoreOptional.isEmpty();
+      printIfBusted(humanPlayerScoreOptional.isEmpty(), dealerBusted);
 
-      Integer humanPlayerScore = humanPlayerScoreOptional.orElse(-1);
-      Integer dealerScore = dealerScoreOptional.orElse(0);
-      if (humanPlayerScore > dealerScore) {
-        console.print("You won");
-        humanPlayer.applyWon();
-      } else if (humanPlayerScore < dealerScore) {
-        console.print("You lost");
-        humanPlayer.applyLost();
-      } else if (dealerScoreOptional.isPresent()) {
-        console.print("It was a draw, you can keep your bet");
-      }
+      applyScore(humanPlayerScoreOptional.orElse(-1), dealerScoreOptional.orElse(0), dealerBusted);
 
       if (humanPlayer.isBroke()) {
         console.print("You lost all your money, see you next time");
         return;
       }
+    }
+  }
+
+  private void printInitialHands() {
+    console.print("Dealers initial hand:");
+    dealer.printInitialHand();
+    console.print("\n");
+    console.print("Your initial hand:");
+    humanPlayer.printInitialHand();
+  }
+
+  private void dealCards() {
+    humanPlayer.addCard(pack.drawCard());
+    humanPlayer.addCard(pack.drawCard());
+    dealer.addCard(pack.drawCard());
+    dealer.addCard(pack.drawCard());
+  }
+
+  private void printIfBusted(boolean humanPlayerBusted, boolean dealerBusted) {
+    if (humanPlayerBusted) {
+      console.print("You were busted");
+    } else if (dealerBusted) {
+      console.print("The dealer was busted");
+    }
+  }
+
+  private void applyScore(Integer humanPlayerScore, Integer dealerScore, boolean dealerBusted) {
+    if (humanPlayerScore > dealerScore) {
+      console.print("You won");
+      humanPlayer.applyWon();
+    } else if (humanPlayerScore < dealerScore) {
+      console.print("You lost");
+      humanPlayer.applyLost();
+    } else if (!dealerBusted) {
+      console.print("It was a draw, you can keep your bet");
     }
   }
 }
