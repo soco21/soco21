@@ -6,12 +6,18 @@ rectangle "flow control classes" {
         |= Responsibilities |= Collaborators |
         | Print HumanPlayers balance | HumanPlayer |
         | Ask HumanPlayer if he wants to play | HumanPlayer |
+        | Start Round | Round |
+        | Check if HumanPlayer still has money | HumanPlayer |
+    ]
+
+    rectangle Round [
+        Round
+        |= Responsibilities |= Collaborators |
         | reset hand of HumanPlayer and dealer | HumanPlayer, Dealer|
         | force HumanPlayer to bet | HumanPlayer |
         | do HumanPlayers play | Play |
         | do dealers play | Play |
-        | apply the result | HumanPlayer, Dealer |
-        | Check if HumanPlayer still has money | HumanPlayer |
+        | apply the result | |
     ]
 
     rectangle Play [
@@ -21,7 +27,8 @@ rectangle "flow control classes" {
         | check if busted | HumanPlayer, Dealer |
     ]
 
-    BlackJack --> Play
+    BlackJack --> Round
+    Round --> Play
 }
 
 rectangle "classes with state" {
@@ -102,6 +109,9 @@ rectangle "data classes" {
 }
 
 BlackJack --> HumanPlayer
+
+Round --> HumanPlayer
+Round --> Dealer
 
 Play --> Dealer : either Dealer or HumanPlayer
 Play --> HumanPlayer : either Dealer or HumanPlayer
