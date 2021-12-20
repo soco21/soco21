@@ -14,6 +14,18 @@ public class HumanPlayer implements Player {
     hand = new Hand(console);
   }
 
+  boolean wantsToContinue() {
+    while (true) {
+      console.print("Do you want to play? Type 'yes' or 'no'");
+      String userInput = console.getUserInput().strip();
+      if ("yes".equalsIgnoreCase(userInput)) {
+        return true;
+      } else if ("no".equalsIgnoreCase(userInput)) {
+        return false;
+      }
+    }
+  }
+
   public void startRound() {
     hand = new Hand(console);
     currentBet = 0;

@@ -21,14 +21,8 @@ public class BlackJack {
   public void run() {
     while (true) {
       humanPlayer.printBalance();
-      while (true) {
-        console.print("Do you want to play? Type 'yes' or 'no'");
-        String userInput = console.getUserInput().strip();
-        if ("yes".equalsIgnoreCase(userInput)) {
-          break;
-        } else if ("no".equalsIgnoreCase(userInput)) {
-          return;
-        }
+      if (!humanPlayer.wantsToContinue()) {
+        return;
       }
 
       humanPlayer.startRound();
