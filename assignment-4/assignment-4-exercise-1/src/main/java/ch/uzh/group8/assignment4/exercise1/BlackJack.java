@@ -52,7 +52,7 @@ public class BlackJack {
       boolean dealerBusted = dealerScoreOptional.isEmpty();
       printIfBusted(humanPlayerScoreOptional.isEmpty(), dealerBusted);
 
-      applyScore(humanPlayerScoreOptional.orElse(-1), dealerScoreOptional.orElse(0), dealerBusted);
+      applyScore(humanPlayerScoreOptional.orElse(-1), dealerScoreOptional.orElse(0));
 
       if (humanPlayer.isBroke()) {
         console.print("You lost all your money, see you next time");
@@ -84,14 +84,14 @@ public class BlackJack {
     }
   }
 
-  private void applyScore(Integer humanPlayerScore, Integer dealerScore, boolean dealerBusted) {
+  private void applyScore(Integer humanPlayerScore, Integer dealerScore) {
     if (humanPlayerScore > dealerScore) {
       console.print("You won");
       humanPlayer.applyWon();
     } else if (humanPlayerScore < dealerScore) {
       console.print("You lost");
       humanPlayer.applyLost();
-    } else if (!dealerBusted) {
+    } else {
       console.print("It was a draw, you can keep your bet");
     }
   }

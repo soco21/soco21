@@ -28,6 +28,31 @@ class HumanPlayerTest {
     humanPlayer = new HumanPlayer(console);
   }
 
+  @ParameterizedTest
+  @CsvSource(
+      textBlock =
+          """
+            yes,true
+            no,false
+            YeS,true
+            YES,true
+            NO,false
+            '   yes   ',true
+            'no ',false
+            """)
+  public void parse_input_for_wantsToContinue(String input, boolean result) {
+    when(console.getUserInput()).thenReturn(input);
+
+    assertThat(humanPlayer.wantsToContinue(), is(result));
+  }
+
+  @Test
+  public void repeat_getting_input_for_wantsToContinue_for_invalid_input() {
+    when(console.getUserInput()).thenReturn("blabla", "1", "0.5", "yes");
+
+    assertThat(humanPlayer.wantsToContinue(), is(true));
+  }
+
   @Test
   public void has_empty_hand_when_initialized() {
     humanPlayer.printAllCards();
@@ -154,5 +179,27 @@ class HumanPlayerTest {
 
     inOrder.verify(console).print("Your current balance is: 50");
     inOrder.verifyNoMoreInteractions();
+  }
+
+  @Test
+  public void isBroke_is_false_when_player_still_has_money() {
+    assertThat(humanPlayer.isBroke(), is(false));
+
+    when(console.getUserInput()).thenReturn("99");
+
+    humanPlayer.placeBet();
+    humanPlayer.applyLost();
+
+    assertThat(humanPlayer.isBroke(), is(false));
+  }
+
+  @Test
+  public void isBroke_is_true_when_player_has_no_money() {
+    when(console.getUserInput()).thenReturn("100");
+
+    humanPlayer.placeBet();
+    humanPlayer.applyLost();
+
+    assertThat(humanPlayer.isBroke(), is(true));
   }
 }
