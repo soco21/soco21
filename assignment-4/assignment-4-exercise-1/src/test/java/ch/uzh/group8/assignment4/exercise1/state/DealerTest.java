@@ -1,4 +1,4 @@
-package ch.uzh.group8.assignment4.exercise1;
+package ch.uzh.group8.assignment4.exercise1.state;
 
 import static ch.uzh.group8.assignment4.exercise1.domain.Rank.*;
 import static ch.uzh.group8.assignment4.exercise1.domain.Suit.CLUBS;
@@ -7,6 +7,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.*;
 
+import ch.uzh.group8.assignment4.exercise1.PlayAction;
 import ch.uzh.group8.assignment4.exercise1.domain.Card;
 import ch.uzh.group8.assignment4.exercise1.util.Console;
 import java.util.List;

@@ -1,5 +1,7 @@
 package ch.uzh.group8.assignment4.exercise1;
 
+import ch.uzh.group8.assignment4.exercise1.state.Pack;
+import ch.uzh.group8.assignment4.exercise1.state.Player;
 import ch.uzh.group8.assignment4.exercise1.util.Console;
 import java.util.Optional;
 

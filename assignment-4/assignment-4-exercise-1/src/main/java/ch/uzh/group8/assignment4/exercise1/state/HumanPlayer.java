@@ -1,5 +1,6 @@
-package ch.uzh.group8.assignment4.exercise1;
+package ch.uzh.group8.assignment4.exercise1.state;
 
+import ch.uzh.group8.assignment4.exercise1.PlayAction;
 import ch.uzh.group8.assignment4.exercise1.domain.Card;
 import ch.uzh.group8.assignment4.exercise1.util.Console;
 
@@ -15,7 +16,7 @@ public class HumanPlayer implements Player {
     hand = new Hand(console);
   }
 
-  boolean wantsToContinue() {
+  public boolean wantsToContinue() {
     while (true) {
       console.print("Do you want to play? Type 'yes' or 'no'");
       String userInput = console.getUserInput().strip();

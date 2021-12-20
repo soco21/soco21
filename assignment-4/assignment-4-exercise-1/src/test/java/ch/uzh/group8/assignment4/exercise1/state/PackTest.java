@@ -1,4 +1,4 @@
-package ch.uzh.group8.assignment4.exercise1;
+package ch.uzh.group8.assignment4.exercise1.state;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
