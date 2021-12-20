@@ -6,6 +6,7 @@ import ch.uzh.group8.assignment4.exercise1.state.Pack;
 import ch.uzh.group8.assignment4.exercise1.util.Console;
 import java.util.Optional;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class BlackJack {
   private final Console console;
   private final HumanPlayer humanPlayer;
