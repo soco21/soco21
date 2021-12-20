@@ -34,6 +34,7 @@ public class BlackJack {
 
       printInitialHands();
 
+      console.print("Now it's the players turn:");
       Optional<Integer> humanPlayerScoreOptional = play.doPlayFor(humanPlayer);
 
       Optional<Integer> dealerScoreOptional = Optional.empty();
