@@ -1,11 +1,13 @@
 package ch.uzh.group8.assignment4.exercise1;
 
-import static ch.uzh.group8.assignment4.exercise1.Rank.*;
-import static ch.uzh.group8.assignment4.exercise1.Suit.*;
+import static ch.uzh.group8.assignment4.exercise1.domain.Rank.*;
+import static ch.uzh.group8.assignment4.exercise1.domain.Suit.CLUBS;
+import static ch.uzh.group8.assignment4.exercise1.domain.Suit.HEARTS;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.*;
 
+import ch.uzh.group8.assignment4.exercise1.domain.Card;
 import ch.uzh.group8.assignment4.exercise1.util.Console;
 import java.util.List;
 import java.util.stream.Stream;

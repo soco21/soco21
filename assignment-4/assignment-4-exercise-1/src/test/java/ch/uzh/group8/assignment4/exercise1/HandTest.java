@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import ch.uzh.group8.assignment4.exercise1.domain.Card;
+import ch.uzh.group8.assignment4.exercise1.domain.Rank;
+import ch.uzh.group8.assignment4.exercise1.domain.Suit;
 import ch.uzh.group8.assignment4.exercise1.util.Console;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;

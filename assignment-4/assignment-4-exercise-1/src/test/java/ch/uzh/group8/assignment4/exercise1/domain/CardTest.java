@@ -1,9 +1,9 @@
-package ch.uzh.group8.assignment4.exercise1;
+package ch.uzh.group8.assignment4.exercise1.domain;
 
-import static ch.uzh.group8.assignment4.exercise1.Card.createDeck;
+import static ch.uzh.group8.assignment4.exercise1.domain.Card.createDeck;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
 
 import java.util.HashSet;
 import java.util.List;

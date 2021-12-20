@@ -1,5 +1,6 @@
 package ch.uzh.group8.assignment4.exercise1;
 
+import ch.uzh.group8.assignment4.exercise1.domain.Card;
 import ch.uzh.group8.assignment4.exercise1.util.Console;
 
 public class Dealer implements Player {
