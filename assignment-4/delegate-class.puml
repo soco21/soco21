@@ -1,0 +1,63 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Player {
+    + <color:#green>void addCard(Card card)
+    + <color:#green>void printAllCards()
+    + <color:#green>int getScore()
+    + PlayAction hitOrStay()
+}
+
+class Hand {
+    - Console console
+    - List<Card> hand
+
+    + Hand(Console console)
+    + <color:#green>void addCard(Card card)
+    + void printFirstCard()
+    + <color:#green>void printAllCards()
+    + <color:#green>int getScore()
+    - void printCardsUpTo(int to)
+    - {static} int getScoreOfRank(Rank rank)
+}
+
+class Dealer implements Player {
+    - Console console;
+
+    - Hand hand;
+
+    + Dealer(Console console)
+    + void startRound()
+    + void printInitialHand()
+    + <color:#green>void addCard(Card card)
+    + <color:#green>void printAllCards()
+    + <color:#green>int getScore()
+    + PlayAction hitOrStay()
+}
+
+class HumanPlayer implements Player {
+    - Console console;
+
+    - Hand hand;
+    - int balance = 100;
+    - int currentBet;
+
+    + HumanPlayer(Console console)
+    + boolean wantsToContinue()
+    + void startRound()
+    + void printInitialHand()
+    + <color:#green>void addCard(Card card)
+    + <color:#green>void printAllCards()
+    + <color:#green>int getScore()
+    + PlayAction hitOrStay()
+    + void printBalance()
+    + void placeBet()
+    + void applyWon()
+    + void applyLost()
+    + boolean isBroke()
+}
+
+Dealer ..> Hand
+HumanPlayer ..> Hand
+
+@enduml
