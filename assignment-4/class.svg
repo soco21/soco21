@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1387px" preserveAspectRatio="none" style="width:1108px;height:1387px;background:#FFFFFF;" version="1.1" viewBox="0 0 1108 1387" width="1108px" zoomAndPan="magnify"><defs><filter height="300%" id="fc4xjhdy9ltax" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[c1202fc19ee68968d1857636cb9f71b6]
+cluster ch.uzh.group8.assignment4.exercise1.state--><polygon fill="#FFFFFF" filter="url(#fc4xjhdy9ltax)" points="431.5,221,792.5,221,799.5,243.2969,869.5,243.2969,869.5,932,431.5,932,431.5,221" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="431.5" x2="799.5" y1="243.2969" y2="243.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="355" x="435.5" y="235.9951">ch.uzh.group8.assignment4.exercise1.state</text><!--MD5=[81a1ac727bfd1b4deab6ab9093a6e306]
+cluster ch.uzh.group8.assignment4.exercise1.domain--><polygon fill="#FFFFFF" filter="url(#fc4xjhdy9ltax)" points="704.5,956,1081.5,956,1088.5,978.2969,1091.5,978.2969,1091.5,1380,704.5,1380,704.5,956" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="704.5" x2="1088.5" y1="978.2969" y2="978.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="371" x="708.5" y="970.9951">ch.uzh.group8.assignment4.exercise1.domain</text><!--MD5=[571b2b75e0fc45b7bb0c90d45db1a4d1]
+cluster ch.uzh.group8.assignment4.exercise1.util--><polygon fill="#FFFFFF" filter="url(#fc4xjhdy9ltax)" points="52.5,762.5,397.5,762.5,404.5,784.7969,407.5,784.7969,407.5,887.5,52.5,887.5,52.5,762.5" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="52.5" x2="404.5" y1="784.7969" y2="784.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="339" x="56.5" y="777.4951">ch.uzh.group8.assignment4.exercise1.util</text><!--MD5=[c9258217e9bf77cef15858c9efd4d2a2]
+class HumanPlayer--><rect codeLine="32" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="278.4844" id="HumanPlayer" style="stroke:#A80036;stroke-width:1.5;" width="203" x="650" y="415"/><ellipse cx="708.75" cy="431" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M711.0938,426.6719 C710.1563,426.2344 709.5625,426.0938 708.6875,426.0938 C706.0625,426.0938 704.0625,428.1719 704.0625,430.8906 L704.0625,432.0156 C704.0625,434.5938 706.1719,436.4844 709.0625,436.4844 C710.2813,436.4844 711.4375,436.1875 712.1875,435.6406 C712.7656,435.2344 713.0938,434.7813 713.0938,434.3906 C713.0938,433.9375 712.7031,433.5469 712.2344,433.5469 C712.0156,433.5469 711.8125,433.625 711.625,433.8125 C711.1719,434.2969 711.1719,434.2969 710.9844,434.3906 C710.5625,434.6563 709.875,434.7813 709.1094,434.7813 C707.0625,434.7813 705.7656,433.6875 705.7656,431.9844 L705.7656,430.8906 C705.7656,429.1094 707.0156,427.7969 708.75,427.7969 C709.3281,427.7969 709.9375,427.9531 710.4063,428.2031 C710.8906,428.4844 711.0625,428.7031 711.1563,429.1094 C711.2188,429.5156 711.25,429.6406 711.3906,429.7656 C711.5313,429.9063 711.7656,430.0156 711.9844,430.0156 C712.25,430.0156 712.5156,429.875 712.6875,429.6563 C712.7969,429.5 712.8281,429.3125 712.8281,428.8906 L712.8281,427.4688 C712.8281,427.0313 712.8125,426.9063 712.7188,426.75 C712.5625,426.4844 712.2813,426.3438 711.9844,426.3438 C711.6875,426.3438 711.4844,426.4375 711.2656,426.75 L711.0938,426.6719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="77" x="729.25" y="435.1543">HumanPlayer</text><line style="stroke:#A80036;stroke-width:1.5;" x1="651" x2="852" y1="447" y2="447"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="658" y="455"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="670" y="461.2104">Console console;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="0" x="674" y="474.0151"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="658" y="480.6094"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="670" y="486.8198">Hand hand;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="658" y="493.4141"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="104" x="670" y="499.6245">int balance = 100;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="658" y="506.2188"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="81" x="670" y="512.4292">int currentBet;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="651" x2="852" y1="519.0234" y2="519.0234"/><ellipse cx="661" cy="530.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="177" x="670" y="533.2339">HumanPlayer(Console console)</text><ellipse cx="661" cy="542.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="156" x="670" y="546.0386">boolean wantsToContinue()</text><ellipse cx="661" cy="555.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="670" y="558.8433">void startRound()</text><ellipse cx="661" cy="568.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="120" x="670" y="571.6479">void printInitialHand()</text><ellipse cx="661" cy="581.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="137" x="670" y="584.4526">void addCard(Card card)</text><ellipse cx="661" cy="594.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="107" x="670" y="597.2573">void printAllCards()</text><ellipse cx="661" cy="606.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="670" y="610.062">int getScore()</text><ellipse cx="661" cy="619.6563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="670" y="622.8667">PlayAction hitOrStay()</text><ellipse cx="661" cy="632.4609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="107" x="670" y="635.6714">void printBalance()</text><ellipse cx="661" cy="645.2656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="87" x="670" y="648.4761">void placeBet()</text><ellipse cx="661" cy="658.0703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="92" x="670" y="661.2808">void applyWon()</text><ellipse cx="661" cy="670.875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="90" x="670" y="674.0854">void applyLost()</text><ellipse cx="661" cy="683.6797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="100" x="670" y="686.8901">boolean isBroke()</text><!--MD5=[489d8ee0a19148a265eb284aebff018b]
+class Dealer--><rect codeLine="54" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="176.0469" id="Dealer" style="stroke:#A80036;stroke-width:1.5;" width="167" x="448" y="466"/><ellipse cx="507.25" cy="482" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M509.5938,477.6719 C508.6563,477.2344 508.0625,477.0938 507.1875,477.0938 C504.5625,477.0938 502.5625,479.1719 502.5625,481.8906 L502.5625,483.0156 C502.5625,485.5938 504.6719,487.4844 507.5625,487.4844 C508.7813,487.4844 509.9375,487.1875 510.6875,486.6406 C511.2656,486.2344 511.5938,485.7813 511.5938,485.3906 C511.5938,484.9375 511.2031,484.5469 510.7344,484.5469 C510.5156,484.5469 510.3125,484.625 510.125,484.8125 C509.6719,485.2969 509.6719,485.2969 509.4844,485.3906 C509.0625,485.6563 508.375,485.7813 507.6094,485.7813 C505.5625,485.7813 504.2656,484.6875 504.2656,482.9844 L504.2656,481.8906 C504.2656,480.1094 505.5156,478.7969 507.25,478.7969 C507.8281,478.7969 508.4375,478.9531 508.9063,479.2031 C509.3906,479.4844 509.5625,479.7031 509.6563,480.1094 C509.7188,480.5156 509.75,480.6406 509.8906,480.7656 C510.0313,480.9063 510.2656,481.0156 510.4844,481.0156 C510.75,481.0156 511.0156,480.875 511.1875,480.6563 C511.2969,480.5 511.3281,480.3125 511.3281,479.8906 L511.3281,478.4688 C511.3281,478.0313 511.3125,477.9063 511.2188,477.75 C511.0625,477.4844 510.7813,477.3438 510.4844,477.3438 C510.1875,477.3438 509.9844,477.4375 509.7656,477.75 L509.5938,477.6719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="40" x="527.75" y="486.1543">Dealer</text><line style="stroke:#A80036;stroke-width:1.5;" x1="449" x2="614" y1="498" y2="498"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="456" y="506"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="468" y="512.2104">Console console;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="0" x="472" y="525.0151"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="456" y="531.6094"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="468" y="537.8198">Hand hand;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="449" x2="614" y1="544.4141" y2="544.4141"/><ellipse cx="459" cy="555.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="141" x="468" y="558.6245">Dealer(Console console)</text><ellipse cx="459" cy="568.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="468" y="571.4292">void startRound()</text><ellipse cx="459" cy="581.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="120" x="468" y="584.2339">void printInitialHand()</text><ellipse cx="459" cy="593.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="137" x="468" y="597.0386">void addCard(Card card)</text><ellipse cx="459" cy="606.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="107" x="468" y="609.8433">void printAllCards()</text><ellipse cx="459" cy="619.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="468" y="622.6479">int getScore()</text><ellipse cx="459" cy="632.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="468" y="635.4526">PlayAction hitOrStay()</text><!--MD5=[2cb47ba637a0d19583e6199456f6ad0b]
+class Player--><rect codeLine="68" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="99.2188" id="Player" style="stroke:#A80036;stroke-width:1.5;" width="163" x="464" y="256"/><ellipse cx="523.25" cy="272" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M524.2031,268.7813 L525.9219,268.7813 C526.3125,268.7813 526.5,268.75 526.625,268.6719 C526.8906,268.5156 527.0313,268.2344 527.0313,267.9375 C527.0313,267.6719 526.9219,267.4063 526.6875,267.2344 C526.5156,267.125 526.375,267.0938 525.9219,267.0938 L520.7813,267.0938 C520.3438,267.0938 520.2188,267.1094 520.0625,267.2031 C519.8125,267.3594 519.6563,267.6563 519.6563,267.9375 C519.6563,268.2188 519.7969,268.4688 520.0156,268.6406 C520.1719,268.75 520.3594,268.7813 520.7813,268.7813 L522.5,268.7813 L522.5,275.2969 L520.7813,275.2969 C520.3438,275.2969 520.2188,275.3125 520.0625,275.4219 C519.8125,275.5781 519.6563,275.8594 519.6563,276.1563 C519.6563,276.4063 519.7969,276.6719 520.0156,276.8281 C520.1719,276.9531 520.375,277 520.7813,277 L525.9219,277 C526.6719,277 527.0313,276.7188 527.0313,276.1563 C527.0313,275.875 526.9219,275.625 526.6875,275.4531 C526.5156,275.3281 526.375,275.2969 525.9219,275.2969 L524.2031,275.2969 L524.2031,268.7813 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="36" x="543.75" y="276.1543">Player</text><line style="stroke:#A80036;stroke-width:1.5;" x1="465" x2="626" y1="288" y2="288"/><line style="stroke:#A80036;stroke-width:1.5;" x1="465" x2="626" y1="296" y2="296"/><ellipse cx="475" cy="307" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="137" x="484" y="310.2104">void addCard(Card card)</text><ellipse cx="475" cy="319.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="107" x="484" y="323.0151">void printAllCards()</text><ellipse cx="475" cy="332.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="484" y="335.8198">int getScore()</text><ellipse cx="475" cy="345.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="484" y="348.6245">PlayAction hitOrStay()</text><!--MD5=[b3a980551af4fb5504d75634056fd54d]
+class Hand--><rect codeLine="75" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="163.2422" id="Hand" style="stroke:#A80036;stroke-width:1.5;" width="199" x="651" y="753"/><ellipse cx="730.75" cy="769" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M733.0938,764.6719 C732.1563,764.2344 731.5625,764.0938 730.6875,764.0938 C728.0625,764.0938 726.0625,766.1719 726.0625,768.8906 L726.0625,770.0156 C726.0625,772.5938 728.1719,774.4844 731.0625,774.4844 C732.2813,774.4844 733.4375,774.1875 734.1875,773.6406 C734.7656,773.2344 735.0938,772.7813 735.0938,772.3906 C735.0938,771.9375 734.7031,771.5469 734.2344,771.5469 C734.0156,771.5469 733.8125,771.625 733.625,771.8125 C733.1719,772.2969 733.1719,772.2969 732.9844,772.3906 C732.5625,772.6563 731.875,772.7813 731.1094,772.7813 C729.0625,772.7813 727.7656,771.6875 727.7656,769.9844 L727.7656,768.8906 C727.7656,767.1094 729.0156,765.7969 730.75,765.7969 C731.3281,765.7969 731.9375,765.9531 732.4063,766.2031 C732.8906,766.4844 733.0625,766.7031 733.1563,767.1094 C733.2188,767.5156 733.25,767.6406 733.3906,767.7656 C733.5313,767.9063 733.7656,768.0156 733.9844,768.0156 C734.25,768.0156 734.5156,767.875 734.6875,767.6563 C734.7969,767.5 734.8281,767.3125 734.8281,766.8906 L734.8281,765.4688 C734.8281,765.0313 734.8125,764.9063 734.7188,764.75 C734.5625,764.4844 734.2813,764.3438 733.9844,764.3438 C733.6875,764.3438 733.4844,764.4375 733.2656,764.75 L733.0938,764.6719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="31" x="751.25" y="773.1543">Hand</text><line style="stroke:#A80036;stroke-width:1.5;" x1="652" x2="849" y1="785" y2="785"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="659" y="793"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="94" x="671" y="799.2104">Console console</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="659" y="805.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="95" x="671" y="812.0151">List&lt;Card&gt; hand</text><line style="stroke:#A80036;stroke-width:1.5;" x1="652" x2="849" y1="818.6094" y2="818.6094"/><ellipse cx="662" cy="829.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="131" x="671" y="832.8198">Hand(Console console)</text><ellipse cx="662" cy="842.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="137" x="671" y="845.6245">void addCard(Card card)</text><ellipse cx="662" cy="855.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="110" x="671" y="858.4292">void printFirstCard()</text><ellipse cx="662" cy="868.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="107" x="671" y="871.2339">void printAllCards()</text><ellipse cx="662" cy="880.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="671" y="884.0386">int getScore()</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="659" y="890.6328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="151" x="671" y="896.8433">void printCardsUpTo(int to)</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="659" y="903.4375"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="173" x="671" y="909.6479">int getScoreOfRank(Rank rank)</text><!--MD5=[ed59bb8f54e2c8af7c561b182d70ca56]
+class Pack--><rect codeLine="88" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="99.2188" id="Pack" style="stroke:#A80036;stroke-width:1.5;" width="178" x="662.5" y="256"/><ellipse cx="733.75" cy="272" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M736.0938,267.6719 C735.1563,267.2344 734.5625,267.0938 733.6875,267.0938 C731.0625,267.0938 729.0625,269.1719 729.0625,271.8906 L729.0625,273.0156 C729.0625,275.5938 731.1719,277.4844 734.0625,277.4844 C735.2813,277.4844 736.4375,277.1875 737.1875,276.6406 C737.7656,276.2344 738.0938,275.7813 738.0938,275.3906 C738.0938,274.9375 737.7031,274.5469 737.2344,274.5469 C737.0156,274.5469 736.8125,274.625 736.625,274.8125 C736.1719,275.2969 736.1719,275.2969 735.9844,275.3906 C735.5625,275.6563 734.875,275.7813 734.1094,275.7813 C732.0625,275.7813 730.7656,274.6875 730.7656,272.9844 L730.7656,271.8906 C730.7656,270.1094 732.0156,268.7969 733.75,268.7969 C734.3281,268.7969 734.9375,268.9531 735.4063,269.2031 C735.8906,269.4844 736.0625,269.7031 736.1563,270.1094 C736.2188,270.5156 736.25,270.6406 736.3906,270.7656 C736.5313,270.9063 736.7656,271.0156 736.9844,271.0156 C737.25,271.0156 737.5156,270.875 737.6875,270.6563 C737.7969,270.5 737.8281,270.3125 737.8281,269.8906 L737.8281,268.4688 C737.8281,268.0313 737.8125,267.9063 737.7188,267.75 C737.5625,267.4844 737.2813,267.3438 736.9844,267.3438 C736.6875,267.3438 736.4844,267.4375 736.2656,267.75 L736.0938,267.6719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="27" x="754.25" y="276.1543">Pack</text><line style="stroke:#A80036;stroke-width:1.5;" x1="663.5" x2="839.5" y1="288" y2="288"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="670.5" y="296"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="682.5" y="302.2104">List&lt;Card&gt; cards</text><line style="stroke:#A80036;stroke-width:1.5;" x1="663.5" x2="839.5" y1="308.8047" y2="308.8047"/><ellipse cx="673.5" cy="319.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="682.5" y="323.0151">Pack()</text><ellipse cx="673.5" cy="332.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="91" x="682.5" y="335.8198">Card drawCard()</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="670.5" y="342.4141"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="152" x="682.5" y="348.6245">List&lt;Card&gt; initializeDeck()</text><!--MD5=[5e305716458bbdabbd2d7f572ed2bae2]
+class Card--><rect codeLine="102" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="99.2188" id="Card" style="stroke:#A80036;stroke-width:1.5;" width="168" x="806.5" y="991"/><ellipse cx="872.25" cy="1007" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M874.5938,1002.6719 C873.6563,1002.2344 873.0625,1002.0938 872.1875,1002.0938 C869.5625,1002.0938 867.5625,1004.1719 867.5625,1006.8906 L867.5625,1008.0156 C867.5625,1010.5938 869.6719,1012.4844 872.5625,1012.4844 C873.7813,1012.4844 874.9375,1012.1875 875.6875,1011.6406 C876.2656,1011.2344 876.5938,1010.7813 876.5938,1010.3906 C876.5938,1009.9375 876.2031,1009.5469 875.7344,1009.5469 C875.5156,1009.5469 875.3125,1009.625 875.125,1009.8125 C874.6719,1010.2969 874.6719,1010.2969 874.4844,1010.3906 C874.0625,1010.6563 873.375,1010.7813 872.6094,1010.7813 C870.5625,1010.7813 869.2656,1009.6875 869.2656,1007.9844 L869.2656,1006.8906 C869.2656,1005.1094 870.5156,1003.7969 872.25,1003.7969 C872.8281,1003.7969 873.4375,1003.9531 873.9063,1004.2031 C874.3906,1004.4844 874.5625,1004.7031 874.6563,1005.1094 C874.7188,1005.5156 874.75,1005.6406 874.8906,1005.7656 C875.0313,1005.9063 875.2656,1006.0156 875.4844,1006.0156 C875.75,1006.0156 876.0156,1005.875 876.1875,1005.6563 C876.2969,1005.5 876.3281,1005.3125 876.3281,1004.8906 L876.3281,1003.4688 C876.3281,1003.0313 876.3125,1002.9063 876.2188,1002.75 C876.0625,1002.4844 875.7813,1002.3438 875.4844,1002.3438 C875.1875,1002.3438 874.9844,1002.4375 874.7656,1002.75 L874.5938,1002.6719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="28" x="892.75" y="1011.1543">Card</text><line style="stroke:#A80036;stroke-width:1.5;" x1="807.5" x2="973.5" y1="1023" y2="1023"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="814.5" y="1031"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="826.5" y="1037.2104">Rank rank;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="814.5" y="1043.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="826.5" y="1050.0151">Suit suit;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="807.5" x2="973.5" y1="1056.6094" y2="1056.6094"/><ellipse cx="817.5" cy="1067.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="127" x="826.5" y="1070.8198">of(Suit suit, Rank rank)</text><ellipse cx="817.5" cy="1080.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" text-decoration="underline" textLength="142" x="826.5" y="1083.6245">Set&lt;Card&gt; createDeck()</text><!--MD5=[8afaa0cc9be9ac1cdc24999fa1642fa3]
+class Suit--><rect codeLine="109" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="99.2188" id="Suit" style="stroke:#A80036;stroke-width:1.5;" width="78" x="804.5" y="1207.5"/><ellipse cx="830.3" cy="1223.5" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M829.0969,1224.375 L830.55,1224.375 L830.55,1224.4844 C830.55,1224.8906 830.5813,1225.0469 830.6594,1225.2031 C830.8156,1225.4531 831.0969,1225.6094 831.3938,1225.6094 C831.6438,1225.6094 831.9094,1225.4688 832.0656,1225.25 C832.1906,1225.0938 832.2219,1224.9375 832.2219,1224.4844 L832.2219,1222.5625 C832.2219,1222.4063 832.2219,1222.3594 832.2063,1222.2031 C832.1438,1221.7344 831.8313,1221.4219 831.3781,1221.4219 C831.1281,1221.4219 830.8625,1221.5625 830.6906,1221.7813 C830.5813,1221.9531 830.55,1222.1094 830.55,1222.5625 L830.55,1222.6875 L829.0969,1222.6875 L829.0969,1220.2813 L833.0813,1220.2813 L833.0813,1221.1406 C833.0813,1221.5469 833.1125,1221.7188 833.1906,1221.875 C833.3625,1222.125 833.6438,1222.2813 833.925,1222.2813 C834.1906,1222.2813 834.4563,1222.1406 834.6281,1221.9219 C834.7375,1221.75 834.7688,1221.6094 834.7688,1221.1406 L834.7688,1218.5938 L827.1438,1218.5938 C826.7063,1218.5938 826.5813,1218.6094 826.425,1218.7031 C826.175,1218.8594 826.0188,1219.1563 826.0188,1219.4375 C826.0188,1219.7188 826.1594,1219.9688 826.3781,1220.1406 C826.5344,1220.25 826.7219,1220.2813 827.1438,1220.2813 L827.3938,1220.2813 L827.3938,1226.7969 L827.1438,1226.7969 C826.7375,1226.7969 826.5813,1226.8125 826.425,1226.9219 C826.175,1227.0938 826.0188,1227.3594 826.0188,1227.6563 C826.0188,1227.9219 826.1594,1228.1719 826.3781,1228.3281 C826.5188,1228.4531 826.7531,1228.5 827.1438,1228.5 L835.1438,1228.5 L835.1438,1225.9219 C835.1438,1225.4844 835.1125,1225.3438 835.0344,1225.1875 C834.8625,1224.9375 834.5813,1224.7813 834.3,1224.7813 C834.0344,1224.7813 833.7688,1224.8906 833.5969,1225.1406 C833.4875,1225.2969 833.4563,1225.4375 833.4563,1225.9219 L833.4563,1226.7969 L829.0969,1226.7969 L829.0969,1224.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="22" x="846.7" y="1227.6543">Suit</text><line style="stroke:#A80036;stroke-width:1.5;" x1="805.5" x2="881.5" y1="1239.5" y2="1239.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="41" x="810.5" y="1253.7104">CLUBS,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="810.5" y="1266.5151">DIAMONDS,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="810.5" y="1279.3198">HEARTS,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="46" x="810.5" y="1292.1245">SPADES</text><line style="stroke:#A80036;stroke-width:1.5;" x1="805.5" x2="881.5" y1="1298.7188" y2="1298.7188"/><!--MD5=[0f690a215a17a0cf4b9f948ca5dd1b3e]
+class Rank--><rect codeLine="116" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="214.4609" id="Rank" style="stroke:#A80036;stroke-width:1.5;" width="60" x="917.5" y="1150"/><ellipse cx="932.5" cy="1166" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M931.2969,1166.875 L932.75,1166.875 L932.75,1166.9844 C932.75,1167.3906 932.7813,1167.5469 932.8594,1167.7031 C933.0156,1167.9531 933.2969,1168.1094 933.5938,1168.1094 C933.8438,1168.1094 934.1094,1167.9688 934.2656,1167.75 C934.3906,1167.5938 934.4219,1167.4375 934.4219,1166.9844 L934.4219,1165.0625 C934.4219,1164.9063 934.4219,1164.8594 934.4063,1164.7031 C934.3438,1164.2344 934.0313,1163.9219 933.5781,1163.9219 C933.3281,1163.9219 933.0625,1164.0625 932.8906,1164.2813 C932.7813,1164.4531 932.75,1164.6094 932.75,1165.0625 L932.75,1165.1875 L931.2969,1165.1875 L931.2969,1162.7813 L935.2813,1162.7813 L935.2813,1163.6406 C935.2813,1164.0469 935.3125,1164.2188 935.3906,1164.375 C935.5625,1164.625 935.8438,1164.7813 936.125,1164.7813 C936.3906,1164.7813 936.6563,1164.6406 936.8281,1164.4219 C936.9375,1164.25 936.9688,1164.1094 936.9688,1163.6406 L936.9688,1161.0938 L929.3438,1161.0938 C928.9063,1161.0938 928.7813,1161.1094 928.625,1161.2031 C928.375,1161.3594 928.2188,1161.6563 928.2188,1161.9375 C928.2188,1162.2188 928.3594,1162.4688 928.5781,1162.6406 C928.7344,1162.75 928.9219,1162.7813 929.3438,1162.7813 L929.5938,1162.7813 L929.5938,1169.2969 L929.3438,1169.2969 C928.9375,1169.2969 928.7813,1169.3125 928.625,1169.4219 C928.375,1169.5938 928.2188,1169.8594 928.2188,1170.1563 C928.2188,1170.4219 928.3594,1170.6719 928.5781,1170.8281 C928.7188,1170.9531 928.9531,1171 929.3438,1171 L937.3438,1171 L937.3438,1168.4219 C937.3438,1167.9844 937.3125,1167.8438 937.2344,1167.6875 C937.0625,1167.4375 936.7813,1167.2813 936.5,1167.2813 C936.2344,1167.2813 935.9688,1167.3906 935.7969,1167.6406 C935.6875,1167.7969 935.6563,1167.9375 935.6563,1168.4219 L935.6563,1169.2969 L931.2969,1169.2969 L931.2969,1166.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="28" x="946.5" y="1170.1543">Rank</text><line style="stroke:#A80036;stroke-width:1.5;" x1="918.5" x2="976.5" y1="1182" y2="1182"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="923.5" y="1196.2104">ACE,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="923.5" y="1209.0151">TWO,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="923.5" y="1221.8198">THREE,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="923.5" y="1234.6245">FOUR,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="923.5" y="1247.4292">FIVE,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="923.5" y="1260.2339">SIX,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="41" x="923.5" y="1273.0386">SEVEN,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="37" x="923.5" y="1285.8433">EIGHT,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="923.5" y="1298.6479">NINE,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="923.5" y="1311.4526">TEN,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="923.5" y="1324.2573">JACK,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="923.5" y="1337.062">QUEEN,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="923.5" y="1349.8667">KING</text><line style="stroke:#A80036;stroke-width:1.5;" x1="918.5" x2="976.5" y1="1356.4609" y2="1356.4609"/><!--MD5=[315b61b427ec618d6861d47eee00cca3]
+class Console--><rect codeLine="137" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="73.6094" id="Console" style="stroke:#A80036;stroke-width:1.5;" width="155" x="236" y="797.5"/><ellipse cx="284.75" cy="813.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M287.0938,809.1719 C286.1563,808.7344 285.5625,808.5938 284.6875,808.5938 C282.0625,808.5938 280.0625,810.6719 280.0625,813.3906 L280.0625,814.5156 C280.0625,817.0938 282.1719,818.9844 285.0625,818.9844 C286.2813,818.9844 287.4375,818.6875 288.1875,818.1406 C288.7656,817.7344 289.0938,817.2813 289.0938,816.8906 C289.0938,816.4375 288.7031,816.0469 288.2344,816.0469 C288.0156,816.0469 287.8125,816.125 287.625,816.3125 C287.1719,816.7969 287.1719,816.7969 286.9844,816.8906 C286.5625,817.1563 285.875,817.2813 285.1094,817.2813 C283.0625,817.2813 281.7656,816.1875 281.7656,814.4844 L281.7656,813.3906 C281.7656,811.6094 283.0156,810.2969 284.75,810.2969 C285.3281,810.2969 285.9375,810.4531 286.4063,810.7031 C286.8906,810.9844 287.0625,811.2031 287.1563,811.6094 C287.2188,812.0156 287.25,812.1406 287.3906,812.2656 C287.5313,812.4063 287.7656,812.5156 287.9844,812.5156 C288.25,812.5156 288.5156,812.375 288.6875,812.1563 C288.7969,812 288.8281,811.8125 288.8281,811.3906 L288.8281,809.9688 C288.8281,809.5313 288.8125,809.4063 288.7188,809.25 C288.5625,808.9844 288.2813,808.8438 287.9844,808.8438 C287.6875,808.8438 287.4844,808.9375 287.2656,809.25 L287.0938,809.1719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49" x="305.25" y="817.6543">Console</text><line style="stroke:#A80036;stroke-width:1.5;" x1="237" x2="390" y1="829.5" y2="829.5"/><line style="stroke:#A80036;stroke-width:1.5;" x1="237" x2="390" y1="837.5" y2="837.5"/><ellipse cx="247" cy="848.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="256" y="851.7104">void print(String string)</text><ellipse cx="247" cy="861.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="118" x="256" y="864.5151">String getUserInput()</text><!--MD5=[7b7f13d36f3b79c727673592c109c23e]
+class BlackJack--><rect codeLine="3" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="188.8516" id="BlackJack" style="stroke:#A80036;stroke-width:1.5;" width="547" x="7" y="7"/><ellipse cx="247.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M250.0938,18.6719 C249.1563,18.2344 248.5625,18.0938 247.6875,18.0938 C245.0625,18.0938 243.0625,20.1719 243.0625,22.8906 L243.0625,24.0156 C243.0625,26.5938 245.1719,28.4844 248.0625,28.4844 C249.2813,28.4844 250.4375,28.1875 251.1875,27.6406 C251.7656,27.2344 252.0938,26.7813 252.0938,26.3906 C252.0938,25.9375 251.7031,25.5469 251.2344,25.5469 C251.0156,25.5469 250.8125,25.625 250.625,25.8125 C250.1719,26.2969 250.1719,26.2969 249.9844,26.3906 C249.5625,26.6563 248.875,26.7813 248.1094,26.7813 C246.0625,26.7813 244.7656,25.6875 244.7656,23.9844 L244.7656,22.8906 C244.7656,21.1094 246.0156,19.7969 247.75,19.7969 C248.3281,19.7969 248.9375,19.9531 249.4063,20.2031 C249.8906,20.4844 250.0625,20.7031 250.1563,21.1094 C250.2188,21.5156 250.25,21.6406 250.3906,21.7656 C250.5313,21.9063 250.7656,22.0156 250.9844,22.0156 C251.25,22.0156 251.5156,21.875 251.6875,21.6563 C251.7969,21.5 251.8281,21.3125 251.8281,20.8906 L251.8281,19.4688 C251.8281,19.0313 251.8125,18.9063 251.7188,18.75 C251.5625,18.4844 251.2813,18.3438 250.9844,18.3438 C250.6875,18.3438 250.4844,18.4375 250.2656,18.75 L250.0938,18.6719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="57" x="268.25" y="27.1543">BlackJack</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="553" y1="39" y2="39"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="47"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="27" y="53.2104">Console console;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="59.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="156" x="27" y="66.0151">HumanPlayer humanPlayer;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="72.6094"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="83" x="27" y="78.8198">Dealer dealer;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="85.4141"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="27" y="91.6245">Pack pack;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="98.2188"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="54" x="27" y="104.4292">Play play;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="553" y1="111.0234" y2="111.0234"/><ellipse cx="18" cy="122.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="521" x="27" y="125.2339">BlackJack(Console console, HumanPlayer humanPlayer, Dealer dealer, Pack pack, Play play)</text><ellipse cx="18" cy="134.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="54" x="27" y="138.0386">void run()</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="144.6328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="123" x="27" y="150.8433">void printInitialCards()</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="157.4375"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="27" y="163.6479">void dealCards()</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="170.2422"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="406" x="27" y="176.4526">void printIfBusted(boolean humanPlayerBusted, boolean dealerBusted)</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="183.0469"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="374" x="27" y="189.2573">void applyScore(Integer humanPlayerScore, Integer dealerScore)</text><!--MD5=[22f149128707d465c8b2660daf24cb3f]
+class Play--><rect codeLine="18" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="99.2188" id="Play" style="stroke:#A80036;stroke-width:1.5;" width="273" x="589" y="52"/><ellipse cx="709.75" cy="68" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M712.0938,63.6719 C711.1563,63.2344 710.5625,63.0938 709.6875,63.0938 C707.0625,63.0938 705.0625,65.1719 705.0625,67.8906 L705.0625,69.0156 C705.0625,71.5938 707.1719,73.4844 710.0625,73.4844 C711.2813,73.4844 712.4375,73.1875 713.1875,72.6406 C713.7656,72.2344 714.0938,71.7813 714.0938,71.3906 C714.0938,70.9375 713.7031,70.5469 713.2344,70.5469 C713.0156,70.5469 712.8125,70.625 712.625,70.8125 C712.1719,71.2969 712.1719,71.2969 711.9844,71.3906 C711.5625,71.6563 710.875,71.7813 710.1094,71.7813 C708.0625,71.7813 706.7656,70.6875 706.7656,68.9844 L706.7656,67.8906 C706.7656,66.1094 708.0156,64.7969 709.75,64.7969 C710.3281,64.7969 710.9375,64.9531 711.4063,65.2031 C711.8906,65.4844 712.0625,65.7031 712.1563,66.1094 C712.2188,66.5156 712.25,66.6406 712.3906,66.7656 C712.5313,66.9063 712.7656,67.0156 712.9844,67.0156 C713.25,67.0156 713.5156,66.875 713.6875,66.6563 C713.7969,66.5 713.8281,66.3125 713.8281,65.8906 L713.8281,64.4688 C713.8281,64.0313 713.8125,63.9063 713.7188,63.75 C713.5625,63.4844 713.2813,63.3438 712.9844,63.3438 C712.6875,63.3438 712.4844,63.4375 712.2656,63.75 L712.0938,63.6719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="23" x="730.25" y="72.1543">Play</text><line style="stroke:#A80036;stroke-width:1.5;" x1="590" x2="861" y1="84" y2="84"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="597" y="92"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="609" y="98.2104">Pack pack;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="597" y="104.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="609" y="111.0151">Console console;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="590" x2="861" y1="117.6094" y2="117.6094"/><ellipse cx="600" cy="128.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="187" x="609" y="131.8198">Play(Pack pack, Console console)</text><ellipse cx="600" cy="141.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="247" x="609" y="144.6245">Optional&lt;Integer&gt; doPlayFor(Player player)</text><!--MD5=[71299309df4b39b96f0b0a13054895fa]
+class PlayAction--><rect codeLine="26" fill="#FEFECE" filter="url(#fc4xjhdy9ltax)" height="73.6094" id="PlayAction" style="stroke:#A80036;stroke-width:1.5;" width="92" x="885.5" y="797.5"/><ellipse cx="900.5" cy="813.5" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M899.2969,814.375 L900.75,814.375 L900.75,814.4844 C900.75,814.8906 900.7813,815.0469 900.8594,815.2031 C901.0156,815.4531 901.2969,815.6094 901.5938,815.6094 C901.8438,815.6094 902.1094,815.4688 902.2656,815.25 C902.3906,815.0938 902.4219,814.9375 902.4219,814.4844 L902.4219,812.5625 C902.4219,812.4063 902.4219,812.3594 902.4063,812.2031 C902.3438,811.7344 902.0313,811.4219 901.5781,811.4219 C901.3281,811.4219 901.0625,811.5625 900.8906,811.7813 C900.7813,811.9531 900.75,812.1094 900.75,812.5625 L900.75,812.6875 L899.2969,812.6875 L899.2969,810.2813 L903.2813,810.2813 L903.2813,811.1406 C903.2813,811.5469 903.3125,811.7188 903.3906,811.875 C903.5625,812.125 903.8438,812.2813 904.125,812.2813 C904.3906,812.2813 904.6563,812.1406 904.8281,811.9219 C904.9375,811.75 904.9688,811.6094 904.9688,811.1406 L904.9688,808.5938 L897.3438,808.5938 C896.9063,808.5938 896.7813,808.6094 896.625,808.7031 C896.375,808.8594 896.2188,809.1563 896.2188,809.4375 C896.2188,809.7188 896.3594,809.9688 896.5781,810.1406 C896.7344,810.25 896.9219,810.2813 897.3438,810.2813 L897.5938,810.2813 L897.5938,816.7969 L897.3438,816.7969 C896.9375,816.7969 896.7813,816.8125 896.625,816.9219 C896.375,817.0938 896.2188,817.3594 896.2188,817.6563 C896.2188,817.9219 896.3594,818.1719 896.5781,818.3281 C896.7188,818.4531 896.9531,818.5 897.3438,818.5 L905.3438,818.5 L905.3438,815.9219 C905.3438,815.4844 905.3125,815.3438 905.2344,815.1875 C905.0625,814.9375 904.7813,814.7813 904.5,814.7813 C904.2344,814.7813 903.9688,814.8906 903.7969,815.1406 C903.6875,815.2969 903.6563,815.4375 903.6563,815.9219 L903.6563,816.7969 L899.2969,816.7969 L899.2969,814.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="60" x="914.5" y="817.6543">PlayAction</text><line style="stroke:#A80036;stroke-width:1.5;" x1="886.5" x2="976.5" y1="829.5" y2="829.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="891.5" y="843.7104">HIT,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="891.5" y="856.5151">STAY</text><line style="stroke:#A80036;stroke-width:1.5;" x1="886.5" x2="976.5" y1="863.1094" y2="863.1094"/><!--MD5=[6120630932363b125bb1d42b4bbf62ab]
+reverse link Player to Dealer--><path codeLine="95" d="M541.599,375.19 C540.001,403.321 538.134,436.201 536.442,465.982 " fill="none" id="Player-backto-Dealer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="534.611,374.77,542.734,355.2,548.589,375.57,534.611,374.77" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[480206b57360204782f62575e8914631]
+reverse link Player to HumanPlayer--><path codeLine="96" d="M599.08,370.61 C614.696,389.3 632.297,410.361 649.846,431.361 " fill="none" id="Player-backto-HumanPlayer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="593.653,375.04,586.199,355.2,604.395,366.06,593.653,375.04" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e66f0c76c095a89c4be371414302133c]
+link Dealer to Hand--><path codeLine="97" d="M593.932,642.16 C606.5,659.174 619.764,676.765 632.5,693 C646.848,711.291 662.606,730.571 677.803,748.791 " fill="none" id="Dealer-to-Hand" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="681.24,752.906,678.5394,743.4346,678.0343,749.0689,672.4,748.5637,681.24,752.906" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e9659a7ca59bb2f33a5cb623a1d435c5]
+link HumanPlayer to Hand--><path codeLine="98" d="M751.004,693.026 C750.938,711.619 750.871,730.242 750.809,747.567 " fill="none" id="HumanPlayer-to-Hand" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="750.789,752.901,754.8198,743.9148,750.8061,747.901,746.8199,743.8873,750.789,752.901" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[01ae9f68263e6bc4031c0aece6e20929]
+link Card to Suit--><path codeLine="132" d="M879.835,1090.173 C872.53,1123.514 862.837,1167.75 855.3,1202.147 " fill="none" id="Card-to-Suit" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="854.204,1207.148,860.0373,1199.2125,855.274,1202.2638,852.2226,1197.5005,854.204,1207.148" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[dab4fdc688f775bd2cd14c67a04f3f7b]
+link Card to Rank--><path codeLine="133" d="M903.434,1090.173 C907.795,1106.582 912.856,1125.63 917.962,1144.845 " fill="none" id="Card-to-Rank" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="919.261,1149.732,920.8154,1140.0066,917.9769,1144.8997,913.0837,1142.0612,919.261,1149.732" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b8b3019cfe85e076e293cd57ef92a70b]
+link Pack to Card--><path codeLine="143" d="M815.925,355.1 C835.482,372.33 855.688,392.95 870.5,415 C959.733,547.821 966.513,595.454 994.5,753 C1009.04,834.83 1027.15,863.572 994.5,940 C987.007,957.538 974.738,973.463 961.206,987.178 " fill="none" id="Pack-to-Card" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="957.359,990.987,966.5691,987.4979,960.9123,987.4694,960.9409,981.8126,957.359,990.987" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="941.0735" y="980.0304">312</text><!--MD5=[2f16b817737525477c59504130fd53f7]
+link Hand to Card--><path codeLine="144" d="M805.832,916.126 C822.097,939.827 839.469,965.14 854.217,986.63 " fill="none" id="Hand-to-Card" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="857.13,990.876,855.3345,981.1922,854.3004,986.7537,848.7389,985.7196,857.13,990.876" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="843.8748" y="979.9038">n</text><!--MD5=[0e681066293ef762cde37da73b293239]
+link HumanPlayer to PlayAction--><path codeLine="146" d="M840.709,693.026 C864.373,729.639 888.109,766.365 905.374,793.078 " fill="none" id="HumanPlayer-to-PlayAction" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="908.089,797.277,906.562,787.5472,905.3745,793.078,899.8437,791.8905,908.089,797.277" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[244f1e6d585682e73f25295604e22989]
+link HumanPlayer to Console--><path codeLine="147" d="M649.629,680.636 C644.059,685.065 638.342,689.217 632.5,693 C554.245,743.673 515.674,712.921 431.5,753 C407.879,764.247 383.687,779.895 363.406,794.407 " fill="none" id="HumanPlayer-to-Console" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="359.139,797.484,368.7787,795.4649,363.1947,794.5597,364.0998,788.9758,359.139,797.484" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[26bcad44198f2bf85c544572f66fe756]
+link Dealer to PlayAction--><path codeLine="148" d="M581.155,642.158 C595.563,661.259 612.81,679.717 632.5,693 C722.577,753.765 778.686,693.342 869.5,753 C884.866,763.094 897.996,778.311 908.164,792.807 " fill="none" id="Dealer-to-PlayAction" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="911.224,797.276,909.4408,787.5899,908.3996,793.1501,902.8394,792.1089,911.224,797.276" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2c971698b1012c911428e23d1a54f56d]
+link Dealer to Console--><path codeLine="149" d="M463.122,642.355 C423.605,692.839 375.776,753.941 345.008,793.248 " fill="none" id="Dealer-to-Console" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="341.713,797.457,350.4099,792.8349,344.7947,793.5196,344.11,787.9043,341.713,797.457" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d058b1b273bc32e67dd8f6a811c8df4e]
+link Play to PlayAction--><path codeLine="151" d="M812.35,151.22 C834.541,167.91 855.936,188.63 869.5,213 C977.335,406.722 952.317,687.592 937.994,792.204 " fill="none" id="Play-to-PlayAction" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="937.279,797.351,942.4802,788.9875,937.9675,792.3986,934.5564,787.8859,937.279,797.351" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[95a736342928cb1e4bf02aa3065172b7]
+link Play to Player--><path codeLine="152" d="M682.156,151.14 C654.966,181.65 619.923,220.98 592.131,252.17 " fill="none" id="Play-to-Player" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="588.779,255.93,597.7543,251.8748,592.1067,252.1982,591.7833,246.5506,588.779,255.93" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[61167f774d1278d765f324e8c576081e]
+link Play to Pack--><path codeLine="153" d="M731.761,151.14 C735.624,181.16 740.586,219.7 744.568,250.64 " fill="none" id="Play-to-Pack" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="745.249,255.93,748.0587,246.4904,744.6062,250.9715,740.1251,247.519,745.249,255.93" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a7fb69a4defe3719bf09c5202e707fe5]
+link Play to Console--><path codeLine="154" d="M659.23,151.23 C633.12,168.1 602.092,185.41 571.5,196 C541.884,206.25 454.391,191.6 431.5,213 C346.476,292.5 321.319,666.906 315.208,792.392 " fill="none" id="Play-to-Console" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="314.965,797.466,319.3924,788.6684,315.205,792.4718,311.4016,788.2844,314.965,797.466" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0b4c1ae1bba01eb81fbc2f70be80e856]
+link BlackJack to Console--><path codeLine="156" d="M265.085,196.13 C264.46,201.83 263.922,207.48 263.5,213 C246.802,431.349 287.861,692.779 305.708,792.302 " fill="none" id="BlackJack-to-Console" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="306.643,797.487,308.9825,787.92,305.7557,792.5664,301.1094,789.3396,306.643,797.487" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d381bd37a81987dbe43b3888162c458b]
+link BlackJack to HumanPlayer--><path codeLine="157" d="M322.279,196.08 C350.435,249.47 392.337,313.77 446.5,355 C515.616,407.611 560.112,366.99 632.5,415 C637.042,418.012 641.511,421.244 645.897,424.652 " fill="none" id="BlackJack-to-HumanPlayer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="649.901,427.83,645.3392,419.1013,645.985,424.7212,640.3651,425.3669,649.901,427.83" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[aa312def1b97445957b022072a0465ec]
+link BlackJack to Dealer--><path codeLine="158" d="M271.243,196.2 C270.333,245.88 275.825,306.5 300.5,355 C332.123,417.161 392.577,467.873 443.708,502.409 " fill="none" id="BlackJack-to-Dealer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="447.998,505.283,442.7468,496.9508,443.8439,502.5003,438.2945,503.5974,447.998,505.283" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8fb96feba64e07dd0a381f16f1f3104c]
+link BlackJack to Pack--><path codeLine="159" d="M554.086,191.11 C559.936,192.78 565.746,194.41 571.5,196 C603.607,204.88 614.771,197.97 644.5,213 C664.576,223.15 684.047,237.83 700.753,252.47 " fill="none" id="BlackJack-to-Pack" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="704.495,255.79,700.4145,246.8262,700.7538,252.4729,695.1071,252.8122,704.495,255.79" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[64ff2462bb9484e1c25bf3f79a58b02f]
+link BlackJack to Play--><path codeLine="160" d="M554.279,101.5 C564.057,101.5 573.834,101.5 583.611,101.5 " fill="none" id="BlackJack-to-Play" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="588.724,101.5,579.724,97.5,583.724,101.5,579.724,105.5,588.724,101.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[832271bd504b15e2b4439cafd5dcb92c]
+@startuml
+'https://plantuml.com/class-diagram
+
+class BlackJack {
+    - Console console;
+    - HumanPlayer humanPlayer;
+    - Dealer dealer;
+    - Pack pack;
+    - Play play;
+
+    + BlackJack(Console console, HumanPlayer humanPlayer, Dealer dealer, Pack pack, Play play)
+    + void run()
+    - void printInitialCards()
+    - void dealCards()
+    - void printIfBusted(boolean humanPlayerBusted, boolean dealerBusted)
+    - void applyScore(Integer humanPlayerScore, Integer dealerScore)
+}
+
+class Play {
+    - Pack pack;
+    - Console console;
+
+    + Play(Pack pack, Console console)
+    + Optional<Integer> doPlayFor(Player player)
+}
+
+enum PlayAction {
+      HIT,
+      STAY
+}
+
+package ch.uzh.group8.assignment4.exercise1.state {
+    class HumanPlayer {
+        - Console console;
+    
+        - Hand hand;
+        - int balance = 100;
+        - int currentBet;
+    
+        + HumanPlayer(Console console)
+        + boolean wantsToContinue()
+        + void startRound()
+        + void printInitialHand()
+        + void addCard(Card card)
+        + void printAllCards()
+        + int getScore()
+        + PlayAction hitOrStay()
+        + void printBalance()
+        + void placeBet()
+        + void applyWon()
+        + void applyLost()
+        + boolean isBroke()
+    }
+    
+    class Dealer {
+        - Console console;
+    
+        - Hand hand;
+    
+        + Dealer(Console console)
+        + void startRound()
+        + void printInitialHand()
+        + void addCard(Card card)
+        + void printAllCards()
+        + int getScore()
+        + PlayAction hitOrStay()
+    }
+    
+    interface Player {
+        + void addCard(Card card)
+        + void printAllCards()
+        + int getScore()
+        + PlayAction hitOrStay()
+    }
+    
+    class Hand {
+        - Console console
+        - List<Card> hand
+    
+        + Hand(Console console)
+        + void addCard(Card card)
+        + void printFirstCard()
+        + void printAllCards()
+        + int getScore()
+        - void printCardsUpTo(int to)
+        - {static} int getScoreOfRank(Rank rank)
+    }
+    
+    class Pack {
+        - List<Card> cards
+        + Pack()
+        + Card drawCard()
+        - {static} List<Card> initializeDeck()
+    }
+
+    Player <|.. Dealer
+    Player <|.. HumanPlayer
+    Dealer ..> Hand
+    HumanPlayer ..> Hand
+}
+
+package ch.uzh.group8.assignment4.exercise1.domain {
+    class Card {
+        - Rank rank;
+        - Suit suit;
+        + {static} of(Suit suit, Rank rank)
+        + {static} Set<Card> createDeck()
+    }
+    
+    enum Suit {
+        CLUBS,
+        DIAMONDS,
+        HEARTS,
+        SPADES
+    }
+    
+    enum Rank {
+      ACE,
+      TWO,
+      THREE,
+      FOUR,
+      FIVE,
+      SIX,
+      SEVEN,
+      EIGHT,
+      NINE,
+      TEN,
+      JACK,
+      QUEEN,
+      KING
+    }
+
+    Card ..> Suit
+    Card ..> Rank
+}
+
+package ch.uzh.group8.assignment4.exercise1.util {
+    class Console {
+        + void print(String string)
+        + String getUserInput()
+    }
+}
+
+Pack ..> "312" Card
+Hand ..> "n" Card
+
+HumanPlayer ..> PlayAction
+HumanPlayer ..> Console
+Dealer ..> PlayAction
+Dealer ..> Console
+
+Play ..> PlayAction
+Play ..> Player
+Play ..> Pack
+Play ..> Console
+
+BlackJack ..> Console
+BlackJack .> HumanPlayer
+BlackJack .> Dealer
+BlackJack .> Pack
+BlackJack .> Play
+@enduml
+
+@startuml
+
+class BlackJack {
+    - Console console;
+    - HumanPlayer humanPlayer;
+    - Dealer dealer;
+    - Pack pack;
+    - Play play;
+
+    + BlackJack(Console console, HumanPlayer humanPlayer, Dealer dealer, Pack pack, Play play)
+    + void run()
+    - void printInitialCards()
+    - void dealCards()
+    - void printIfBusted(boolean humanPlayerBusted, boolean dealerBusted)
+    - void applyScore(Integer humanPlayerScore, Integer dealerScore)
+}
+
+class Play {
+    - Pack pack;
+    - Console console;
+
+    + Play(Pack pack, Console console)
+    + Optional<Integer> doPlayFor(Player player)
+}
+
+enum PlayAction {
+      HIT,
+      STAY
+}
+
+package ch.uzh.group8.assignment4.exercise1.state {
+    class HumanPlayer {
+        - Console console;
+    
+        - Hand hand;
+        - int balance = 100;
+        - int currentBet;
+    
+        + HumanPlayer(Console console)
+        + boolean wantsToContinue()
+        + void startRound()
+        + void printInitialHand()
+        + void addCard(Card card)
+        + void printAllCards()
+        + int getScore()
+        + PlayAction hitOrStay()
+        + void printBalance()
+        + void placeBet()
+        + void applyWon()
+        + void applyLost()
+        + boolean isBroke()
+    }
+    
+    class Dealer {
+        - Console console;
+    
+        - Hand hand;
+    
+        + Dealer(Console console)
+        + void startRound()
+        + void printInitialHand()
+        + void addCard(Card card)
+        + void printAllCards()
+        + int getScore()
+        + PlayAction hitOrStay()
+    }
+    
+    interface Player {
+        + void addCard(Card card)
+        + void printAllCards()
+        + int getScore()
+        + PlayAction hitOrStay()
+    }
+    
+    class Hand {
+        - Console console
+        - List<Card> hand
+    
+        + Hand(Console console)
+        + void addCard(Card card)
+        + void printFirstCard()
+        + void printAllCards()
+        + int getScore()
+        - void printCardsUpTo(int to)
+        - {static} int getScoreOfRank(Rank rank)
+    }
+    
+    class Pack {
+        - List<Card> cards
+        + Pack()
+        + Card drawCard()
+        - {static} List<Card> initializeDeck()
+    }
+
+    Player <|.. Dealer
+    Player <|.. HumanPlayer
+    Dealer ..> Hand
+    HumanPlayer ..> Hand
+}
+
+package ch.uzh.group8.assignment4.exercise1.domain {
+    class Card {
+        - Rank rank;
+        - Suit suit;
+        + {static} of(Suit suit, Rank rank)
+        + {static} Set<Card> createDeck()
+    }
+    
+    enum Suit {
+        CLUBS,
+        DIAMONDS,
+        HEARTS,
+        SPADES
+    }
+    
+    enum Rank {
+      ACE,
+      TWO,
+      THREE,
+      FOUR,
+      FIVE,
+      SIX,
+      SEVEN,
+      EIGHT,
+      NINE,
+      TEN,
+      JACK,
+      QUEEN,
+      KING
+    }
+
+    Card ..> Suit
+    Card ..> Rank
+}
+
+package ch.uzh.group8.assignment4.exercise1.util {
+    class Console {
+        + void print(String string)
+        + String getUserInput()
+    }
+}
+
+Pack ..> "312" Card
+Hand ..> "n" Card
+
+HumanPlayer ..> PlayAction
+HumanPlayer ..> Console
+Dealer ..> PlayAction
+Dealer ..> Console
+
+Play ..> PlayAction
+Play ..> Player
+Play ..> Pack
+Play ..> Console
+
+BlackJack ..> Console
+BlackJack .> HumanPlayer
+BlackJack .> Dealer
+BlackJack .> Pack
+BlackJack .> Play
+@enduml
+
+PlantUML version 1.2021.17beta3(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
