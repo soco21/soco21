@@ -83,8 +83,7 @@ class HandTest {
               Card 49: Card[suit=SPADES, rank=TEN]
               Card 50: Card[suit=SPADES, rank=JACK]
               Card 51: Card[suit=SPADES, rank=QUEEN]
-              Card 52: Card[suit=SPADES, rank=KING]
-              """);
+              Card 52: Card[suit=SPADES, rank=KING]""");
   }
 
   @Test
@@ -93,7 +92,7 @@ class HandTest {
 
     hand.printFirstCard();
 
-    verify(console).print("Card 1: Card[suit=CLUBS, rank=ACE]\n");
+    verify(console).print("Card 1: Card[suit=CLUBS, rank=ACE]");
   }
 
   @Test

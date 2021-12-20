@@ -32,7 +32,10 @@ public class Hand {
     StringBuilder stringBuilder = new StringBuilder();
     for (int i = 0; i < to; i++) {
       Card currentCard = hand.get(i);
-      stringBuilder.append("Card ").append(i + 1).append(": ").append(currentCard).append("\n");
+      stringBuilder.append("Card ").append(i + 1).append(": ").append(currentCard);
+      if (i != to - 1) {
+        stringBuilder.append("\n");
+      }
     }
     console.print(stringBuilder.toString());
   }
